@@ -23,17 +23,48 @@
 //     int n = 13;
 //     prime(n);
 // }
+// FACTORS
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
+// void findfactor(int n){
+//     for(int i=1;i<sqrt(n);i++){
+//         if(n%i==0) cout << i << " ";
+//     }
+//     for(int i=sqrt(n);i>=1;i--){
+//         if(n%i==0) cout << n/i << " ";
+//     }
+// }
+// int main(){
+//     findfactor(49);
+// }
 #include<iostream>
 #include<math.h>
 using namespace std;
-void findfactor(int n){
+void s(int n){
+    int sum = 0;
+    int x = n;
     for(int i=1;i<sqrt(n);i++){
-        if(n%i==0) cout << i << " ";
+        if(n%i==0){
+            sum = sum + i;
+            cout << i << " ";
+        }
     }
-    for(int i=sqrt(n);i>=1;i--){
-        if(n%i==0) cout << n/i << " ";
+    for(int i=sqrt(n);i>1;i--){
+        if(n%i==0){
+            cout << n/i << " ";
+            sum = sum + n/i;
+        }
     }
+    if(x==sum){
+        cout << endl << "SAME";
+    }
+    else{
+        cout << endl << "NOT SAME";
+    }
+    
 }
 int main(){
-    findfactor(49);
+    int n = 28;
+    s(n);
 }
