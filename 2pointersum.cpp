@@ -32,13 +32,38 @@
 //         cout << "False";
 //     }
 // }
+// #include<iostream>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     int arr[5] = {9,6,3,1,6};
+//     sort(arr,arr+5);
+//     for(int i=0;i<5;i++){
+//         cout << arr[i] << " ";
+//     }
+// }
+//6 7 
 #include<iostream>
-#include<algorithm>
+#include<math.h>
 using namespace std;
-int main(){
-    int arr[5] = {9,6,3,1,6};
-    sort(arr,arr+5);
-    for(int i=0;i<5;i++){
-        cout << arr[i] << " ";
+int fact = 0;
+bool prime(int n){
+    bool flag = true;
+    for(int i=2;i<=sqrt(n);i++){
+        if(n%i==0){
+            flag = false;
+            fact = i;
+            break;
+        }
     }
+    if(flag){
+        cout << "prime";
+    }
+    else{
+        cout << "not prime" << fact;
+    }
+}
+int main(){
+    int n = 13;
+    prime(n);
 }
