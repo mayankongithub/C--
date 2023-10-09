@@ -208,6 +208,19 @@ int c(int n){
     return count;
 }
 int main(){
+<<<<<<< HEAD
     int n = 8;
     cout << c(n);
 }
+=======
+<<<<<<< HEAD
+    int n = 28;
+    s(n);
+}
+=======
+    findfactor(49);
+}
+//me
+>>>>>>> 15d17ec285d85f277b8f5ab01997cf480945fe6f
+    //me
+>>>>>>> 498234d0a7622077d97cc0aaf9bc0df4573038c4
