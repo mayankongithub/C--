@@ -225,3 +225,9 @@ int main(){
     //me
 >>>>>>> 498234d0a7622077d97cc0aaf9bc0df4573038c4
     //me
+#include <iostream>
+using namespace std;
+int main(){
+    int n = 5;
+    cout << n;
+}
