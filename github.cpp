@@ -2,6 +2,8 @@
 using namespace std;
 int main(){
     int n;
+    nf4r4
+    
     int m;
     n = 9;
 <<<<<<< HEAD
