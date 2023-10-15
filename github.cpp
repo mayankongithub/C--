@@ -2,6 +2,8 @@
 using namespace std;
 int main(){
     int n;
+    int m;
     n = 9;
-    cout << n;
+    m = 8;
+    cout << n+m;
 }
