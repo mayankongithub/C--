@@ -562,21 +562,98 @@
 //         cout << arr[i] << " ";
 //     }
 // }
+// #include<iostream>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     int arr[] = {3,2,4};
+//     int idx1 = 0;
+//     int idx2 = 0;
+//     for(int i=0;i<3;i++){
+//         for(int j=1;j<3;j++){
+//             if(arr[i]+arr[j]==6){
+//                 idx1 = i;
+//                 idx2 = j;
+//                 break;
+//             }
+//         }
+//     }
+//     cout << idx1 << endl << idx2;
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x = 5;
+//     int *t = &x;
+//     cout << t;
+// }
+// #include<iostream>
+// using namespace std;
+// int print(int n,int count){
+//     if(n==0){
+//         return n;
+//     }
+    
+//     return n + print(n-1,count+n);
+// }
+// int main(){
+//     int n = 10;
+//     int x = print(n,0);
+//     cout << x;
+// }
+// #include<iostream>
+// using namespace std;
+// int factorial(int n){
+//     if(n==0 || n==1) return 1;
+//     return n*factorial(n-1);
+// }
+// int main(){
+//     int n = 5;
+//     int x = factorial(n);
+//     cout << x;
+// }
+// #include<iostream>
+// using namespace std;
+// int fibo(int n){
+//     if(n==1 || n==2) return 1;
+//     return fibo(n-1) + fibo(n-2);
+// }
+// int main(){
+//     int n = 10;
+//     int x = fibo(n);
+//     cout << x;
+// }
+// #include<iostream>
+// using namespace std;
+// int factorial(int n){
+//     if(n==0 || n==1) return 1;
+//     if(n>0){
+//         return n*factorial(n-1);
+//     }
+//     else{
+//         return n*factorial(n+1);
+//     }
+    
+// }
+// int main(){
+//     int n = -5;
+//     int x = factorial(n);
+//     cout << x;
+// }
 #include<iostream>
-#include<algorithm>
 using namespace std;
-int main(){
-    int arr[] = {3,2,4};
-    int idx1 = 0;
-    int idx2 = 0;
-    for(int i=0;i<3;i++){
-        for(int j=1;j<3;j++){
-            if(arr[i]+arr[j]==6){
-                idx1 = i;
-                idx2 = j;
-                break;
-            }
-        }
+int fibo(int n){
+    if(n==1 || n==0) return n;
+    else{
+        return (fibo(n-1) + fibo(n-2));
     }
-    cout << idx1 << endl << idx2;
+}
+int main(){
+    int n = 10;
+    int i = 0;
+    while (i < n ){
+        cout << fibo(i) << " ";
+        i++;
+    }
+    return 0;
 }
