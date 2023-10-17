@@ -640,20 +640,31 @@
 //     int x = factorial(n);
 //     cout << x;
 // }
+// #include<iostream>
+// using namespace std;
+// int fibo(int n){
+//     if(n==1 || n==0) return n;
+//     else{
+//         return (fibo(n-1) + fibo(n-2));
+//     }
+// }
+// int main(){
+//     int n = 10;
+//     int i = 0;
+//     while (i < n ){
+//         cout << fibo(i) << " ";
+//         i++;
+//     }
+//     return 0;
+// }
 #include<iostream>
 using namespace std;
-int fibo(int n){
-    if(n==1 || n==0) return n;
-    else{
-        return (fibo(n-1) + fibo(n-2));
-    }
-}
+void print(int arr[],int i,int n){
+    if(i==n) return;
+    cout << arr[i] << " ";
+    print(arr,i+1,n);
+} 
 int main(){
-    int n = 10;
-    int i = 0;
-    while (i < n ){
-        cout << fibo(i) << " ";
-        i++;
-    }
-    return 0;
+    int arr[] = {1,2,3,4,5};
+    print(arr,0,5);
 }
