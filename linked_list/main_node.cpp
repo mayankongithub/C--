@@ -66,33 +66,4 @@
 //         cout << temp->val << " ";
 //         temp = temp->next;
 //     }
-//     cout << endl;
-//     cout << size(a);
-// }
-// PRINTING LINKED LIST USING RECURSION
-// #include<iostream>
-// using namespace std;
-// class node{
-// public:
-//     int val;
-//     node* next;
-//     node(int val){
-//         this->val=val;
-//         this->next=NULL;
-//     }
-// };
-// void print(node* a){
-//     if(a==NULL) return;
-//     cout << a->val << " ";
-//     print(a->next);
-// }
-// int main(){
-//     node* a = new node(20);
-//     node* b = new node(30);
-//     node* c = new node(40);
-//     node* d = new node(50);
-//     a->next = b;
-//     b->next = c;
-//     c->next = d;
-//     print(a);
 // }
