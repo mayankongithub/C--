@@ -29,7 +29,7 @@ int main(){
     }
     int midele = len/2;
     node* ntemp = a;
-    for(int i=1;i<=midele-1;i++){
+    for(int i=0;i<midele;i++){
         ntemp = ntemp->next;
     }
     ntemp->val = ntemp->next->val;

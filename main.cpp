@@ -657,14 +657,25 @@
 //     }
 //     return 0;
 // }
+// #include<iostream>
+// using namespace std;
+// void print(int arr[],int i,int n){
+//     if(i==n) return;
+//     cout << arr[i] << " ";
+//     print(arr,i+1,n);
+// } 
+// int main(){
+//     int arr[] = {1,2,3,4,5};
+//     print(arr,0,5);
+// }
 #include<iostream>
 using namespace std;
-void print(int arr[],int i,int n){
-    if(i==n) return;
-    cout << arr[i] << " ";
-    print(arr,i+1,n);
-} 
 int main(){
-    int arr[] = {1,2,3,4,5};
-    print(arr,0,5);
+    int x = 10;
+    for(int i=0;i<5;i++){
+        if(i%2==0)
+        continue;
+        x+=i;
+    }
+    cout << x;
 }
