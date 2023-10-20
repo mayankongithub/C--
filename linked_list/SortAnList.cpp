@@ -38,6 +38,10 @@ int main(){
         cout<< temp->val <<" ";
         temp = temp->next;
     }
+    //me
 
 }
+<<<<<<< HEAD
 fv = 8 
+=======
+>>>>>>> bd306ce889ee187b0763545c2e8f87a166ab8477
