@@ -67,6 +67,4 @@ using namespace std;
 //         temp = temp->next;
 //     }
 //
-int main(){
-    cout<<"khyhdwbw";
-}
+
