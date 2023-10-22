@@ -20,17 +20,18 @@ int main(){
     b->next = c;
     c->next = d;
     d->next = e;
-
-    node* temp = a;
-    node* tail = NULL;
-    while(temp!=NULL){
-        if(temp->next==NULL) tail = temp;
-        temp = temp->next;
+    node* prev = NULL;
+    node* curr = a;
+    node* Next = a;
+    while(curr!=NULL){
+        Next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = Next;
     }
-    temp = a;
-    tail->next = tail-1->next;
-    while(tail){
-        cout << tail->val << " ";
-        tail = tail->next;
+    node* temp = prev;
+    while(prev){
+        cout << prev->val << " ";
+        prev = prev->next;
     }
 }
