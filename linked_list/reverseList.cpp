@@ -29,9 +29,18 @@ int main(){
         prev = curr;
         curr = Next;
     }
+<<<<<<< HEAD
     node* temp = prev;
     while(prev){
         cout << prev->val << " ";
         prev = prev->next;
+=======
+    temp = a;
+    tail->next = tail-1->next;
+    while(tail){
+        cout << tail->val << " ";
+        tail = tail->next;
+        //me
+>>>>>>> 25de0c5b08abaca05c53e8e4bb3046e39623059e
     }
 }
