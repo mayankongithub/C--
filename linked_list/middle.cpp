@@ -33,7 +33,7 @@ int main(){
     }
     cout << slow->val;
 
-    //for left middle
+    //For left middle
     // while(fast->next!=NULL && fast->next->next!=NULL){
     //     slow = slow->next;
     //     fast = fast->next->next;
