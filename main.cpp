@@ -187,7 +187,6 @@
 //     }
 
 // }
-//me
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -821,9 +820,5 @@ int main(){
         cout << print->val << " ";
         print = print->next;
     }
-<<<<<<< HEAD
 
 }
-=======
-}
->>>>>>> 99296fb00a22feb863843d6d62dc6375ef83bd87
