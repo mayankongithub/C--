@@ -767,6 +767,62 @@
 //         ntemp = ntemp->next;
 //     }
 // }
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+
+//     node(int val){
+//         this->val = val;
+//         next = NULL;
+//     }
+// };
+// int main(){
+//     node* a = new node(10);
+//     node* b = new node(20);
+//     node* c = new node(30);
+//     node* d = new node(40);
+//     node* e = new node(50);
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+
+//     node* ab = new node(14);
+//     node* bc = new node(2);
+//     node* cd = new node(13);
+//     node* de = new node(80);
+//     node* ef = new node(60);
+//     ab->next = bc;
+//     bc->next = cd;
+//     cd->next = de;
+//     de->next = ef;
+//     node* temp = a;
+//     node* tempab = ab;
+//     node* farzi = new node(100);
+//     node* tempf = farzi;
+//     while(temp!=NULL && tempab!=NULL){
+//         if(temp->val < tempab->val){
+//             node* t = new node(temp->val);
+//             tempf->next = t;
+//             tempf = t;
+//         }
+//         else{
+//             node* t = new node(tempab->val);
+//             tempf->next = t;
+//             tempf = t;
+//         }
+//         tempf->next = NULL;
+//     }
+//     node* print = farzi->next;
+//     while(print != NULL){
+//         cout << print->val << " ";
+//         print = print->next;
+//     }
+
+// }
 #include<iostream>
 using namespace std;
 class node{
@@ -779,6 +835,15 @@ public:
         next = NULL;
     }
 };
+void deleteNode(node* a){
+
+    node* temp = a;
+    for(int i=1;i<3;i++){
+        temp = temp->next;
+    }
+    temp->val=temp->next->val;
+    temp->next = temp->next->next;
+}
 int main(){
     node* a = new node(10);
     node* b = new node(20);
@@ -789,37 +854,11 @@ int main(){
     b->next = c;
     c->next = d;
     d->next = e;
-
-    node* ab = new node(14);
-    node* bc = new node(2);
-    node* cd = new node(13);
-    node* de = new node(80);
-    node* ef = new node(60);
-    ab->next = bc;
-    bc->next = cd;
-    cd->next = de;
-    de->next = ef;
-    node* temp = a;
-    node* tempab = ab;
-    node* farzi = new node(100);
-    node* tempf = farzi;
-    while(temp!=NULL && tempab!=NULL){
-        if(temp->val < tempab->val){
-            node* t = new node(temp->val);
-            tempf->next = t;
-            tempf = t;
-        }
-        else{
-            node* t = new node(tempab->val);
-            tempf->next = t;
-            tempf = t;
-        }
-        tempf->next = NULL;
+    deleteNode(a);
+    node* ltemp = a;
+    while(ltemp!=NULL){
+        cout << ltemp->val << " ";
+        ltemp = ltemp->next;
     }
-    node* print = farzi->next;
-    while(print != NULL){
-        cout << print->val << " ";
-        print = print->next;
-    }
-
 }
+//me
