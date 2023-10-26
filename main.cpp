@@ -8,6 +8,7 @@
 //         cout << i;
 //     }
 // }
+//me
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -862,4 +863,7 @@ int main(){
     }
 }
 //me
+<<<<<<< HEAD
 //me
+=======
+>>>>>>> ee950a8ac1712724e918d04dbdfb61b76887462b
