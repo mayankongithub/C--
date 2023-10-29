@@ -825,43 +825,56 @@
 //     }
 
 // }
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+
+//     node(int val){
+//         this->val = val;
+//         next = NULL;
+//     }
+// };
+// void deleteNode(node* a){
+
+//     node* temp = a;
+//     for(int i=1;i<3;i++){
+//         temp = temp->next;
+//     }
+//     temp->val=temp->next->val;
+//     temp->next = temp->next->next;
+// }
+// int main(){
+//     node* a = new node(10);
+//     node* b = new node(20);
+//     node* c = new node(30);
+//     node* d = new node(40);
+//     node* e = new node(50);
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     deleteNode(a);
+//     node* ltemp = a;
+//     while(ltemp!=NULL){
+//         cout << ltemp->val << " ";
+//         ltemp = ltemp->next;
+//     }
+// }
+//me
 #include<iostream>
 using namespace std;
-class node{
-public:
-    int val;
-    node* next;
-
-    node(int val){
-        this->val = val;
-        next = NULL;
-    }
-};
-void deleteNode(node* a){
-
-    node* temp = a;
-    for(int i=1;i<3;i++){
-        temp = temp->next;
-    }
-    temp->val=temp->next->val;
-    temp->next = temp->next->next;
-}
 int main(){
-    node* a = new node(10);
-    node* b = new node(20);
-    node* c = new node(30);
-    node* d = new node(40);
-    node* e = new node(50);
-    a->next = b;
-    b->next = c;
-    c->next = d;
-    d->next = e;
-    deleteNode(a);
-    node* ltemp = a;
-    while(ltemp!=NULL){
-        cout << ltemp->val << " ";
-        ltemp = ltemp->next;
+    int n = 10;
+    int sum = 0;
+    int i = 0;
+    while(i<=n){
+        sum = sum + i;
+        i++;
     }
+    cout << sum;
+    
 }
-//me
 
