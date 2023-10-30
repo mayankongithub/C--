@@ -47,12 +47,23 @@ public:
         if(idx==size) insertattail(val);
         if(size==0) insertathead(val);
         else{
-            node* val = new node(val);
+            node* t = new node(val);
             node* temp = head;
             for(int i=1;i<=idx-1;i++){
                 temp = temp->next;
             }
-            temp->next
+            t->next = temp->next;
+            temp->next = t;
+            t->next->prev = t->prev;
+            t->prev = temp;
+            size++;
+        }
+    }
+    void display(){
+        node* temp = head;
+        while(temp){
+            cout << temp->val << " ";
+            temp = temp->next;
         }
     }
 };
@@ -73,4 +84,13 @@ int main(){
     c->prev = b;
     d->prev = c;
     e->prev = d;
+    linkedlist list;
+    list.insertattail(10);
+    list.insertattail(20);
+    list.insertattail(30);
+    list.insertattail(40);
+    list.display();
+    cout << endl;
+    list.insertathead(50);
+    list.display();
 }

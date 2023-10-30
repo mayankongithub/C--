@@ -865,17 +865,316 @@
 //     }
 // }
 //me
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n = 10;
+//     int sum = 0;
+//     int i = 0;
+//     while(i<=n){
+//         sum = sum + i;
+//         i++;
+//     }
+//     cout << sum;
+    
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout << "Enter the value of n -> ";
+//     cin >> n;
+//     int m;
+//     cout << "Enter the value of m -> ";
+//     cin >> m;
+
+//     int p;
+//     cout << "Enter the value of p -> ";
+//     cin >> p;
+//     int q;
+//     cout << "Enter the value of q -> ";
+//     cin >> q;  
+//     if(m==p){
+//         int arr[n][m];
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<m;j++){
+//                 cout << "Enter the value of the element at the index[" << i << "][" << j << "] -> ";
+//                 cin >> arr[i][j];
+//             }
+//         }
+//         int brr[p][q];
+//         for(int i=0;i<p;i++){
+//             for(int j=0;j<q;j++){
+//                 cout << "Enter the value of the element at the index[" << i << "][" << j << "] -> ";
+//                 cin >> brr[i][j];
+//             }
+//         }
+//         int result[n][q];
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<m;j++){
+//                 result[i][j] = 0;
+//                 for(int k=0;k<p;k++){
+//                     result[i][j] += arr[i][k]*brr[k][j];
+//                 }
+//             }
+//         }
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<q;j++){
+//                 cout << result[i][j] << " ";
+//             }
+//             cout << endl;
+//         }        
+        
+//     }  
+//     else{
+//         cout << "Cannot multiply";
+//     }
+// }
+// WAVE PRINT
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     for(int i=0;i<3;i++){
+//         if(i%2==0){
+//             for(int j=0;j<3;j++){
+//                 cout << arr[i][j] << " ";
+//             }
+//         }
+//         else{
+//             for(int j=2;j>=0;j--){
+//                 cout << arr[i][j] << " ";
+//             }
+//         }
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     for(int i=2;i>=0;i--){
+//         if(i%2==0){
+//             for(int j=0;j<3;j++){
+//                 cout << arr[i][j] << " ";
+//             }
+//         }
+//         else{
+//             for(int j=2;j>=0;j--){
+//                 cout << arr[i][j] << " ";
+//             }
+//         }
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][4] = {1,2,3,4,5,6,7,8,9,10,11,12};
+//     int minr = 0;
+//     int minc = 0;
+//     int maxr = 2;
+//     int maxc = 3;
+
+//     while(minr<=maxr && minc<=maxc){
+//         for(int j=minc;j<=maxc;j++){
+//             cout << arr[minc][j] << " ";
+//         }
+//         minr++;
+//         if(minr>maxr || minc>maxc) break;
+//         for(int i=minr;i<=maxr;i++){
+//             cout << arr[i][maxc] << " ";
+//         }
+//         maxc--;
+//         if(minr>maxr || minc>maxc) break;
+//         for(int j=maxc;j>=minc;j--){
+//             cout << arr[maxr][j] << " ";
+//         }
+//         maxr--;
+//         if(minr>maxr || minc>maxc) break;
+//         for(int i=maxr;i>=minr;i--){
+//             cout << arr[i][minc] << " ";
+//         }
+//         minc++;
+//         // 1 2 3
+//         // 4 5 6
+//         // 7 8 9
+//         // 1 2 3 6 9 8 7 4 5
+//     }
+// }
+// #include<iostream>
+// #include<algorithm>
+// #include<limits.h>
+// using namespace std;
+// int main(){
+//     int sum = 0;
+//     int max = INT_MIN;
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     for(int i=0;i<3;i++){
+//         for(int j=0;j<3;j++){
+//             if(arr[i][j]>max){
+//                 swap(max,arr[i][j]);
+//             }
+//         }
+//     }
+//     cout << max;
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     int brr[3][3];
+//     // for(int i=0;i<3;i++){
+//     //     for(int j=0;j<3;j++){
+//     //         brr[i][j] = arr[j][i];
+//     //     }
+//     // }
+//     // for(int i=0;i<3;i++){
+//     //     for(int j=0;j<3;j++){
+//     //         cout << brr[i][j] << " ";
+//     //     }
+//     //     cout << endl;
+//     // }
+//     // 1 2 3
+//     // 4 5 6
+//     // 7 8 9
+    
+//     // 1 4 7
+//     // 2 5 8
+//     // 3 6 9
+//     for(int i=0;i<3;i++){
+//         for(int j=i+1;j<3;j++){
+//             swap(arr[i][j],arr[j][i]);
+              
+//         }
+//     }
+//     for(int i=0;i<3;i++){
+//         for(int j=0;j<3;j++){
+//             cout << arr[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     for(int i=0;i<3;i++){
+//         for(int j=i+1;j<3;j++){
+//             swap(arr[i][j],arr[j][i]);
+//         }
+//     }
+//     for(int i=0;i<3;i++){
+//         for(int j=2;j>=0;j--){
+//             cout << arr[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[9];
+//     for(int i=0;i<9;i++){
+//         cout << "Enter the value at index[" << i << "] -> ";
+//         cin >> arr[i];
+//     }
+//     for(int i=0;i<9;i++){
+//         cout << arr[i] << " ";
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n,m;
+//     cout << "Enter the value of n -> ";
+//     cin >> n;
+
+//     cout << "Enter the value of m -> ";
+//     cin >> m;
+//     int arr[n][m];
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<m;j++){
+//             cout << "Enter the value at index ["<<i<<"]["<<j<<"] -> ";
+//             cin >> arr[i][j];
+//         }
+//     }
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<m;j++){
+//             cout << arr[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     int brr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     int result[3][3];
+//     for(int i=0;i<3;i++){
+//         for(int j=0;j<3;j++){
+//             result[i][j] = arr[i][j] + brr[i][j];
+//         }
+//     }
+
+//     for(int i=0;i<3;i++){
+//         for(int j=0;j<3;j++){
+//             cout << result[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+
 #include<iostream>
 using namespace std;
 int main(){
-    int n = 10;
-    int sum = 0;
-    int i = 0;
-    while(i<=n){
-        sum = sum + i;
-        i++;
+    int n;
+    cout << "Enter the value of n -> ";
+    cin >> n;
+    int m;
+    cout << "Enter the value of m -> ";
+    cin >> m;
+
+    int p;
+    cout << "Enter the value of p -> ";
+    cin >> p;
+    int q;
+    cout << "Enter the value of q -> ";
+    cin >> q;  
+    if(m==p){
+        int arr[n][m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                cout << "Enter the value of the element at the index[" << i << "][" << j << "] -> ";
+                cin >> arr[i][j];
+            }
+        }
+        int brr[p][q];
+        for(int i=0;i<p;i++){
+            for(int j=0;j<q;j++){
+                cout << "Enter the value of the element at the index[" << i << "][" << j << "] -> ";
+                cin >> brr[i][j];
+            }
+        }
+        int result[n][q];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                result[i][j] = 0;
+                for(int k=0;k<p;k++){
+                    result[i][j] += arr[i][k] * brr[k][j];
+                }
+            }
+        }
+        for(int i=0;i<n;i++){
+            for(int j=0;j<q;j++){
+                cout << result[i][j] << " ";
+            }
+            cout << endl;
+        }
+    }  
+    else{
+        cout << "Cannot multiply";
     }
-    cout << sum;
     
 }
-
