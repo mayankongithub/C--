@@ -1126,55 +1126,92 @@
 // }
 
 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout << "Enter the value of n -> ";
+//     cin >> n;
+//     int m;
+//     cout << "Enter the value of m -> ";
+//     cin >> m;
+
+//     int p;
+//     cout << "Enter the value of p -> ";
+//     cin >> p;
+//     int q;
+//     cout << "Enter the value of q -> ";
+//     cin >> q;  
+//     if(m==p){
+//         int arr[n][m];
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<m;j++){
+//                 cout << "Enter the value of the element at the index[" << i << "][" << j << "] -> ";
+//                 cin >> arr[i][j];
+//             }
+//         }
+//         int brr[p][q];
+//         for(int i=0;i<p;i++){
+//             for(int j=0;j<q;j++){
+//                 cout << "Enter the value of the element at the index[" << i << "][" << j << "] -> ";
+//                 cin >> brr[i][j];
+//             }
+//         }
+//         int result[n][q];
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<m;j++){
+//                 result[i][j] = 0;
+//                 for(int k=0;k<p;k++){
+//                     result[i][j] += arr[i][k] * brr[k][j];
+//                 }
+//             }
+//         }
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<q;j++){
+//                 cout << result[i][j] << " ";
+//             }
+//             cout << endl;
+//         }
+//     }  
+//     else{
+//         cout << "Cannot multiply";
+//     }
+    
+// }
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// void reverse(string &s,int i,int j){
+//     while(i<j){
+//         swap(s[i],s[j]);
+//         i++;
+//         j--;
+//     }
+// }
+// int main(){
+//     string s = "abc";
+//     int k = 1;
+//     int n = s.size();
+//     reverse(s,0,n-k-1);
+//     reverse(s,n-k,n-1);
+//     reverse(s,0,n-1);
+//     cout << s;
+// }
 #include<iostream>
 using namespace std;
 int main(){
-    int n;
-    cout << "Enter the value of n -> ";
-    cin >> n;
-    int m;
-    cout << "Enter the value of m -> ";
-    cin >> m;
-
-    int p;
-    cout << "Enter the value of p -> ";
-    cin >> p;
-    int q;
-    cout << "Enter the value of q -> ";
-    cin >> q;  
-    if(m==p){
-        int arr[n][m];
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                cout << "Enter the value of the element at the index[" << i << "][" << j << "] -> ";
-                cin >> arr[i][j];
+    int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+    for(int j=0;j<3;j++){
+        if(j%2==0){
+            for(int i=0;i<3;i++){
+                cout << arr[i][j] << " ";
             }
         }
-        int brr[p][q];
-        for(int i=0;i<p;i++){
-            for(int j=0;j<q;j++){
-                cout << "Enter the value of the element at the index[" << i << "][" << j << "] -> ";
-                cin >> brr[i][j];
+        else{
+            for(int i=2;i>=0;i--){
+                cout << arr[i][j] << " ";
             }
         }
-        int result[n][q];
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                result[i][j] = 0;
-                for(int k=0;k<p;k++){
-                    result[i][j] += arr[i][k] * brr[k][j];
-                }
-            }
-        }
-        for(int i=0;i<n;i++){
-            for(int j=0;j<q;j++){
-                cout << result[i][j] << " ";
-            }
-            cout << endl;
-        }
-    }  
-    else{
-        cout << "Cannot multiply";
+        
     }
-    
 }
