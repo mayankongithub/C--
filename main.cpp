@@ -1197,21 +1197,119 @@
 //     reverse(s,0,n-1);
 //     cout << s;
 // }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     for(int j=0;j<3;j++){
+//         if(j%2==0){
+//             for(int i=0;i<3;i++){
+//                 cout << arr[i][j] << " ";
+//             }
+//         }
+//         else{
+//             for(int i=2;i>=0;i--){
+//                 cout << arr[i][j] << " ";
+//             }
+//         }
+        
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     int arr2[3][3];
+//     for(int i=0;i<3;i++){
+//         for(int j=0;j<3;j++){
+//             arr2[i][j] = arr[j][i];
+//         }
+//     }
+//     for(int i=0;i<3;i++){
+//         for(int j=2;j>=0;j--){
+//             cout << arr2[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+    
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[5] = {1,2,3,4,5};
+//     for(int i=4;i>=0;i--){
+//         cout << arr[i] << " ";
+//     }
+// }
+// 1 2 3 
+// 4 5 6
+// 7 8 9
+// 1 2 3 6 5 4 7 8 9
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     for(int i=0;i<3;i++){
+//         if(i%2==0){
+//             for(int j=0;j<3;j++){
+//                 cout << arr[i][j] << " ";
+//             }
+//         }
+//         else{
+//             for(int j=2;j>=0;j--){
+//                 cout << arr[i][j] << " ";
+                
+//             }
+//         }
+        
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout << "Enter the value of  n -> ";
+//     cin >> n;
+//     int arr[n];// int arr[5]
+//     for(int i=0;i<n;i++){
+//         cin >> arr[i];
+//     }
+//     for(int i=4;i>=0;i--){
+//         cout << arr[i] << " ";
+//     }
+// }
+// #include<iostream>
+// #include<limits.h>
+// using namespace std;
+// int main(){
+//     int arr[5] = {1,82,3,4,5};
+//     int min = INT_MAX;
+//     for(int i=0;i<5;i++){
+//         if(min>arr[i]){
+//             swap(min,arr[i]);
+//         }
+//     }
+//     cout << min;
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[5] = {1,2,3,4,5};
+//     int sum = 0;
+//     for(int i=0;i<5;i++){
+//         sum = sum + arr[i];
+//     }
+//     cout << sum;
+// }
 #include<iostream>
 using namespace std;
 int main(){
-    int arr[3][3] = {1,2,3,4,5,6,7,8,9};
-    for(int j=0;j<3;j++){
-        if(j%2==0){
-            for(int i=0;i<3;i++){
-                cout << arr[i][j] << " ";
-            }
+    int arr[3][3] = {{1,2,3},
+                    {4,5,6},
+                    {7,8,9}};
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+
         }
-        else{
-            for(int i=2;i>=0;i--){
-                cout << arr[i][j] << " ";
-            }
-        }
-        
     }
 }
