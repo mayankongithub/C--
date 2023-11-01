@@ -1,5 +1,6 @@
 //hii
 //me
+//me
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -1341,5 +1342,17 @@
 #include<iostream>
 using namespace std;
 int main(){
+<<<<<<< HEAD
     
 }
+=======
+    int arr[3][3] = {{1,2,3},
+                    {4,5,6},
+                    {7,8,9}};
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+
+        }
+    }
+}
+>>>>>>> 4dad1f080683998db72a0b88aee9b543650146d8
