@@ -1301,15 +1301,45 @@
 //     }
 //     cout << sum;
 // }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {{1,2,3},
+//                     {4,5,6},
+//                     {7,8,9}};
+//     for(int i=0;i<3;i++){
+//         for(int j=0;j<3;j++){
+
+//         }
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// void find(int m,int n,int arr[3][3]){
+//     bool flag = false;
+//     for(int i=0;i<m;i++){
+//         for(int j=0;j<n;j++){
+//             if(arr[i][j]==4){
+//                 flag = true;
+//                 break;
+//             }
+//         }
+//     }
+//     if(flag!=true){
+//         cout << "NOT FOUND";
+//     }
+//     else{
+//         cout << "FOUND";
+//     }
+// }
+// int main(){
+//     int n = 3;
+//     int m = 3;
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9}; 
+//     find(m,n,arr);
+// }
 #include<iostream>
 using namespace std;
 int main(){
-    int arr[3][3] = {{1,2,3},
-                    {4,5,6},
-                    {7,8,9}};
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-
-        }
-    }
+    
 }
