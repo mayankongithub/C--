@@ -1,6 +1,5 @@
 //hii
 //me
-//me
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -1339,20 +1338,133 @@
 //     int arr[3][3] = {1,2,3,4,5,6,7,8,9}; 
 //     find(m,n,arr);
 // }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int row;
+//     int column;
+//     cout <<"Enter the number of row -> ";
+//     cin >> row;
+//     cout << "Enter the number of column -> ";
+//     cin >> column;
+//     int arr[row][column];
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<column;j++){
+//             cin >> arr[i][j];
+//         }
+//     }
+
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<column;j++){
+//             cout << arr[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     cout << endl;
+//     cout << endl;
+//     // 1 2 3
+//     // 4 5 6
+//     // 7 8 9
+
+//     // 1 4 7
+//     // 2 5 8
+//     // 3 6 9
+//     // transpose
+//     int array[row][column];
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<column;j++){
+//             array[i][j] = arr[j][i];
+//         }
+//     }
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<column;j++){
+//             cout << array[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     cout << endl;
+//     cout << endl;
+//     // 1 2 3
+//     // 4 5 6
+//     // 7 8 9
+
+//     // 7 4 1
+//     // 8 5 2
+//     // 9 6 3
+
+//     // 90 degree
+//     for(int i=0;i<row;i++){
+//         for(int j=column-1;j>=0;j--){
+//             cout << array[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     cout << endl;
+//     cout << endl;
+
+//     // wave print
+//     // 1 2 3
+//     // 4 5 6
+//     // 7 8 9
+//     // 1 2 3 6 5 4 7 8 9
+//      for(int i=0;i<row;i++){
+//         if(i%2!=0){
+//             for(int j=column-1;j>=0;j--){
+//                 cout << arr[i][j] << " ";
+//             }
+//         }
+//         else{
+//             for(int j=0;j<column;j++){
+//                 cout << arr[i][j] << " ";
+//             }
+//         }
+        
+//     }
+// }
+// #include <iostream>
+// using namespace std;
+// int non_repeating_elements(int arr[], int n){
+//     int count = 1;
+//     int i,j;
+//     for(i = 0; i<n; i++){
+//         for(j = 0; j<n; j++){
+//             if(arr[i] == arr[j] && i != j)
+//                 break;
+//             }
+//             if(j == n ){
+//                 cout << "\nNon-repeating element [" << count << "]" << " : " << arr[i] << endl;
+//                 ++count;
+//             }
+//         }    
+//     return -1;
+// }
+// int main(){
+//     int n,i;
+//     cout << "\nEnter the number of elements : ";
+//     cin >> n;
+//     int arr[n];
+//     cout << "\nInput the array elements : ";
+//     for(i = 0; i < n; i++){
+//         cin >> arr[i];
+//     }
+//     non_repeating_elements(arr, n);
+//     return 0;
+// }
 #include<iostream>
 using namespace std;
 int main(){
-<<<<<<< HEAD
-    
-}
-=======
-    int arr[3][3] = {{1,2,3},
-                    {4,5,6},
-                    {7,8,9}};
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-
+    int arr[5] = {1,2,2,1,5};
+    int i,j;
+    int n = 5;
+    int count = 1;
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+            if(arr[i] == arr[j] && i != j)
+                break;
+            }
+            if(j == n ){
+                cout << "\nNon-repeating element [" << count << "]" << " : " << arr[i] << endl;
+                ++count;
+            }
         }
-    }
 }
->>>>>>> 4dad1f080683998db72a0b88aee9b543650146d8
