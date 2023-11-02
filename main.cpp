@@ -1,5 +1,10 @@
 //hii
 //me
+<<<<<<< HEAD
+=======
+//me
+//me
+>>>>>>> fecf52ef2ed6394d230d96fc5e09a5b351dad6f2
 // #include<iostream>
 // using namespace std;
 // int main(){
