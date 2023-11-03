@@ -1,10 +1,4 @@
 //hii
-<<<<<<< HEAD
-//me
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 88a6401521c186464e7e0e84d63ac4f66dbe6d0e
 //me
 //me
 // #include<iostream>
