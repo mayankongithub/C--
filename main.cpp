@@ -1,10 +1,7 @@
 //hii
 //me
-<<<<<<< HEAD
-=======
 //me
 //me
->>>>>>> fecf52ef2ed6394d230d96fc5e09a5b351dad6f2
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -1455,21 +1452,84 @@
 //     non_repeating_elements(arr, n);
 //     return 0;
 // }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[5] = {1,2,2,1,5};
+//     int i,j;
+//     int n = 5;
+//     int count = 1;
+//     for(i=0;i<n;i++){
+//         for(j=0;j<n;j++){
+//             if(arr[i] == arr[j] && i != j)
+//                 break;
+//             }
+//             if(j == n ){
+//                 cout << "\nNon-repeating element [" << count << "]" << " : " << arr[i] << endl;
+//                 ++count;
+//             }
+//         }
+// }
+
+
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// void reverse(string &s,int i,int j){
+//     while(i<j){
+//         swap(s[i],s[j]);
+//         i++;
+//         j--;
+//     }
+// }
+// int main(){
+//     string s = "abc";//cab
+//     int k = 1;
+//     int n = s.size();
+//     reverse(s,0,n-k-1);
+//     reverse(s,n-k,n-1);
+//     reverse(s,0,n-1);
+//     cout << s;
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[5] = {1,2,3,4,5};
+//     int min = 3;
+//     int max = 5;
+//     int sum = 0;
+//     int idx = -1;
+//     int idx2 = -2;
+//     for(int i=0;i<5;i++){
+//         if(arr[i]==min){
+//             idx = i;
+//         }
+//         if(arr[i]==max){
+//             idx2 = i;
+//         }
+//     }
+//     cout << idx << endl << idx2;
+// }
+
 #include<iostream>
+#include<string>
 using namespace std;
+void reverse(int arr[],int i,int j){
+    while(i<j){
+        swap(arr[i],arr[j]);
+        i++;
+        j--;
+    }
+}
 int main(){
-    int arr[5] = {1,2,2,1,5};
-    int i,j;
-    int n = 5;
-    int count = 1;
-    for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            if(arr[i] == arr[j] && i != j)
-                break;
-            }
-            if(j == n ){
-                cout << "\nNon-repeating element [" << count << "]" << " : " << arr[i] << endl;
-                ++count;
-            }
-        }
+    int arr[5] = {1,2,3,4,5};
+    int k = 1;
+    int n = sizeof(arr)/sizeof(int);
+    reverse(arr,0,n-k-1);
+    reverse(arr,n-k,n-1);
+    reverse(arr,0,n-1);
+    for(int i=0;i<5;i++){
+        cout << arr[i] << " ";
+    }
 }
