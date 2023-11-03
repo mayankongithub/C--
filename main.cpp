@@ -1,5 +1,10 @@
 //hii
+<<<<<<< HEAD
 //me
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 88a6401521c186464e7e0e84d63ac4f66dbe6d0e
 //me
 //me
 // #include<iostream>
@@ -1523,6 +1528,7 @@ void reverse(int arr[],int i,int j){
     }
 }
 int main(){
+<<<<<<< HEAD
     int arr[5] = {1,2,3,4,5};
     int k = 1;
     int n = sizeof(arr)/sizeof(int);
@@ -1533,3 +1539,20 @@ int main(){
         cout << arr[i] << " ";
     }
 }
+=======
+    int arr[5] = {1,2,2,1,5};
+    int i,j;
+    int n = 5;
+    int count = 1;
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+            if(arr[i] == arr[j] && i != j)
+                break;
+            }
+            if(j == n ){
+                cout << "\nNon-repeating element [" << count << "]" << " : " << arr[i] << endl;
+                ++count;
+            }
+        }
+}
+>>>>>>> 88a6401521c186464e7e0e84d63ac4f66dbe6d0e
