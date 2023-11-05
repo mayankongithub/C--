@@ -1,10 +1,5 @@
 //hii
-<<<<<<< HEAD
 //me
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 88a6401521c186464e7e0e84d63ac4f66dbe6d0e
 //me
 //me
 // #include<iostream>
@@ -983,7 +978,7 @@
 
 //     while(minr<=maxr && minc<=maxc){
 //         for(int j=minc;j<=maxc;j++){
-//             cout << arr[minc][j] << " ";
+//             cout << arr[minr][j] << " ";
 //         }
 //         minr++;
 //         if(minr>maxr || minc>maxc) break;
@@ -1514,45 +1509,90 @@
 //             idx2 = i;
 //         }
 //     }
-//     cout << idx << endl << idx2;
+//     cout << idx << endl << idx2 << endl;
+//     for(int i=idx;i<=idx2;i++){
+//         sum += arr[i];
+//     }
+//     cout << sum;
 // }
 
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// void reverse(int arr[],int i,int j){
+//     while(i<j){
+//         swap(arr[i],arr[j]);
+//         i++;
+//         j--;
+//     }
+// }
+// int main(){
+//     int arr[5] = {1,2,3,4,5};
+//     int k = 1;
+//     int n = sizeof(arr)/sizeof(int);
+//     reverse(arr,0,n-k-1);
+//     reverse(arr,n-k,n-1);
+//     reverse(arr,0,n-1);
+//     for(int i=0;i<5;i++){
+//         cout << arr[i] << " ";
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// class player{
+// public:
+//     string name;
+//     int score;
+//     int age;
+//     int health;
+
+
+// };
+// int main(){
+//     player milan;
+//     milan.name = "Milan";
+//     milan.score = 4;
+//     milan.age = 20;
+//     milan.health = 100;
+//     cout << milan.health << endl;
+//     cout << milan.age << endl;
+
+//     player shubham;
+//     shubham.name = "shubham";
+//     shubham.score = 4;
+//     shubham.age = 70;
+//     shubham.health = 90;
+//     cout << shubham.health << endl;
+//     cout << shubham.age << endl;
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     // 1 2 3
+//     // 4 5 6
+//     // 7 8 9
+//     int arr[3][3];
+//     for(int i=0;i<3;i++){
+//         for(int j=0;j<3;j++){
+//             cout << "Enter the element -> ";
+//             cin >> arr[i][j];
+//         }
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     string s = "mayank sharma";
+//     for(int i=0;i<s.length();i++){
+//         putchar(toupper(s[i]));
+//     }
+// }
 #include<iostream>
-#include<string>
+#include<string.h>
+#include<algorithm>
 using namespace std;
-void reverse(int arr[],int i,int j){
-    while(i<j){
-        swap(arr[i],arr[j]);
-        i++;
-        j--;
-    }
-}
 int main(){
-<<<<<<< HEAD
-    int arr[5] = {1,2,3,4,5};
-    int k = 1;
-    int n = sizeof(arr)/sizeof(int);
-    reverse(arr,0,n-k-1);
-    reverse(arr,n-k,n-1);
-    reverse(arr,0,n-1);
-    for(int i=0;i<5;i++){
-        cout << arr[i] << " ";
-    }
+    string s = "mayank sharma i am";
+    reverse(s.begin(),s.end());
+    cout << s;
 }
-=======
-    int arr[5] = {1,2,2,1,5};
-    int i,j;
-    int n = 5;
-    int count = 1;
-    for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            if(arr[i] == arr[j] && i != j)
-                break;
-            }
-            if(j == n ){
-                cout << "\nNon-repeating element [" << count << "]" << " : " << arr[i] << endl;
-                ++count;
-            }
-        }
-}
->>>>>>> 88a6401521c186464e7e0e84d63ac4f66dbe6d0e
