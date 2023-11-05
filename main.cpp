@@ -1,5 +1,8 @@
 //hii
+<<<<<<< HEAD
 //me
+=======
+>>>>>>> e3f7f285821a6a4cc227d6efbaf73674007f95fb
 //me
 //me
 // #include<iostream>
