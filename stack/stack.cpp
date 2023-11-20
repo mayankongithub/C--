@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // //me
 // #include<iostream>
 // #include<stack>
