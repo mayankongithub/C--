@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // //me
 // #include<iostream>
 // #include<stack>
@@ -13,21 +12,6 @@
 //     st.push(30);
 //     st.push(40);
 //     cout << st.size() << endl;
-=======
-//me
-#include<iostream>
-#include<stack>
-#include<algorithm>
-using namespace std;
-int main(){
-    stack<int>st;
-    cout << st.size() << endl;
-    st.push(10);
-    st.push(20);
-    st.push(30);
-    st.push(40);
-    cout << st.size() << endl;
->>>>>>> df2eebc5c9b2636d3a2dc59623857917b5cc5730
     
 //     stack<int>temp;
 //     while(st.size()>0){
