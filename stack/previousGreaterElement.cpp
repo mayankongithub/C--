@@ -5,14 +5,14 @@ int main(){
     int arr[8] = {3,1,2,7,4,6,2,3};
     int n = 8;
     int newarr[n];
-    newarr[n-1] = -1;
+    newarr[0] = -1;
     stack<int>st;
-    st.push(arr[n-1]);
+    st.push(arr[0]);
     //pop
     //insert
     //push
     for(int i=n-2;i>=0;i--){
-        while(st.size()>0 && st.top()<=arr[i]){
+        while(st.size()>0 && st.top()>=arr[i]){
             st.pop();
         }
         if(st.size()==0) newarr[i] = -1;
