@@ -1627,8 +1627,8 @@ class bike{
 public:
     static int noofbike;
     int tyre;
-    bike(int tyre){
-        this->tyre = tyre;
+    bike(int t) : tyre(t){
+        
     }
     static void increase(){
         noofbike++;
