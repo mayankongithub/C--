@@ -38,8 +38,8 @@ int main(){
     st.push(50);
     displayRev(st);
     cout << endl;
-    display(st);
-    insertatbottom(st,-1);
-    cout << endl;
-    display(st);
+    // display(st);
+    // insertatbottom(st,-1);
+    // cout << endl;
+    // display(st);
 }

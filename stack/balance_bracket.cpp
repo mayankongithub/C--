@@ -20,6 +20,6 @@ bool balance(string s){
     }
 }
 int main(){
-    string s = "(())";
+    string s = "()()()";
     cout << balance(s);
 }
