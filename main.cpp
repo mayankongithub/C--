@@ -1621,23 +1621,42 @@
 //     cout << res.to_string();
 // }
 
+// #include<iostream>
+// using namespace std;
+// class bike{
+// public:
+//     static int noofbike;
+//     int tyre;
+//     bike(int t) : tyre(t){
+
+//     }
+//     static void increase(){
+//         noofbike++;
+//     }
+// };
+// int bike :: noofbike = 10;
+// int main(){
+//     bike bmw(2);
+//     bmw.increase();
+//     cout << bmw.tyre << endl;
+//     cout << bmw.noofbike;
+// }
 #include<iostream>
 using namespace std;
-class bike{
+class vehicle{
 public:
-    static int noofbike;
-    int tyre;
-    bike(int t) : tyre(t){
-        
-    }
-    static void increase(){
-        noofbike++;
+    int engine;
+    vehicle(){
+        cout << "constructor is called of vehicle\n";
     }
 };
-int bike :: noofbike = 10;
+class bike : public vehicle{
+public:
+    int headlight;
+    bike(){
+        cout << "constructor is called of bike";
+    }
+};
 int main(){
-    bike bmw(2);
-    bmw.increase();
-    cout << bmw.tyre << endl;
-    cout << bmw.noofbike;
+    bike bmw;
 }
