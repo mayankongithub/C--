@@ -1646,6 +1646,8 @@ using namespace std;
 class vehicle{
 public:
     int engine;
+protected:
+    int a;
     vehicle(){
         cout << "constructor is called of vehicle\n";
     }
