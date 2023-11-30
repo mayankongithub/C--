@@ -40,5 +40,13 @@ int main(){
     for(int i=0;i<n;i++){
         cout << pse[i] << " ";
     }
+    int maxarea = 0;
+    for(int i=0;i<n;i++){
+        int height = arr[i];
+        int breath = nse[i] - pse[i] -1;
+        int area = height * breath;
+        maxarea = max(area,maxarea);
+    }
+    cout << endl << maxarea;
 
 }

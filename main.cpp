@@ -1585,38 +1585,59 @@
 //         putchar(toupper(s[i]));
 //     }
 // }
-#include <iostream>
-#include <sstream>
-#include <cmath>
+// #include <iostream>
+// #include <sstream>
+// #include <cmath>
+// using namespace std;
+// class Complex {
+//     private:
+//         int real, imag;
+//     public:
+//     Complex(){
+//         real = imag = 0;    
+//     }
+//     Complex (int r, int i){
+//         real = r;
+//         imag = i;
+//     }
+//     string to_string(){
+//         stringstream ss;
+//         if(imag >= 0)
+//             ss << "(" << real << " + " << imag << "i)";
+//         else
+//             ss << "(" << real << " - " << abs(imag) << "i)";
+//         return ss.str();
+//     }
+//     Complex operator+(Complex c2){
+//         Complex ret;
+//         ret.real = real + c2.real;
+//         ret.imag = imag + c2.imag;
+//         return ret;
+//     }
+// };
+// int main(){
+//     Complex c1(3,1), c2(4,2);
+//     Complex res = c1 + c2;
+//     cout << res.to_string();
+// }
+
+#include<iostream>
 using namespace std;
-class Complex {
-    private:
-        int real, imag;
-    public:
-    Complex(){
-        real = imag = 0;    
+class bike{
+public:
+    static int noofbike;
+    int tyre;
+    bike(int tyre){
+        this->tyre = tyre;
     }
-    Complex (int r, int i){
-        real = r;
-        imag = i;
-    }
-    string to_string(){
-        stringstream ss;
-        if(imag >= 0)
-            ss << "(" << real << " + " << imag << "i)";
-        else
-            ss << "(" << real << " - " << abs(imag) << "i)";
-        return ss.str();
-    }
-    Complex operator+(Complex c2){
-        Complex ret;
-        ret.real = real + c2.real;
-        ret.imag = imag + c2.imag;
-        return ret;
+    static void increase(){
+        noofbike++;
     }
 };
+int bike :: noofbike = 10;
 int main(){
-    Complex c1(3,1), c2(4,2);
-    Complex res = c1 + c2;
-    cout << res.to_string();
+    bike bmw(2);
+    bmw.increase();
+    cout << bmw.tyre << endl;
+    cout << bmw.noofbike;
 }
