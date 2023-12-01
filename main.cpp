@@ -1,41 +1,41 @@
-//me
-//me
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int n;
-//     cin >> n;
-//     for(int i=1;i<=n;i++){
-//         cout << i;
-//     }
-// }
-//me
-//me
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int arr[5];
-//     for(int i=0;i<5;i++){
-//         cin >> arr[i];
-//     }
-//     for(int i=0;i<5;i++){
-//         cout << arr[i]<< '\n';
-//     }
-// }
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int arr[5];
-//     for(int i=0;i<5;i++){
-//         cin >> arr[i];
-//     }
-//     for(int i=0;i<5;i++){
-//         if(arr[i]<35){
-//             cout << i << '\t';
-        
+// me
+// me
+//  #include<iostream>
+//  using namespace std;
+//  int main(){
+//      int n;
+//      cin >> n;
+//      for(int i=1;i<=n;i++){
+//          cout << i;
+//      }
+//  }
+// me
+// me
+//  #include<iostream>
+//  using namespace std;
+//  int main(){
+//      int arr[5];
+//      for(int i=0;i<5;i++){
+//          cin >> arr[i];
+//      }
+//      for(int i=0;i<5;i++){
+//          cout << arr[i]<< '\n';
+//      }
+//  }
+//  #include<iostream>
+//  using namespace std;
+//  int main(){
+//      int arr[5];
+//      for(int i=0;i<5;i++){
+//          cin >> arr[i];
+//      }
+//      for(int i=0;i<5;i++){
+//          if(arr[i]<35){
+//              cout << i << '\t';
+
 //         }
 //     }
-//     cout << sizeof(arr);   
+//     cout << sizeof(arr);
 
 // }
 // #include<iostream>
@@ -345,7 +345,7 @@
 //                 //count++;
 //             }
 //         }
-        
+
 //     }
 //     cout << count;
 // }
@@ -356,7 +356,7 @@
 //     string str = "good me";
 //     for(int i=str.size();i>=0;i--){
 //         cout << str[i] << " ";
-//     }   
+//     }
 // }
 // #include<iostream>
 // using namespace std;
@@ -446,7 +446,7 @@
 //             else{
 //                 arr[i][j] = arr[i][j];
 //             }
-            
+
 //         }
 //     }
 //     for(int i=0;i<3;i++){
@@ -545,7 +545,7 @@
 //             n = n/10;
 //         }
 //     }
-    
+
 //     if(sum==x){
 //         return true;
 //     }
@@ -597,7 +597,7 @@
 //     if(n==0){
 //         return n;
 //     }
-    
+
 //     return n + print(n-1,count+n);
 // }
 // int main(){
@@ -637,7 +637,7 @@
 //     else{
 //         return n*factorial(n+1);
 //     }
-    
+
 // }
 // int main(){
 //     int n = -5;
@@ -667,7 +667,7 @@
 //     if(i==n) return;
 //     cout << arr[i] << " ";
 //     print(arr,i+1,n);
-// } 
+// }
 // int main(){
 //     int arr[] = {1,2,3,4,5};
 //     print(arr,0,5);
@@ -864,7 +864,7 @@
 //         ltemp = ltemp->next;
 //     }
 // }
-//me
+// me
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -876,7 +876,7 @@
 //         i++;
 //     }
 //     cout << sum;
-    
+
 // }
 // #include<iostream>
 // using namespace std;
@@ -893,7 +893,7 @@
 //     cin >> p;
 //     int q;
 //     cout << "Enter the value of q -> ";
-//     cin >> q;  
+//     cin >> q;
 //     if(m==p){
 //         int arr[n][m];
 //         for(int i=0;i<n;i++){
@@ -923,9 +923,9 @@
 //                 cout << result[i][j] << " ";
 //             }
 //             cout << endl;
-//         }        
-        
-//     }  
+//         }
+
+//     }
 //     else{
 //         cout << "Cannot multiply";
 //     }
@@ -1036,14 +1036,14 @@
 //     // 1 2 3
 //     // 4 5 6
 //     // 7 8 9
-    
+
 //     // 1 4 7
 //     // 2 5 8
 //     // 3 6 9
 //     for(int i=0;i<3;i++){
 //         for(int j=i+1;j<3;j++){
 //             swap(arr[i][j],arr[j][i]);
-              
+
 //         }
 //     }
 //     for(int i=0;i<3;i++){
@@ -1125,7 +1125,6 @@
 //     }
 // }
 
-
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -1141,7 +1140,7 @@
 //     cin >> p;
 //     int q;
 //     cout << "Enter the value of q -> ";
-//     cin >> q;  
+//     cin >> q;
 //     if(m==p){
 //         int arr[n][m];
 //         for(int i=0;i<n;i++){
@@ -1172,11 +1171,11 @@
 //             }
 //             cout << endl;
 //         }
-//     }  
+//     }
 //     else{
 //         cout << "Cannot multiply";
 //     }
-    
+
 // }
 // #include<iostream>
 // #include<string>
@@ -1212,7 +1211,7 @@
 //                 cout << arr[i][j] << " ";
 //             }
 //         }
-        
+
 //     }
 // }
 // #include<iostream>
@@ -1231,7 +1230,7 @@
 //         }
 //         cout << endl;
 //     }
-    
+
 // }
 // #include<iostream>
 // using namespace std;
@@ -1241,7 +1240,7 @@
 //         cout << arr[i] << " ";
 //     }
 // }
-// 1 2 3 
+// 1 2 3
 // 4 5 6
 // 7 8 9
 // 1 2 3 6 5 4 7 8 9
@@ -1258,10 +1257,10 @@
 //         else{
 //             for(int j=2;j>=0;j--){
 //                 cout << arr[i][j] << " ";
-                
+
 //             }
 //         }
-        
+
 //     }
 // }
 // #include<iostream>
@@ -1335,7 +1334,7 @@
 // int main(){
 //     int n = 3;
 //     int m = 3;
-//     int arr[3][3] = {1,2,3,4,5,6,7,8,9}; 
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
 //     find(m,n,arr);
 // }
 // #include<iostream>
@@ -1418,7 +1417,7 @@
 //                 cout << arr[i][j] << " ";
 //             }
 //         }
-        
+
 //     }
 // }
 // #include <iostream>
@@ -1435,7 +1434,7 @@
 //                 cout << "\nNon-repeating element [" << count << "]" << " : " << arr[i] << endl;
 //                 ++count;
 //             }
-//         }    
+//         }
 //     return -1;
 // }
 // int main(){
@@ -1468,8 +1467,6 @@
 //             }
 //         }
 // }
-
-
 
 // #include<iostream>
 // #include<string>
@@ -1544,7 +1541,6 @@
 //     int age;
 //     int health;
 
-
 // };
 // int main(){
 //     player milan;
@@ -1594,7 +1590,7 @@
 //         int real, imag;
 //     public:
 //     Complex(){
-//         real = imag = 0;    
+//         real = imag = 0;
 //     }
 //     Complex (int r, int i){
 //         real = r;
@@ -1641,24 +1637,52 @@
 //     cout << bmw.tyre << endl;
 //     cout << bmw.noofbike;
 // }
-#include<iostream>
+// #include<iostream>
+// using namespace std;
+// class vehicle{
+// public:
+//     int engine;
+// protected:
+//     int a;
+//     vehicle(){
+//         cout << "constructor is called of vehicle\n";
+//     }
+// };
+// class bike : public vehicle{
+// public:
+//     int headlight;
+//     bike(){
+//         cout << "constructor is called of bike";
+//     }
+// };
+// int main(){
+//     bike bmw;
+// }
+#include <iostream>
 using namespace std;
-class vehicle{
-public:
-    int engine;
-protected:
-    int a;
-    vehicle(){
-        cout << "constructor is called of vehicle\n";
-    }
-};
-class bike : public vehicle{
-public:
-    int headlight;
-    bike(){
-        cout << "constructor is called of bike";
-    }
-};
+// class height{
+// public:
+//     int feet;
+//     int inch;
+//     height(int feet=0,int inch=0){
+//         this->feet = feet;
+//         this->inch = inch;
+//     }
+
+//     height operator+(height h){
+//         height temp;
+//         temp.feet = feet + h.feet;
+//         temp.inch = inch + h.inch;
+//         return temp;
+//     }
+// };
+// int main(){
+//     height a1(10,20),a2(30,40);
+//     height a3 = a1 + a2;
+//     cout << a3.feet << "'"<< a3.inch<<"''";
+// }
 int main(){
-    bike bmw;
+int z = 65;
+int r = 65 % 12;
+cout << r;
 }
