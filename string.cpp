@@ -455,28 +455,136 @@
 //     height a3 = a1 + a2;
 //     cout << a3.feet << "'" << a3.inch << "''";
 // }
+// #include<iostream>
+// using namespace std;
+// class cart{
+// public:
+//     string name;
+//     int price;
+//     int qu;
+//     cart(string name="",int price=0,int qu=0){
+//         this->name  = name;
+//         this->price = price;
+//         this->qu = qu;
+//     }
+//     cart operator +(cart a){
+//         cart temp;
+//         temp.price = (qu*price) + (a.qu*a.price);
+//         return temp;
+//     }
+
+// };
+// int main(){
+//     cart a1("laptop",100000,2);
+//     cart a2("mobile",10000,3);
+//     cart a3 = a1 + a2;
+//     cout << a3.price;
+// }
+// #include<iostream>
+// using namespace std;
+// class marks{
+// public:
+//     int score;
+//     marks(int score=0){
+//         this->score = score;
+//     }
+
+//     marks operator +(marks s2){
+//         marks temp;
+//         temp.score = score + s2.score;
+//         return temp;
+//     }
+
+// };
+// int main(){
+//     marks s1(10),s2(20);
+//     marks s3 = s1 + s2;
+//     cout << s3.score;
+// }
+// #include<iostream>
+// #include<algorithm>
+// #include<sstream>
+// #include<string>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     string s = "my name is mayank is";
+//     stringstream ss(s);
+//     string temp;
+//     vector<string>v;
+//     while(ss>>temp){
+//         v.push_back(temp);
+//     }
+//     cout << endl;
+//     sort(v.begin(),v.end());
+//     for(int i=0;i<v.size();i++){
+//         cout << v[i] << endl;
+//     }
+//     for(int i=0;i<v.size();i++){
+//         if(v[i]==v[i+1])
+//     }
+
+// }
+// #include<iostream>
+// #include<algorithm>
+// #include<vector>
+// #include<sstream>
+// using namespace std;
+// int main(){
+//     string str = "mayank is mayank a b.tech student as well as a coder well well mayank";
+//     stringstream ss(str);
+//     string temp;
+//     vector<string>v;
+//     while(ss>>temp){
+//         v.push_back(temp);
+//     }
+//     sort(v.begin(),v.end());
+
+//     int count = 1;
+//     int maxcount = 1;
+//     for(int i=1;i<=v.size();i++){
+//         if(v[i]==v[i-1]){
+//             count++;
+//         }
+//         else{
+//             count = 1;
+//         }
+//         if(count > maxcount){
+//             maxcount = count;
+//         }
+//     }
+//     for(int i=1;i<=v.size();i++){
+//         if(v[i]==v[i-1]){
+//             count++;
+//         }
+//         else{
+//             count = 1;
+//         }
+//         if(count==maxcount){
+//             cout << v[i] << endl;
+//         }
+//     }   
+
+// }
 #include<iostream>
 using namespace std;
-class cart{
+class a{
+private:
+    int a;
 public:
-    string name;
-    int price;
-    int qu;
-    cart(string name="",int price=0,int qu=0){
-        this->name  = name;
-        this->price = price;
-        this->qu = qu;
+    void print(){
+        cout << "this is funtion of class a";
     }
-    cart operator +(cart a){
-        cart temp;
-        temp.price = (qu*price) + (a.qu*a.price);
-        return temp;
+};
+class b: virtual a{
+protected:
+    int b;
+public:
+    void print(){
+        cout << "this is function of class b";
     }
-    
 };
 int main(){
-    cart a1("laptop",100000,2);
-    cart a2("mobile",10000,3);
-    cart a3 = a1 + a2;
-    cout << a3.price;
+    b c;
+    c.print();
 }
