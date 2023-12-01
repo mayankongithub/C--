@@ -339,3 +339,143 @@
 //     cout << n << endl;
 //     cout << s[n-2];
 // }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     string s = "abc";
+//     int count = 0;
+//     for(int i=0;i<s.length();i++){
+//         if(s[i]!=s[i-1] && s[i]!=s[i+1]){
+//             count++;
+//         }
+//         else if(i==s.length()-1){
+//             if(s[i]!=s[i-1]) count++;
+//         }
+//         else if(i==0){
+//             if(s[i]!=s[i+1]) count++;
+//         }
+//         else if(s.length()==1){
+//             break;
+//         }
+//     }
+//     cout << count;
+// }
+//#include<iostream>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     string s = "mayank sharma";
+//     string p = "amrahs knayam";
+//     sort(s.begin(),s.end());
+//     sort(p.begin(),p.end());
+//     int ss = s.length();
+//     int ps = s.length();
+//     bool flag = true;
+//     for(int i=0;i<ss;i++){
+//         if(ss!=ps){
+//             flag = false;
+//             break;
+//         }
+//         else if(s[i]!=p[i]){
+//             flag = false;
+//             break;
+//         }
+//     }
+//     if(flag == true) {
+//         cout << "YES";
+//     }
+//     else {
+//         cout << "NO";
+//     }
+// }
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     string s = "mayanyk";
+//     int n = s.length();
+//     vector<int>v(26,0);
+//     for(int i=0;i<n;i++){
+//         char ch = s[i];
+//         int x = (int)(ch);
+//         int index = x-97;
+//         v[index]++;
+//     }
+//     int max = 0;
+//     for(int i=0;i<26;i++){
+//         if(v[i]>max){
+//             max = v[i];
+//         }
+//     }
+//     for(int i=0;i<26;i++){
+//         if(v[i]==max){
+//             char ch2 = (char)(i+97);
+//             cout << ch2 << " - " << max <<endl;
+//         }
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// class marks{
+// public:
+//     int mark;
+//     marks(int mark=0){
+//         this->mark = mark;
+//     }
+//     marks operator +(marks m){
+//         marks temp;
+//         temp.mark = mark + m.mark;
+//         return temp;
+//     }
+// };
+// int main(){
+//     marks a1(20),a2(30);
+//     marks a3 = a1 + a2;
+//     cout << a3.mark;
+// }
+// #include<iostream>
+// using namespace std;
+// class height{
+// public:
+//     int feet;
+//     float inch;
+//     height(int feet=0,float inch=0){
+//         this->feet = feet;
+//         this->inch = inch;
+//     }
+//     height operator +(height h){
+//         height temp;
+//         temp.feet = feet + h.feet;
+//         temp.inch = inch + h.inch;
+//         return temp;
+//     }
+// };
+// int main(){
+//     height a1(20,0.5),a2(40,6);
+//     height a3 = a1 + a2;
+//     cout << a3.feet << "'" << a3.inch << "''";
+// }
+#include<iostream>
+using namespace std;
+class cart{
+public:
+    string name;
+    int price;
+    int qu;
+    cart(string name="",int price=0,int qu=0){
+        this->name  = name;
+        this->price = price;
+        this->qu = qu;
+    }
+    cart operator +(cart a){
+        cart temp;
+        temp.price = (qu*price) + (a.qu*a.price);
+        return temp;
+    }
+};
+int main(){
+    cart a1("laptop",100000,2);
+    cart a2("mobile",10000,3);
+    cart a3 = a1 + a2;
+    cout << a3.price;
+}
