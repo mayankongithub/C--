@@ -1658,8 +1658,8 @@
 // int main(){
 //     bike bmw;
 // }
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 // class height{
 // public:
 //     int feet;
@@ -1681,8 +1681,29 @@ using namespace std;
 //     height a3 = a1 + a2;
 //     cout << a3.feet << "'"<< a3.inch<<"''";
 // }
+#include<iostream>
+using namespace std;
+class shop{
+public:
+    string name;
+    int price;
+    int quantity;
+    shop(string name = "",int price = 0,int quantity = 0){
+        this->name = name;
+        this->price = price;
+        this->quantity = quantity;
+    }
+    shop operator +(shop b){
+        shop temp;
+        temp.price = (quantity*price) + (b.price*b.quantity);
+        return temp;
+    }
+};
 int main(){
-int z = 65;
-int r = 65 % 12;
-cout << r;
+    string m;
+    getline(cin,m);
+    shop a(m,60000,2);
+    shop b("phone",10000,3);
+    shop add = a + b;
+    cout << add.price;
 }
