@@ -472,6 +472,7 @@ public:
         temp.price = (qu*price) + (a.qu*a.price);
         return temp;
     }
+    
 };
 int main(){
     cart a1("laptop",100000,2);
