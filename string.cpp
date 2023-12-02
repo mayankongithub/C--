@@ -566,25 +566,194 @@
 //     }   
 
 // }
+// #include<iostream>
+// using namespace std;
+// class a{
+// private:
+//     int a;
+// public:
+//     void print(){
+//         cout << "this is funtion of class a";
+//     }
+// };
+// class b: virtual a{
+// protected:
+//     int b;
+// public:
+//     void print(){
+//         cout << "this is function of class b";
+//     }
+// };
+// int main(){
+//     b c;
+//     c.print();
+// }
+//#include<iostream>
+// #include<iostream>
+// #include<algorithm>
+// #include<vector>
+// #include<sstream>
+// using namespace std;
+// int main(){
+//     string str = "mayank is mayank a b.tech student as well as a coder well well mayank";
+//     stringstream ss(str);
+//     string temp;
+//     vector<string>v;
+//     while(ss>>temp){
+//         v.push_back(temp);
+//     }
+//     sort(v.begin(),v.end());
+
+//     int count = 1;
+//     int maxcount = 1;
+//     for(int i=1;i<=v.size();i++){
+//         if(v[i]==v[i-1]){
+//             count++;
+//         }
+//         else{
+//             count = 1;
+//         }
+//         if(count > maxcount){
+//             maxcount = count;
+//         }
+//     }
+//     for(int i=1;i<=v.size();i++){
+//         if(v[i]==v[i-1]){
+//             count++;
+//         }
+//         else{
+//             count = 1;
+//         }
+//         if(count==maxcount){
+//             cout << v[i] << endl;
+//         }
+//     }   
+
+// }
+// #include<iostream>
+// #include<cmath>
+// #include<cstdio>
+// using namespace std;
+// class matrix{
+// private:
+//     int m;
+//     int n;
+//     int arr[20][20];
+// public:
+//     matrix(int m=0,int n=0){
+//         this->m = m;
+//         this-> n = n;
+
+//         for (int i = 0; i < m; i++) {
+//             for (int j = 0; j < n; j++) {
+//                 arr[i][j] = 0;
+//             }
+//         }
+//     }
+//     void read(){
+//         for(int i=0;i<m;i++){
+//             for(int j=0;j<n;j++){
+//                 cin >> arr[i][j];
+//             }
+//         }
+//     }
+
+//     matrix operator +(matrix b){
+//         matrix temp(m,n);
+//         temp.m = m;
+//         temp.n = n;
+//         for(int i=0;i<m;i++){
+//             for(int j=0;j<n;j++){
+//                 temp.arr[i][j] = arr[i][j] + b.arr[i][j];
+//             }
+//         }
+//         return temp;
+//     }
+
+//     void display(){
+//         for(int i=0;i<m;i++){
+//             for(int j=0;j<n;j++){
+//                 cout << arr[i][j] << " ";
+//             }
+//             cout << endl;
+//         }
+//     }
+// };
+// int main(){
+//     int m,n;
+//     cin >> m >> n;
+//     matrix a(m,n);
+//     a.read();
+
+//     matrix b(m,n),c(m,n);
+//     b.read();
+//     c = a + b;
+//     c.display();
+//     return 0;
+// }
+
+
 #include<iostream>
+#include<cmath>
+#include<cstdio>
 using namespace std;
-class a{
+
+class matrix {
 private:
-    int a;
+    int m;
+    int n;
+    int arr[20][20];
+
 public:
-    void print(){
-        cout << "this is funtion of class a";
+    matrix(int m = 0, int n = 0) {
+        this->m = 2;
+        this->n = 2;
+        // Initialize array elements to 0
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                arr[i][j] = 0;
+            }
+        }
+    }
+
+    void read() {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                cin >> arr[i][j];
+            }
+        }
+    }
+
+    matrix operator +(matrix b) {
+        matrix temp(m, n); // Create a new matrix with size m x n
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                temp.arr[i][j] = arr[i][j] + b.arr[i][j];
+            }
+        }
+        return temp;
+    }
+
+    void display() {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                cout << arr[i][j] << " ";
+            }
+            cout << endl;
+        }
     }
 };
-class b: virtual a{
-protected:
-    int b;
-public:
-    void print(){
-        cout << "this is function of class b";
-    }
-};
-int main(){
-    b c;
-    c.print();
+
+int main() {
+    matrix a(2,2);
+    a.read();
+
+    matrix b(2,2), c(2,2);
+    b.read();
+    c = a + b;
+    c.display();
+    return 0;
 }
+
+
+
