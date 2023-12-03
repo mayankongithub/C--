@@ -1681,29 +1681,50 @@
 //     height a3 = a1 + a2;
 //     cout << a3.feet << "'"<< a3.inch<<"''";
 // }
+// #include<iostream>
+// using namespace std;
+// class shop{
+// public:
+//     string name;
+//     int price;
+//     int quantity;
+//     shop(string name = "",int price = 0,int quantity = 0){
+//         this->name = name;
+//         this->price = price;
+//         this->quantity = quantity;
+//     }
+//     shop operator +(shop b){
+//         shop temp;
+//         temp.price = (quantity*price) + (b.price*b.quantity);
+//         return temp;
+//     }
+// };
+// int main(){
+//     string m;
+//     getline(cin,m);
+//     shop a(m,60000,2);
+//     shop b("phone",10000,3);
+//     shop add = a + b;
+//     cout << add.price;
+// }
 #include<iostream>
 using namespace std;
-class shop{
-public:
-    string name;
-    int price;
-    int quantity;
-    shop(string name = "",int price = 0,int quantity = 0){
-        this->name = name;
-        this->price = price;
-        this->quantity = quantity;
-    }
-    shop operator +(shop b){
-        shop temp;
-        temp.price = (quantity*price) + (b.price*b.quantity);
-        return temp;
-    }
-};
 int main(){
-    string m;
-    getline(cin,m);
-    shop a(m,60000,2);
-    shop b("phone",10000,3);
-    shop add = a + b;
-    cout << add.price;
+    int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+    int arr2[3][3] = {1,2,3,4,5,6,7,8,9};
+    int res[3][3];
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            res[i][j] = 0;
+            for(int k=0;k<3;k++){
+                res[i][j] += arr[k][i] * arr2[i][k];
+            }
+        }
+    }
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout << res[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
