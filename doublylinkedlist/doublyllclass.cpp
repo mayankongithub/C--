@@ -10,6 +10,7 @@ public:
         next = NULL;
         prev = NULL;
     }
+    
 
 };
 class linkedlist{
