@@ -12,8 +12,8 @@ int main(){
     //pop
     //insert
     //push
-    
-    for(int i=n-2;i>=0;i--){
+
+    for(int i=1;i<n;i++){
         while(st.size()>0 && st.top()<=arr[i]){
             st.pop();
         }

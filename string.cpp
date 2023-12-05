@@ -693,67 +693,90 @@
 // }
 
 
+// #include<iostream>
+// #include<cmath>
+// #include<cstdio>
+// using namespace std;
+
+// class matrix {
+// private:
+//     int m;
+//     int n;
+//     int arr[20][20];
+
+// public:
+//     matrix(int m = 0, int n = 0) {
+//         this->m = 2;
+//         this->n = 2;
+//         // Initialize array elements to 0
+//         for (int i = 0; i < 2; i++) {
+//             for (int j = 0; j < 2; j++) {
+//                 arr[i][j] = 0;
+//             }
+//         }
+//     }
+
+//     void read() {
+//         for (int i = 0; i < 2; i++) {
+//             for (int j = 0; j < 2; j++) {
+//                 cin >> arr[i][j];
+//             }
+//         }
+//     }
+
+//     matrix operator +(matrix b) {
+//         matrix temp(m, n); // Create a new matrix with size m x n
+//         for (int i = 0; i < 2; i++) {
+//             for (int j = 0; j < 2; j++) {
+//                 temp.arr[i][j] = arr[i][j] + b.arr[i][j];
+//             }
+//         }
+//         return temp;
+//     }
+
+//     void display() {
+//         for (int i = 0; i < m; i++) {
+//             for (int j = 0; j < n; j++) {
+//                 cout << arr[i][j] << " ";
+//             }
+//             cout << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     matrix a(2,2);
+//     a.read();
+
+//     matrix b(2,2), c(2,2);
+//     b.read();
+//     c = a + b;
+//     c.display();
+//     return 0;
+// }
 #include<iostream>
-#include<cmath>
-#include<cstdio>
+#include<stack>
 using namespace std;
-
-class matrix {
-private:
-    int m;
-    int n;
-    int arr[20][20];
-
-public:
-    matrix(int m = 0, int n = 0) {
-        this->m = 2;
-        this->n = 2;
-        // Initialize array elements to 0
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                arr[i][j] = 0;
-            }
+int main(){
+    int arr[8] = {3,1,2,7,4,6,2,3};
+    int n = 8;
+    int pge[n];
+    stack<int>st;
+    st.push(arr[0]);
+    pge[0] = -1;
+    for(int i=1;i<n;i++){
+        while(st.size()>0 && st.top()<=arr[i]){
+            st.pop();
         }
-    }
-
-    void read() {
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                cin >> arr[i][j];
-            }
+        if(st.size()==0)pge[i] = -1;
+        else{
+            pge[i] = st.top();
         }
+        st.push(arr[i]);
     }
-
-    matrix operator +(matrix b) {
-        matrix temp(m, n); // Create a new matrix with size m x n
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                temp.arr[i][j] = arr[i][j] + b.arr[i][j];
-            }
-        }
-        return temp;
+    for(int i=0;i<n;i++){
+        cout << pge[i] << " ";
     }
-
-    void display() {
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                cout << arr[i][j] << " ";
-            }
-            cout << endl;
-        }
-    }
-};
-
-int main() {
-    matrix a(2,2);
-    a.read();
-
-    matrix b(2,2), c(2,2);
-    b.read();
-    c = a + b;
-    c.display();
-    return 0;
 }
-
 
 
