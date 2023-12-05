@@ -41,6 +41,7 @@ void account :: getdata(){
     cout << name << endl;
     cout << balance << endl;
 }
+
 int main(){
     account a1;
     a1.setdata();
