@@ -89,24 +89,33 @@
 //     a3.getdata();
 // }
 //FRIEND FUNCTION
+// #include<iostream>
+// using namespace std;
+// class mark{
+// private:
+//     int y;
+// public:
+//     void setdata(){
+//         cin >> y;
+//     }
+    
+//     friend void show(mark &m1);
+// };
+// void show(mark &m1){
+//     cout << m1.y;
+// }
+
+// int main(){
+//     mark m1;
+//     m1.setdata();
+//     show(m1);
+// }
 #include<iostream>
 using namespace std;
-class mark{
-private:
-    int y;
+class a{
 public:
-    void setdata(){
-        cin >> y;
-    }
     
-    friend void show(mark &m1);
 };
-void show(mark &m1){
-    cout << m1.y;
-}
-
 int main(){
-    mark m1;
-    m1.setdata();
-    show(m1);
+
 }
