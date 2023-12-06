@@ -104,7 +104,6 @@ void show(mark &m1){
     cout << m1.y;
 }
 
-
 int main(){
     mark m1;
     m1.setdata();
