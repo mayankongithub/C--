@@ -98,6 +98,7 @@ public:
     void setdata(){
         cin >> y;
     }
+    
     friend void show(mark &m1);
 };
 void show(mark &m1){
