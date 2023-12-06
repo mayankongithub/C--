@@ -52,38 +52,61 @@
 //     a1.getdata();
 //     a2.getdata();
 // }
+// STATIC FUNCTION
+// #include<iostream>
+// using namespace std;
+// class account{
+// private:
+//     int balance;
+// public:
+//     void setdata();
+//     void getdata();
+//     static account& lowbalance(account &a1,account &a2); 
+
+// };
+// account& account :: lowbalance(account &a1,account &a2){
+//     if(a1.balance < a2.balance){
+//         return a1;
+//     }
+//     else{
+//         return a2;
+//     }
+// } 
+
+// void account :: getdata(){
+//     cout << balance;
+// }
+// void account :: setdata(){
+//     cout << "Enter the balance -> ";
+//     cin >> balance;
+// }
+// int main(){
+//     account a1;
+//     a1.setdata();
+//     account a2;
+//     a2.setdata();
+//     account & a3 = account :: lowbalance(a1,a2);
+//     a3.getdata();
+// }
+//FRIEND FUNCTION
 #include<iostream>
 using namespace std;
-class account{
+class mark{
 private:
-    int balance;
+    int y;
 public:
-    void setdata();
-    void getdata();
-    static account& lowbalance(account &a1,account &a2); 
-
+    void setdata(){
+        cin >> y;
+    }
+    friend void show(mark &m1);
 };
-account& account :: lowbalance(account &a1,account &a2){
-    if(a1.balance < a2.balance){
-        return a1;
-    }
-    else{
-        return a2;
-    }
-} 
+void show(mark &m1){
+    cout << m1.y;
+}
 
-void account :: getdata(){
-    cout << balance;
-}
-void account :: setdata(){
-    cout << "Enter the balance -> ";
-    cin >> balance;
-}
+
 int main(){
-    account a1;
-    a1.setdata();
-    account a2;
-    a2.setdata();
-    account & a3 = account :: lowbalance(a1,a2);
-    a3.getdata();
+    mark m1;
+    m1.setdata();
+    show(m1);
 }
