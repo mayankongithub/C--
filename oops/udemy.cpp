@@ -110,12 +110,46 @@
 //     m1.setdata();
 //     show(m1);
 // }
+//DYNAMIC CAST
+// #include<iostream>
+// using namespace std;
+// class CA{
+// public:
+//     int aa;
+//     virtual ~ CA(){
+
+//     }
+// };
+// class CB:public CA{
+// public:
+//     int bb;
+// };
+// int main(){
+//     CA a;
+//     CB b;
+//     CA *pa;
+//     CB *pb;
+//     pa = new CB();
+//     pb = dynamic_cast<CB*>(pa);
+//     cout << pb;
+// }
 #include<iostream>
 using namespace std;
-class a{
+class A{
 public:
-    
+    virtual void foo(){
+        cout << "funtion of A" << endl;
+    }
+};
+class B:public A{
+public:
+    virtual void foo(){
+        cout << "funtion of B" << endl;
+    }
 };
 int main(){
-
+    A a;
+    B b;
+    A *pa = &b;
+    pa->foo(); 
 }
