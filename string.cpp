@@ -798,6 +798,25 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int arr
+    int arr[5];
+    //INPUT KE LIYE FOR LOOP
+    for(int i=0;i<5;i++){
+        cout << "Enter the element at index [" << i << "] -> ";
+        cin >> arr[i]; 
+    }
+    int max = 0;
+    int sec_max = 0;
+    for(int i=0;i<5;i++){
+        if(arr[i]>max){
+            max = arr[i];
+        }
+    }
+    cout << "This is the maximum element in an array -> " << max << endl;
+    for(int i=0;i<5;i++){
+        if(arr[i]>sec_max && arr[i]!=max){
+            sec_max = arr[i];
+        }
+    }
+    cout << "This is the second maximum element in an array -> " << sec_max << endl;
 }
 
