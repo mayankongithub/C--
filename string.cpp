@@ -754,29 +754,50 @@
 //     c.display();
 //     return 0;
 // }
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// #include<sstream>
+// using namespace std;
+// int main(){
+//     string str = "mayank is mayank a b.tech student as well as a coder well well mayank";
+//     stringstream ss(str);
+//     string temp;
+//     vector<string>v;
+//     while(ss>>temp){
+//         v.push_back(temp);
+//     }
+//     sort(v.begin(),v.end());
+
+//     int count = 1;
+//     int maxcount = 1;
+//     for(int i=1;i<=v.size();i++){
+//         if(v[i]==v[i-1]){
+//             count++;
+//         }
+//         else{
+//             count = 1;
+//         }
+//         if(count > maxcount){
+//             maxcount = count;
+//         }
+//     }
+//     for(int i=1;i<=v.size();i++){
+//         if(v[i]==v[i-1]){
+//             count++;
+//         }
+//         else{
+//             count = 1;
+//         }
+//         if(count==maxcount){
+//             cout << v[i] << endl;
+//         }
+//     }   
+
+// }
 #include<iostream>
-#include<stack>
 using namespace std;
 int main(){
-    int arr[8] = {3,1,2,7,4,6,2,3};
-    int n = 8;
-    int pge[n];
-    stack<int>st;
-    st.push(arr[0]);
-    pge[0] = -1;
-    for(int i=1;i<n;i++){
-        while(st.size()>0 && st.top()<=arr[i]){
-            st.pop();
-        }
-        if(st.size()==0)pge[i] = -1;
-        else{
-            pge[i] = st.top();
-        }
-        st.push(arr[i]);
-    }
-    for(int i=0;i<n;i++){
-        cout << pge[i] << " ";
-    }
+    int arr
 }
-
 
