@@ -819,3 +819,85 @@
 //     }
 //     cout << "This is the second maximum element in an array -> " << sec_max << endl;
 // }
+// #include<iostream>
+// #include<array>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    //array<int,3>arr = {1,2,3};
+//    //cout << arr.front() << endl << arr.back();
+// //    for(auto i=arr.begin();i!=arr.end();i++){
+// //     cout << *i << endl;
+// //    }
+//     array<int,5>arr = {1,2,3,4,5};
+//     //PRINT ARRAY IN REVERSE ORDER
+//     for(auto i=arr.crbegin();i!=arr.crend();i++){
+//         cout << *i << " ";
+//     }
+// }
+// #include<iostream>
+// #include<cstring>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     array<char,15>arr;
+//     const char* str = "mayank sharma";
+//     memcpy(arr.data(),str,15);
+//     cout << arr.data();
+    
+// }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    array<int,0>first;
+//    array<int,5>second;
+//     cout << "first " << (first.empty() ? "is empty" : "is not empty") << endl;
+//     cout << "second " << (second.empty() ? "is empty" : "is not empty");
+// }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     array<int,6>arr;
+//     arr.fill(5);
+//     for(auto i=arr.begin();i!=arr.end();i++){
+//         cout << *i << " ";
+//     }
+// }
+//  new way to print array
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     array<int,6>arr = {1,2,3,4,5,6};
+//     for(int &i : arr){
+//         cout << i << " ";
+//     }
+// }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     array<int,6>arr = {1,2,3,4};
+//     cout << arr.size() << endl;
+//     cout << arr.max_size() << endl;
+// }
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    array<int,6>arr = {1,2,3,4,5,6};
+    // for(auto i=arr.rbegin();i<arr.rend();i++){
+    //     cout << *i << " ";
+    // }
+    array<int,6>brr = {5,6,7,8,9,45};
+    arr.swap(brr);
+    for(int &i : arr){
+        cout << i << " ";
+    }
+    cout << endl;
+    for(int &i : brr){
+        cout << i << " ";
+    }
+}
