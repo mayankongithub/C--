@@ -883,21 +883,85 @@
 //     cout << arr.size() << endl;
 //     cout << arr.max_size() << endl;
 // }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     array<int,6>arr = {1,2,3,4,5,6};
+//     // for(auto i=arr.rbegin();i<arr.rend();i++){
+//     //     cout << *i << " ";
+//     // }
+//     array<int,6>brr = {5,6,7,8,9,45};
+//     arr.swap(brr);
+//     for(int &i : arr){
+//         cout << i << " ";
+//     }
+//     cout << endl;
+//     for(int &i : brr){
+//         cout << i << " ";
+//     }
+// }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// void sortt(int arr[]){
+//     int i=0;
+//     int j=5-1;
+//     while(i<=j){
+//         if(arr[i]<0){
+//             i++;
+//         }
+//         else{
+//             swap(arr[i],arr[j]);
+//             j--;
+//         }
+//     }
+//     for(int i=0;i<5;i++){
+//         cout << arr[i] << " ";
+//     }
+// }
+// int main(){
+//    int arr[5] = {1,-2,-6,4,5};
+//    sortt(arr);
+//    return 0;
+// }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    int arr[9] = {-1,2,-3,-4,5,6,-7,8,9};
+//    for(int i=0;i<8;i++){
+//     for(int j=0;j<8-i;j++){
+//         if(arr[j]>=0 && arr[j+1]<0){
+//             swap(arr[j+1],arr[j]);
+//         }
+//     }
+//    }
+//    for(int i=0;i<9;i++){
+//     cout << arr[i] << " ";
+//    }
+//    return 0;
+// }
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
+                   
+
 int main(){
-    array<int,6>arr = {1,2,3,4,5,6};
-    // for(auto i=arr.rbegin();i<arr.rend();i++){
-    //     cout << *i << " ";
-    // }
-    array<int,6>brr = {5,6,7,8,9,45};
-    arr.swap(brr);
-    for(int &i : arr){
-        cout << i << " ";
+   string s = "wtriangle";
+   string t = "integral";
+   bool flag = true;
+   sort(s.begin(),s.end());
+   sort(t.begin(),t.end());
+   for(int i=0;i<s.size();i++){
+    if(s[i]!=t[i]){
+        flag = false;
+        break;
     }
-    cout << endl;
-    for(int &i : brr){
-        cout << i << " ";
-    }
-}
+   }
+   if(flag == true) cout << "YES";
+   else{
+    cout << "NO";
+   }
+   return 0;
+}       
