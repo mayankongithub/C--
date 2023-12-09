@@ -682,6 +682,29 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
+bool isbalanced(string s){
+    stack<char>st;
+    bool flag = true;
+    for(int i=0;i<s.length();i++){
+        if(s[i]=='('){
+            st.push(s[i]);
+        }
+        else{//s[i]==')'
+            if(st.size()!=0){
+                st.pop();
+            }
+            else{
+                flag = false;
+                break;
+            }
+        }
+    }
+    if(flag == true) return true;
+    else{
+        return false;
+    }
+}
 int main(){
-   
+   string s = "(()))";
+   cout << isbalanced(s);
 }
