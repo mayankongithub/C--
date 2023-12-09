@@ -942,26 +942,48 @@
 //    }
 //    return 0;
 // }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+                   
+
+// int main(){
+//    string s = "wtriangle";
+//    string t = "integral";
+//    bool flag = true;
+//    sort(s.begin(),s.end());
+//    sort(t.begin(),t.end());
+//    for(int i=0;i<s.size();i++){
+//     if(s[i]!=t[i]){
+//         flag = false;
+//         break;
+//     }
+//    }
+//    if(flag == true) cout << "YES";
+//    else{
+//     cout << "NO";
+//    }
+//    return 0;
+// }       
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-                   
-
 int main(){
-   string s = "wtriangle";
-   string t = "integral";
-   bool flag = true;
-   sort(s.begin(),s.end());
-   sort(t.begin(),t.end());
-   for(int i=0;i<s.size();i++){
-    if(s[i]!=t[i]){
-        flag = false;
-        break;
+   int arr[6] = {1,1,2,3,4,6};
+   int missing = 1;
+   for(int i=0;i<6;i++){
+    if(arr[i]==missing){
+        missing += 1;
     }
+    else {
+        if(arr[i]<missing){
+            continue;
+        }
+        else{
+            cout<<missing<<endl;
+            break;
+        }
+    }
+    
    }
-   if(flag == true) cout << "YES";
-   else{
-    cout << "NO";
-   }
-   return 0;
-}       
+}
