@@ -679,32 +679,66 @@
 //    }
 //    return 0;
 // }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool isbalanced(string s){
+//     stack<char>st;
+//     bool flag = true;
+//     for(int i=0;i<s.length();i++){
+//         if(s[i]=='('){
+//             st.push(s[i]);
+//         }
+//         else{//s[i]==')'
+//             if(st.size()!=0){
+//                 st.pop();
+//             }
+//             else{
+//                 flag = false;
+//                 break;
+//             }
+//         }
+//     }
+//     if(flag == true) return true;
+//     else{
+//         return false;
+//     }
+// }
+// int main(){
+//    string s = "(()))";
+//    cout << isbalanced(s);
+// }
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool isbalanced(string s){
-    stack<char>st;
-    bool flag = true;
-    for(int i=0;i<s.length();i++){
-        if(s[i]=='('){
-            st.push(s[i]);
-        }
-        else{//s[i]==')'
-            if(st.size()!=0){
-                st.pop();
-            }
-            else{
-                flag = false;
-                break;
-            }
-        }
-    }
-    if(flag == true) return true;
-    else{
-        return false;
-    }
-}
 int main(){
-   string s = "(()))";
-   cout << isbalanced(s);
+   int arr[5] = {1,2,3,4,5};
+   int brr[5] = {4,5,6,7,8};
+   int i=0;
+   int j=0;
+   sort(arr,arr+5);
+   sort(brr,brr+5);
+   while(i<5 && j<5){
+    if(arr[i]<brr[j]){
+        cout << arr[i] << " ";
+        i++;
+    }
+    else if(arr[i]>brr[j]){
+        cout << brr[j] << " ";
+        j++;
+    }
+    else{
+        cout << brr[j] << " ";
+        i++;
+        j++;
+    }
+   }
+   while(i<5){
+    cout << arr[i] << " ";
+    i++;
+   }
+   while(j<5){
+    cout << brr[j] << " ";
+    j++;
+   }
 }
