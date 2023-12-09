@@ -616,39 +616,72 @@
 //     }
 //     cout << sum;
 // }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    int arr[3][3];
+//    for(int i=0;i<3;i++){
+//     for(int j=0;j<3;j++){
+//         cout << "Enter the element -> ";
+//         cin >> arr[i][j];
+//     }
+//    }
+
+//     // 1 2 3
+//     // 4 5 6
+//     // 7 8 9
+
+//     // 1 2 3 
+//     // 6 5 4 
+//     // 7 8 9
+//     for(int i=0;i<3;i++){
+//         if(i%2!=0){
+//             for(int j=2;j>=0;j--){
+//                 cout << arr[i][j] << " ";
+//             }
+//             cout << endl;
+//         }
+//         else{
+//             for(int j=0;j<3;j++){
+//                 cout << arr[i][j] << " ";
+                
+//             }
+//             cout << endl;
+//         }
+//     }
+   
+// }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+                   
+
+// int main(){
+//    int arr[5] = {1,2,8,4,5};
+//    int brr[5] = {6,5,7,8,9};
+//    int i=0;
+//    int j=0;
+//    sort(arr,arr+5);
+//    sort(brr,brr+5);
+//    while(i<5 && j<5){
+//     if(arr[i]<brr[j]){
+//         i++;
+//     }
+//     else if(arr[i]>brr[j]){
+//         j++;
+//     }
+//     else{
+//         cout << arr[i] << " ";
+//         i++;
+//         j++;
+//     }
+//    }
+//    return 0;
+// }
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-   int arr[3][3];
-   for(int i=0;i<3;i++){
-    for(int j=0;j<3;j++){
-        cout << "Enter the element -> ";
-        cin >> arr[i][j];
-    }
-   }
-
-    // 1 2 3
-    // 4 5 6
-    // 7 8 9
-
-    // 1 2 3 
-    // 6 5 4 
-    // 7 8 9
-    for(int i=0;i<3;i++){
-        if(i%2!=0){
-            for(int j=2;j>=0;j--){
-                cout << arr[i][j] << " ";
-            }
-            cout << endl;
-        }
-        else{
-            for(int j=0;j<3;j++){
-                cout << arr[i][j] << " ";
-                
-            }
-            cout << endl;
-        }
-    }
    
 }
