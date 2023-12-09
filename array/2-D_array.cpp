@@ -115,29 +115,29 @@
 //         cout << endl;
 //     }
 // // }
-#include<iostream>
-using namespace std;
-int main(){
-    int arr[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
-    for(int i=0;i<3;i++){
-        for(int j=i+1;j<3;j++){
-            if(i!=j){
-                int temp = arr[i][j];
-                arr[i][j] = arr[j][i];
-                arr[j][i] = temp;
-            }
-            else{
-                arr[i][j] = arr[i][j];
-            }
-        }
-    }
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            cout << arr[j][i] << " ";
-        }
-        cout << endl;
-    }
-}
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+//     for(int i=0;i<3;i++){
+//         for(int j=i+1;j<3;j++){
+//             if(i!=j){
+//                 int temp = arr[i][j];
+//                 arr[i][j] = arr[j][i];
+//                 arr[j][i] = temp;
+//             }
+//             else{
+//                 arr[i][j] = arr[i][j];
+//             }
+//         }
+//     }
+//     for(int i=0;i<3;i++){
+//         for(int j=0;j<3;j++){
+//             cout << arr[j][i] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -384,13 +384,13 @@ int main(){
 //             for(int j=2;j>=0;j--){
 //                 cout << arr[i][j] << " ";
 //             }
-//             cout << endl;
+//             //cout << endl;
 //         }
 //         else{
 //             for(int j=0;j<3;j++){
 //                 cout << arr[i][j] << " ";
 //             }
-//             cout << endl;
+//             //cout << endl;
 //         }
 //     }
 // }
@@ -457,23 +457,29 @@ int main(){
 //     }
 // }
 // ROTATING MATRIX 90 DEGREE
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
-//     int res[3][3];
-//     for(int i=0;i<3;i++){
-//         for(int j=0;j<3;j++){
-//             res[i][j] = arr[j][i];
-//         }
-//     }
-//     for(int i=0;i<3;i++){
-//         for(int j=2;j>=0;j--){
-//             cout << res[i][j] << " ";
-//         } 
-//         cout << endl;
-//     }
-// }
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+    for(int i=0;i<3;i++){
+        for(int j=i;j<3;j++){
+            swap(arr[i][j] , arr[j][i]);
+        }
+    }
+    for(int i=0;i<3;i++){
+        for(int j=0;j<=3/2;j++){
+            swap(arr[i][j],arr[i][2-j]);
+        }
+        cout << endl;
+    }     
+    cout << endl;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<=2;j++){
+            cout << arr[i][j] << " ";
+        } 
+        cout << endl;
+    }
+}
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -516,9 +522,6 @@ int main(){
 //     // 1 2 3
 //     // 4 5 6
 //     // 7 8 9
-
-
-
 //     for(int j=0;j<3;j++){
 //         if(j%2!=0){
 //             for(int i=2;i>=0;i--){
@@ -578,22 +581,17 @@ int main(){
 //     // 7 8 9
 //     // for(int j=0;j<3;j++){
 //     //     for(int i=0;i<3;i++){
-//     //         cout << arr[i][j] << " ";
-                
+//     //         cout << arr[i][j] << " ";       
 //     //     }
 //     //     cout << endl;
 //     // }
 //     for(int j=0;j<3;j++){
 //         for(int i=2;i>=0;i--){
-//             cout << arr[i][j] << " ";
-                
+//             cout << arr[i][j] << " ";             
 //         }
 //         cout << endl;
 //     }
-
 // }
 // 7 4 1
 // 8 5 2
 // 9 6 3
-
-#include
