@@ -595,24 +595,60 @@
 // 7 4 1
 // 8 5 2
 // 9 6 3
-#include<iostream>
-using namespace std;
-int main(){
-    int arr[3][3] = {1,2,3,4,5,6,7,8,9};
-    int sum = 0;
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            if((i+j)%2==0 ){
-                cout << arr[i][j] << " ";
-                sum += arr[i][j];
-            }
-            else{
-                cout << " " << " ";
-            }
-        }
-        cout << endl;
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+//     int sum = 0;
+//     for(int i=0;i<3;i++){
+//         for(int j=0;j<3;j++){
+//             if((i+j)%2==0 ){
+//                 cout << arr[i][j] << " ";
+//                 sum += arr[i][j];
+//             }
+//             else{
+//                 cout << " " << " ";
+//             }
+//         }
+//         cout << endl;
         
        
+//     }
+//     cout << sum;
+// }
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+   int arr[3][3];
+   for(int i=0;i<3;i++){
+    for(int j=0;j<3;j++){
+        cout << "Enter the element -> ";
+        cin >> arr[i][j];
     }
-    cout << sum;
+   }
+
+    // 1 2 3
+    // 4 5 6
+    // 7 8 9
+
+    // 1 2 3 
+    // 6 5 4 
+    // 7 8 9
+    for(int i=0;i<3;i++){
+        if(i%2!=0){
+            for(int j=2;j>=0;j--){
+                cout << arr[i][j] << " ";
+            }
+            cout << endl;
+        }
+        else{
+            for(int j=0;j<3;j++){
+                cout << arr[i][j] << " ";
+                
+            }
+            cout << endl;
+        }
+    }
+   
 }
