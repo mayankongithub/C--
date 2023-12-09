@@ -708,37 +708,37 @@
 //    string s = "(()))";
 //    cout << isbalanced(s);
 // }
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int main(){
-   int arr[5] = {1,2,3,4,5};
-   int brr[5] = {4,5,6,7,8};
-   int i=0;
-   int j=0;
-   sort(arr,arr+5);
-   sort(brr,brr+5);
-   while(i<5 && j<5){
-    if(arr[i]<brr[j]){
-        cout << arr[i] << " ";
-        i++;
-    }
-    else if(arr[i]>brr[j]){
-        cout << brr[j] << " ";
-        j++;
-    }
-    else{
-        cout << brr[j] << " ";
-        i++;
-        j++;
-    }
-   }
-   while(i<5){
-    cout << arr[i] << " ";
-    i++;
-   }
-   while(j<5){
-    cout << brr[j] << " ";
-    j++;
-   }
-}
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    int arr[5] = {1,2,3,4,5};
+//    int brr[5] = {4,5,6,7,8};
+//    int i=0;
+//    int j=0;
+//    sort(arr,arr+5);
+//    sort(brr,brr+5);
+//    while(i<5 && j<5){
+//     if(arr[i]<brr[j]){
+//         cout << arr[i] << " ";
+//         i++;
+//     }
+//     else if(arr[i]>brr[j]){
+//         cout << brr[j] << " ";
+//         j++;
+//     }
+//     else{
+//         cout << brr[j] << " ";
+//         i++;
+//         j++;
+//     }
+//    }
+//    while(i<5){
+//     cout << arr[i] << " ";
+//     i++;
+//    }
+//    while(j<5){
+//     cout << brr[j] << " ";
+//     j++;
+//    }
+// }
