@@ -965,25 +965,65 @@
 //    }
 //    return 0;
 // }       
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    int arr[6] = {1,1,2,3,4,6};
+//    int missing = 1;
+//    for(int i=0;i<6;i++){
+//     if(arr[i]==missing){
+//         missing += 1;
+//     }
+//     else {
+//         if(arr[i]<missing){
+//             continue;
+//         }
+//         else{
+//             cout<<missing<<endl;
+//             break;
+//         }
+//     }
+    
+//    }
+// }
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
+class time{
+private:
+    int hr;
+    int min;
+public:
+    time(){
+        hr = 0;
+        min = 0;
+    }
+    time(int hr,int min){
+        this->hr = hr;
+        this->min = min;
+    }
+    time operator+(time &other) {
+        time temp;
+        temp.hr = hr + other.hr + (min + other.min) / 60; // Calculate additional hours if minutes exceed 59
+        temp.min = (min + other.min) % 60; // Calculate remaining minutes after converting to proper format
+        return temp;
+    }
+    void display(){
+        cout << hr << " hr , " << min << " min";
+    }
+    void setdata(){
+        cout << "Enter the hours -> ";
+        cin >> hr;
+        cout << "Enter the minutes -> ";
+        cin >> min;
+    }
+};
 int main(){
-   int arr[6] = {1,1,2,3,4,6};
-   int missing = 1;
-   for(int i=0;i<6;i++){
-    if(arr[i]==missing){
-        missing += 1;
-    }
-    else {
-        if(arr[i]<missing){
-            continue;
-        }
-        else{
-            cout<<missing<<endl;
-            break;
-        }
-    }
-    
-   }
+   time a,b;
+   a.setdata();
+   b.setdata();
+   time c = a + b;
+   c.display();
 }
+
