@@ -433,28 +433,28 @@
 //     marks a3 = a1 + a2;
 //     cout << a3.mark;
 // }
-// #include<iostream>
-// using namespace std;
-// class height{
-// public:
-//     int feet;
-//     float inch;
-//     height(int feet=0,float inch=0){
-//         this->feet = feet;
-//         this->inch = inch;
-//     }
-//     height operator +(height h){
-//         height temp;
-//         temp.feet = feet + h.feet;
-//         temp.inch = inch + h.inch;
-//         return temp;
-//     }
-// };
-// int main(){
-//     height a1(20,0.5),a2(40,6);
-//     height a3 = a1 + a2;
-//     cout << a3.feet << "'" << a3.inch << "''";
-// }
+#include<iostream>
+using namespace std;
+class height{
+public:
+    int feet;
+    float inch;
+    height(int feet=0,float inch=0){
+        this->feet = feet;
+        this->inch = inch;
+    }
+    height operator +(height h){
+        height temp;
+        temp.feet = feet + h.feet;
+        temp.inch = inch + h.inch;
+        return temp;
+    }
+};
+int main(){
+    height a1(20,0.5),a2(40,6);
+    height a3 = a1 + a2;
+    cout << a3.feet << "'" << a3.inch << "''";
+}
 // #include<iostream>
 // using namespace std;
 // class cart{
@@ -987,43 +987,43 @@
     
 //    }
 // }
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-class time{
-private:
-    int hr;
-    int min;
-public:
-    time(){
-        hr = 0;
-        min = 0;
-    }
-    time(int hr,int min){
-        this->hr = hr;
-        this->min = min;
-    }
-    time operator+(time &other) {
-        time temp;
-        temp.hr = hr + other.hr + (min + other.min) / 60; // Calculate additional hours if minutes exceed 59
-        temp.min = (min + other.min) % 60; // Calculate remaining minutes after converting to proper format
-        return temp;
-    }
-    void display(){
-        cout << hr << " hr , " << min << " min";
-    }
-    void setdata(){
-        cout << "Enter the hours -> ";
-        cin >> hr;
-        cout << "Enter the minutes -> ";
-        cin >> min;
-    }
-};
-int main(){
-   time a,b;
-   a.setdata();
-   b.setdata();
-   time c = a + b;
-   c.display();
-}
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class time{
+// private:
+//     int hr;
+//     int min;
+// public:
+//     time(){
+//         hr = 0;
+//         min = 0;
+//     }
+//     time(int hr,int min){
+//         this->hr = hr;
+//         this->min = min;
+//     }
+//     time operator+(time &other) {
+//         time temp;
+//         temp.hr = hr + other.hr + (min + other.min) / 60; // Calculate additional hours if minutes exceed 59
+//         temp.min = (min + other.min) % 60; // Calculate remaining minutes after converting to proper format
+//         return temp;
+//     }
+//     void display(){
+//         cout << hr << " hr , " << min << " min";
+//     }
+//     void setdata(){
+//         cout << "Enter the hours -> ";
+//         cin >> hr;
+//         cout << "Enter the minutes -> ";
+//         cin >> min;
+//     }
+// };
+// int main(){
+//    time a,b;
+//    a.setdata();
+//    b.setdata();
+//    time c = a + b;
+//    c.display();
+// }
 
