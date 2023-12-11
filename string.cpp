@@ -1049,17 +1049,26 @@
 //    if(flag == true) cout << "true";
 //    else cout << "false";
 // }
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    int n;
+//    cin>>n;
+//    vector<int> vec(n,0);
+//    for(int i=0;i<n;i++) cin>>vec[i];
+//    int ans=0;
+//    for(int i=0;i<n;i++){
+//     ans^=vec[i];
+//    }
+//    cout<<ans<<endl;
+//    return 0;
+// }
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-   int n;
-   cin>>n;
-   vector<int> vec(n,0);
-   for(int i=0;i<n;i++) cin>>vec[i];
-   int ans=0;
-   for(int i=0;i<n;i++){
-    ans^=vec[i];
-   }
-   cout<<ans<<endl;
-   return 0;
+   int x = 10;
+   int *ptr1 = &x; 
+   int *ptr2 = ptr1;
+   cout << *ptr2;
+
 }
