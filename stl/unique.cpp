@@ -131,5 +131,15 @@
 using namespace std;
 int main(){
    int arr[3][3] = {1,2,3,4,5,6,7,8,9};
-   
+   int sum = 0;
+   for(int i=0;i<3;i++){
+    for(int j=0;j<3;j++){
+        if(j == 3-1-i){
+            //sum += arr[i][2-i];
+            cout << arr[i][2-i] << " "; 
+        }  
+    }
+    cout << endl;
+   }
+   //cout << sum;
 }
