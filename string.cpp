@@ -1062,13 +1062,13 @@
 //    }
 //    cout<<ans<<endl;
 //    return 0;
-// }
-#include<bits/stdc++.h>
-using namespace std;
-int main(){
-   int x = 10;
-   int *ptr1 = &x; 
-   int *ptr2 = ptr1;
-   cout << *ptr2;
+// // }
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    int x = 10;
+//    int *ptr1 = &x; 
+//    int *ptr2 = ptr1;
+//    cout << *ptr2;
 
-}
+// }
