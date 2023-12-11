@@ -433,28 +433,28 @@
 //     marks a3 = a1 + a2;
 //     cout << a3.mark;
 // }
-#include<iostream>
-using namespace std;
-class height{
-public:
-    int feet;
-    float inch;
-    height(int feet=0,float inch=0){
-        this->feet = feet;
-        this->inch = inch;
-    }
-    height operator +(height h){
-        height temp;
-        temp.feet = feet + h.feet;
-        temp.inch = inch + h.inch;
-        return temp;
-    }
-};
-int main(){
-    height a1(20,0.5),a2(40,6);
-    height a3 = a1 + a2;
-    cout << a3.feet << "'" << a3.inch << "''";
-}
+// #include<iostream>
+// using namespace std;
+// class height{
+// public:
+//     int feet;
+//     float inch;
+//     height(int feet=0,float inch=0){
+//         this->feet = feet;
+//         this->inch = inch;
+//     }
+//     height operator +(height h){
+//         height temp;
+//         temp.feet = feet + h.feet;
+//         temp.inch = inch + h.inch;
+//         return temp;
+//     }
+// };
+// int main(){
+//     height a1(20,0.5),a2(40,6);
+//     height a3 = a1 + a2;
+//     cout << a3.feet << "'" << a3.inch << "''";
+// }
 // #include<iostream>
 // using namespace std;
 // class cart{
@@ -1026,4 +1026,40 @@ int main(){
 //    time c = a + b;
 //    c.display();
 // }
-
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    string s = "mayatyttfnk";
+//    int n = s.size();
+//    bool flag = true;
+//    for(int i=0;i<n;i++){
+//     if(n>30 || n<8){
+//         flag = false;
+//         break;
+//     }
+//     else{
+//         if(i==0 && isdigit(s[0])){
+//             flag = false;
+//         }
+//         else if(s[i] == '?' || s[i] == '~' || s[i] == '-' || s[i] == '+' || s[i] == '=' || s[i] == '|'){
+//             flag = false;
+//         }
+//     }
+//    }
+//    if(flag == true) cout << "true";
+//    else cout << "false";
+// }
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+   int n;
+   cin>>n;
+   vector<int> vec(n,0);
+   for(int i=0;i<n;i++) cin>>vec[i];
+   int ans=0;
+   for(int i=0;i<n;i++){
+    ans^=vec[i];
+   }
+   cout<<ans<<endl;
+   return 0;
+}
