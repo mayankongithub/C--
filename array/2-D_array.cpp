@@ -957,17 +957,13 @@
 // }
 #include<bits/stdc++.h>
 using namespace std;
-void fibo(int n){
-    int a = 0;
-    int b = 1;
-    for(int i=2;i<n;i++){
-        int c = a+b;
-        cout << c << endl;
-        a = b;
-        b = c;
-    }
-}
 int main(){
-   int n = 11;
-   fibo(n);
+    vector<string>v;
+    v.push_back("flow");
+    v.push_back("flight");
+    v.push_back("flower");
+    sort(v.begin(),v.end());
+    for(int i=0;i<v.size();i++){
+        cout << v[i] << " ";
+    } 
 }
