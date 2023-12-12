@@ -1113,42 +1113,65 @@
 //     }   
 
 // }
+// #include<bits/stdc++.h>
+// #include<vector>
+// using namespace std;
+// int main(){
+//    string str = "my name is mayank is mayank";
+//    stringstream ss(str);
+//    vector<string>v;
+//    string temp;
+//    while(ss>>temp){
+//     v.push_back(temp);
+//    }
+//    sort(v.begin(),v.end());
+
+//    int count = 1;
+//    int maxcount = 0;
+//    for(int i=1;i<v.size();i++){
+//     if(v[i-1]==v[i]){
+//         count++;
+//     }
+//     else{
+//         count = 1;
+//     }
+//     if(count > maxcount){
+//         maxcount = count;
+//     }
+//    }
+//    for(int i=1;i<v.size();i++){
+//     if(v[i-1] == v[i]){
+//         count++;
+//     }
+//     else{
+//         count = 1;
+//     }
+//     if(count == maxcount){
+//         cout << v[i] << " ";
+//     }
+//    }
+ 
+// }
 #include<bits/stdc++.h>
-#include<vector>
 using namespace std;
 int main(){
-   string str = "my name is mayank is mayank";
-   stringstream ss(str);
-   vector<string>v;
-   string temp;
-   while(ss>>temp){
-    v.push_back(temp);
-   }
-   sort(v.begin(),v.end());
-
-   int count = 1;
-   int maxcount = 0;
-   for(int i=1;i<v.size();i++){
-    if(v[i-1]==v[i]){
-        count++;
+    string s = "mayfghjvbbbbbbbak";
+    vector<char>v(26,0);
+    for(int i=0;i<s.size();i++){
+        int ascii = (int)s[i];
+        int set = ascii - 97;
+        v[set]++;
     }
-    else{
-        count = 1;
+    int max = 0;
+    for(int i=0;i<v.size();i++){
+        if(v[i] > max){
+            max = v[i];
+        }
     }
-    if(count > maxcount){
-        maxcount = count;
+    for(int i=0;i<v.size();i++){
+        if(max == v[i]){
+            char ch = (char)(i+97);
+            cout << ch << " -> " << max;
+        }
     }
-   }
-   for(int i=1;i<v.size();i++){
-    if(v[i-1] == v[i]){
-        count++;
-    }
-    else{
-        count = 1;
-    }
-    if(count == maxcount){
-        cout << v[i] << " ";
-    }
-   }
- 
 }
