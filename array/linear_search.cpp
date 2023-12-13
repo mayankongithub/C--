@@ -8,6 +8,7 @@ int main(){
         if(x==arr[i]){
             flag = true;
         }
+        
     }
     if(flag == true){
         cout << "PRESENT";
