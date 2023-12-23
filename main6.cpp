@@ -1,22 +1,25 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-void swap(int &a,int &b){
-    int temp = a;
-    a = b;
-    b = temp;
-    int c = 5;
-}
+class node{
+public:
+    int val;
+    node * next;
+    node(int val){
+        this->val = val;
+        this-> next = NULL;
+    }
+
+};
 int main(){
-    cout << 
-<<<<<<< HEAD
-    int a = 4;
-    int b = 90;
-    swap(a,b);
-    cout << a << " " << b;
-    cout << "selena";
+   node* a = new node(10);
+   node* b = new node(20);
+   node* c = new node(30);
+   a->next = b;
+   b->next = c;
+
+   node* temp = a;
+   while(temp!=NULL){
+    cout << temp->val << " ";
+    temp = temp->next;
+   }
 }
-=======
-    cout << "hello world";
-    //oi
-}
->>>>>>> 0e35be761e0442272baf3644810836cf42cc4f78
