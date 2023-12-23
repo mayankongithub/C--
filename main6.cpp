@@ -358,15 +358,32 @@ void display(node* head){
 
 int main(){
     node *a = new node(10);
-    node *b = new node(20);
-    node *c = new node(30);
-    node *d = new node(40);
+    node *b = new node(10);
+    node *c = new node(20);
+    node *d = new node(20);
     node *e = new node(50);
+    node *f = new node(30);
+    node *g = new node(40);
+    node *h = new node(80);
 
     a->next = b;
     b->next = c;
     c->next = d;
     d->next = e;
-    
-     
+    e->next = f;
+    f->next = g;
+    g->next = h;
+    node* temp = a;
+    node* tempb = a->next;
+    while(tempb!=NULL){
+        while(tempb!=NULL && temp->val==tempb->val){
+            tempb = tempb->next;
+        }
+        temp->next = tempb;
+        temp = tempb;
+        if(tempb!=NULL){
+            tempb = tempb->next;
+        }
+    }
+    display(a);
 }
