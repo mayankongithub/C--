@@ -368,6 +368,5 @@ int main(){
     c->next = d;
     d->next = e;
     
-    
-    
+     
 }
