@@ -338,6 +338,57 @@
 //     //display(a);
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node *next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+
+// void display(node* head){
+//     if(head==0) return;
+//     cout << head->val << " ";
+//     display(head->next);
+// }
+
+// int main(){
+//     node *a = new node(10);
+//     node *b = new node(10);
+//     node *c = new node(20);
+//     node *d = new node(20);
+//     node *e = new node(50);
+//     node *f = new node(30);
+//     node *g = new node(40);
+//     node *h = new node(80);
+
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     e->next = f;
+//     f->next = g;
+//     g->next = h;
+//     node* temp = a;
+//     node* tempb = a->next;
+//      while(tempb!=NULL){
+//         while(tempb!=NULL && temp->val==tempb->val){
+//             tempb = tempb->next;
+//         }
+//         temp->next = tempb;
+//         temp = tempb;
+//         if(tempb!=NULL){
+//             tempb = tempb->next;
+//         }
+//     }
+    
+//     display(a);
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 class node{
@@ -373,17 +424,7 @@ int main(){
     e->next = f;
     f->next = g;
     g->next = h;
-    node* temp = a;
-    node* tempb = a->next;
-    while(tempb!=NULL){
-        while(tempb!=NULL && temp->val==tempb->val){
-            tempb = tempb->next;
-        }
-        temp->next = tempb;
-        temp = tempb;
-        if(tempb!=NULL){
-            tempb = tempb->next;
-        }
-    }
+    
+    
     display(a);
 }
