@@ -470,10 +470,15 @@ int main(){
     node* curr = a;
     node* prev = NULL;
     while(curr){
-        Next = curr->next;
+        Next = Next->next;
         curr->next = prev;
         prev = curr;
         curr = Next;
     }
-    display(a);
+    //display(a);
+    node* tempp = prev;
+    while(tempp){
+        cout << tempp->val << " ";
+        tempp = tempp->next;
+    }
 }
