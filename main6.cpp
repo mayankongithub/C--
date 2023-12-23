@@ -408,23 +408,31 @@ void display(node* head){
 }
 
 int main(){
-    node *a = new node(10);
-    node *b = new node(10);
-    node *c = new node(20);
-    node *d = new node(20);
-    node *e = new node(50);
-    node *f = new node(30);
-    node *g = new node(40);
-    node *h = new node(80);
-
+    node *a = new node(1);
+    node *b = new node(2);
+    node *c = new node(3);
+    node *d = new node(4);
+    node *e = new node(5);
+    
     a->next = b;
     b->next = c;
     c->next = d;
     d->next = e;
-    e->next = f;
-    f->next = g;
-    g->next = h;
-    
-    
+    node* temp = a;
+    node* tail = NULL;
+    int n = 0;
+    while(temp){
+        if(temp->next==NULL) tail = temp;
+        temp = temp->next;
+        n++;
+    }
+    int k = 2;
+    temp = a;
+    for(int i=1;i<n-k;i++){
+        temp = temp->next;
+    }
+    tail->next = a;
+    a = temp->next;
+    temp->next = NULL;
     display(a);
 }
