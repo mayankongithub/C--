@@ -389,6 +389,54 @@
 //     display(a);
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node *next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+
+// void display(node* head){
+//     if(head==0) return;
+//     cout << head->val << " ";
+//     display(head->next);
+// }
+
+// int main(){
+//     node *a = new node(1);
+//     node *b = new node(2);
+//     node *c = new node(3);
+//     node *d = new node(4);
+//     node *e = new node(5);
+    
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     node* temp = a;
+//     node* tail = NULL;
+//     int n = 0;
+//     while(temp){
+//         if(temp->next==NULL) tail = temp;
+//         temp = temp->next;
+//         n++;
+//     }
+//     int k = 2;
+//     temp = a;
+//     for(int i=1;i<n-k;i++){
+//         temp = temp->next;
+//     }
+//     tail->next = a;
+//     a = temp->next;
+//     temp->next = NULL;
+//     display(a);
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 class node{
@@ -418,21 +466,14 @@ int main(){
     b->next = c;
     c->next = d;
     d->next = e;
-    node* temp = a;
-    node* tail = NULL;
-    int n = 0;
-    while(temp){
-        if(temp->next==NULL) tail = temp;
-        temp = temp->next;
-        n++;
+    node* Next = a;
+    node* curr = a;
+    node* prev = NULL;
+    while(curr){
+        Next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = Next;
     }
-    int k = 2;
-    temp = a;
-    for(int i=1;i<n-k;i++){
-        temp = temp->next;
-    }
-    tail->next = a;
-    a = temp->next;
-    temp->next = NULL;
     display(a);
 }
