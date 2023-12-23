@@ -279,6 +279,65 @@
 //     display(a);
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node *next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+
+// void display(node* head){
+//     if(head==0) return;
+//     cout << head->val << " ";
+//     display(head->next);
+// }
+
+// int main(){
+//     node *a = new node(10);
+//     node *b = new node(20);
+//     node *c = new node(30);
+//     node *d = new node(40);
+//     node *e = new node(50);
+
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     e->next = c;
+
+//     bool flag = false;
+//     node* fast = a;
+//     node* slow = a;
+//     while(fast!=NULL && fast->next!=NULL){
+//         fast = fast->next->next;
+//         slow = slow->next;
+//         if(fast==slow){
+//             flag = true;
+//             break;
+//         }
+//     }
+    
+//     if(flag == true){
+//         node* temp = a;
+//         while(temp!=slow){
+//             temp = temp->next;
+//             slow = slow->next;
+//         }
+//         cout << slow->val;
+//     }
+//     else{
+//         cout << "Not a linked list cycle";
+//     }
+    
+    
+//     //display(a);
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 class node{
@@ -308,32 +367,7 @@ int main(){
     b->next = c;
     c->next = d;
     d->next = e;
-    e->next = c;
-
-    bool flag = false;
-    node* fast = a;
-    node* slow = a;
-    while(fast!=NULL && fast->next!=NULL){
-        fast = fast->next->next;
-        slow = slow->next;
-        if(fast==slow){
-            flag = true;
-            break;
-        }
-    }
-    
-    if(flag == true){
-        node* temp = a;
-        while(temp!=slow){
-            temp = temp->next;
-            slow = slow->next;
-        }
-        cout << slow->val;
-    }
-    else{
-        cout << "Not a linked list cycle";
-    }
     
     
-    //display(a);
+    
 }
