@@ -575,6 +575,7 @@ int main(){
         if(a->val <= pa->val){
             temp->next = a;
             a = a->next;
+            
             temp = temp->next;
         }
         else{
