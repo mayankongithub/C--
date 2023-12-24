@@ -483,6 +483,51 @@
 //     }
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node *next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+
+// void display(node* head){
+//     if(head==0) return;
+//     cout << head->val << " ";
+//     display(head->next);
+// }
+
+// int main(){
+//     node *a = new node(10);
+//     node *b = new node(10);
+//     node *c = new node(30);
+//     node *d = new node(30);
+//     node *e = new node(50);
+    
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     node* temp = a;
+//     node* tempb = b;
+//     while(tempb!=NULL){
+//         while(tempb && temp->val==tempb->val){
+//             tempb = tempb->next;
+//         }
+//         temp->next = tempb;
+//         temp = tempb;
+//         if(tempb){
+//             tempb = tempb->next;
+//         }
+//     }
+//     display(a);
+    
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 class node{
@@ -503,27 +548,50 @@ void display(node* head){
 
 int main(){
     node *a = new node(10);
-    node *b = new node(10);
+    node *b = new node(20);
     node *c = new node(30);
-    node *d = new node(30);
+    node *d = new node(40);
     node *e = new node(50);
     
     a->next = b;
     b->next = c;
     c->next = d;
     d->next = e;
-    node* temp = a;
-    node* tempb = b;
-    while(tempb!=NULL){
-        while(tempb && temp->val==tempb->val){
-            tempb = tempb->next;
-        }
-        temp->next = tempb;
-        temp = tempb;
-        if(tempb){
-            tempb = tempb->next;
-        }
-    }
-    display(a);
+   
+
+    node *pa = new node(60);
+    node *pb = new node(70);
+    node *pc = new node(80);
+    node *pd = new node(90);
+    node *pe = new node(100);
     
+    pa->next = pb;
+    pb->next = pc;
+    pc->next = pd;
+    pd->next = pe;
+    node* tc = new node(100);
+    node* temp = tc;
+    while(a!=NULL && pa!=NULL){
+        if(a->val <= pa->val){
+            temp->next = a;
+            a = a->next;
+            temp = temp->next;
+        }
+        else{
+            temp->next = pa;
+            pa = pa->next;
+            temp = temp->next;
+        }
+    }    
+    if(a==NULL){
+        temp->next = pa;
+    }
+    else{
+        temp->next = a;
+    }
+    tc = tc->next;
+    while(tc){
+        cout << tc->val << " ";
+        tc = tc->next;
+    }
 }
