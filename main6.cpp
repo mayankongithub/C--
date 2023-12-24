@@ -437,6 +437,52 @@
 //     display(a);
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node *next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+
+// void display(node* head){
+//     if(head==0) return;
+//     cout << head->val << " ";
+//     display(head->next);
+// }
+
+// int main(){
+//     node *a = new node(1);
+//     node *b = new node(2);
+//     node *c = new node(3);
+//     node *d = new node(4);
+//     node *e = new node(5);
+    
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     node* Next = a;
+//     node* curr = a;
+//     node* prev = NULL;
+//     while(curr){
+//         Next = Next->next;
+//         curr->next = prev;
+//         prev = curr;
+//         curr = Next;
+//     }
+//     //display(a);
+//     node* tempp = prev;
+//     while(tempp){
+//         cout << tempp->val << " ";
+//         tempp = tempp->next;
+//     }
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 class node{
@@ -456,29 +502,28 @@ void display(node* head){
 }
 
 int main(){
-    node *a = new node(1);
-    node *b = new node(2);
-    node *c = new node(3);
-    node *d = new node(4);
-    node *e = new node(5);
+    node *a = new node(10);
+    node *b = new node(10);
+    node *c = new node(30);
+    node *d = new node(30);
+    node *e = new node(50);
     
     a->next = b;
     b->next = c;
     c->next = d;
     d->next = e;
-    node* Next = a;
-    node* curr = a;
-    node* prev = NULL;
-    while(curr){
-        Next = Next->next;
-        curr->next = prev;
-        prev = curr;
-        curr = Next;
+    node* temp = a;
+    node* tempb = b;
+    while(tempb!=NULL){
+        while(tempb && temp->val==tempb->val){
+            tempb = tempb->next;
+        }
+        temp->next = tempb;
+        temp = tempb;
+        if(tempb){
+            tempb = tempb->next;
+        }
     }
-    //display(a);
-    node* tempp = prev;
-    while(tempp){
-        cout << tempp->val << " ";
-        tempp = tempp->next;
-    }
+    display(a);
+    
 }
