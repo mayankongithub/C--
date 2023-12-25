@@ -719,6 +719,7 @@ void reversepart(node* head,int left,int right){
     display(head);
 }
 
+
 int main(){
     node *a = new node(10);
     node *b = new node(20);
