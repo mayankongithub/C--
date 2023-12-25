@@ -528,6 +528,144 @@
     
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node *next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+
+// void display(node* head){
+//     if(head==0) return;
+//     cout << head->val << " ";
+//     display(head->next);
+// }
+
+// int main(){
+//     node *a = new node(10);
+//     node *b = new node(20);
+//     node *c = new node(30);
+//     node *d = new node(40);
+//     node *e = new node(50);
+    
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+   
+
+//     node *pa = new node(60);
+//     node *pb = new node(70);
+//     node *pc = new node(80);
+//     node *pd = new node(90);
+//     node *pe = new node(100);
+    
+//     pa->next = pb;
+//     pb->next = pc;
+//     pc->next = pd;
+//     pd->next = pe;
+//     node* tc = new node(100);
+//     node* temp = tc;
+//     while(a!=NULL && pa!=NULL){
+//         if(a->val <= pa->val){
+//             temp->next = a;
+//             a = a->next;
+            
+//             temp = temp->next;
+//         }
+//         else{
+//             temp->next = pa;
+//             pa = pa->next;
+//             temp = temp->next;
+//         }
+//     }    
+//     if(a==NULL){
+//         temp->next = pa;
+//     }
+//     else{
+//         temp->next = a;
+//     }
+//     tc = tc->next;
+//     while(tc){
+//         cout << tc->val << " ";
+//         tc = tc->next;
+//     }
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node *next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+
+// void display(node* head){
+//     if(head==0) return;
+//     cout << head->val << " ";
+//     display(head->next);
+// }
+// node* reverse(node* head){
+//     node* Next = head;
+//     node* curr = head;
+//     node* prev = NULL;
+//     while(curr){
+//         Next = curr->next;
+//         curr->next = prev;
+//         prev = curr;
+//         curr = Next;
+//     }
+//     return prev;
+// }
+// string palindrome(node* a){
+//     node* cc = new node(100);
+//     node* temp = a;
+//     node* tempc = cc;
+//     while(temp){
+//         node* Node = new node(temp->val);
+//         tempc->next = Node;
+//         tempc = tempc->next;
+//         temp = temp->next;
+//     }
+//     cc = cc->next;
+//     cc = reverse(cc);
+//     node* aa = a;
+//     node* bb = cc;
+//     while(aa!=NULL){
+//         if(aa->val!=bb->val) return "false";
+//         aa = aa->next;
+//         bb = bb->next;
+//     }
+//     return "true";
+// }
+// int main(){
+//     node *a = new node(10);
+//     node *b = new node(20);
+//     node *c = new node(30);
+//     node *d = new node(30);
+//     node *e = new node(20);
+//     node *f = new node(10);
+    
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     e->next = f;
+
+//     string r = palindrome(a);
+//     cout << r;    
+
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 class node{
@@ -539,11 +677,46 @@ public:
         this->next = NULL;
     }
 };
-
 void display(node* head){
     if(head==0) return;
     cout << head->val << " ";
     display(head->next);
+}
+
+node* reverse(node* head){
+    node* Next = head;
+    node* curr = head;
+    node* prev = NULL;
+    while(curr){
+        Next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = Next;
+    }
+    return prev;
+}
+
+void reversepart(node* head,int left,int right){
+    node* a = NULL;
+    node* b = NULL;
+    node* c = NULL;
+    node* d = NULL;
+    node* temp = head;
+    int n = 1;
+    while(temp){
+        if(n==left-1) a = temp;
+        if(n==left) b = temp;
+        if(n==right) c = temp;
+        if(n==right+1) d = temp;
+        n++;
+        temp = temp->next;
+    }
+    a->next = NULL;
+    c->next = NULL;
+    c = reverse(b);
+    a->next = c;
+    b->next = d;
+    display(head);
 }
 
 int main(){
@@ -552,47 +725,14 @@ int main(){
     node *c = new node(30);
     node *d = new node(40);
     node *e = new node(50);
+    node *f = new node(60);
     
     a->next = b;
     b->next = c;
     c->next = d;
     d->next = e;
-   
+    e->next = f;
 
-    node *pa = new node(60);
-    node *pb = new node(70);
-    node *pc = new node(80);
-    node *pd = new node(90);
-    node *pe = new node(100);
-    
-    pa->next = pb;
-    pb->next = pc;
-    pc->next = pd;
-    pd->next = pe;
-    node* tc = new node(100);
-    node* temp = tc;
-    while(a!=NULL && pa!=NULL){
-        if(a->val <= pa->val){
-            temp->next = a;
-            a = a->next;
-            
-            temp = temp->next;
-        }
-        else{
-            temp->next = pa;
-            pa = pa->next;
-            temp = temp->next;
-        }
-    }    
-    if(a==NULL){
-        temp->next = pa;
-    }
-    else{
-        temp->next = a;
-    }
-    tc = tc->next;
-    while(tc){
-        cout << tc->val << " ";
-        tc = tc->next;
-    }
+    reversepart(a,2,4);
+    //display(a);
 }
