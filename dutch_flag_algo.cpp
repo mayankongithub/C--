@@ -1,4 +1,3 @@
-
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -7,6 +6,7 @@ void dutch(vector<int>&v){
     int l=0,mid=0,hi=n-1;
     while(mid<=hi){
         if(v[mid]==2){
+            
             int temp = v[mid];
             v[mid] = v[hi];
             v[hi] = temp;
