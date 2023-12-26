@@ -666,74 +666,151 @@
 
 // }
 
-#include <bits/stdc++.h>
-using namespace std;
-class node{
-public:
-    int val;
-    node *next;
-    node(int val){
-        this->val = val;
-        this->next = NULL;
-    }
-};
-void display(node* head){
-    if(head==0) return;
-    cout << head->val << " ";
-    display(head->next);
-}
+// #include <bits/stdc++.h>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node *next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+// void display(node* head){
+//     if(head==0) return;
+//     cout << head->val << " ";
+//     display(head->next);
+// }
 
-node* reverse(node* head){
-    node* Next = head;
-    node* curr = head;
-    node* prev = NULL;
-    while(curr){
-        Next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = Next;
-    }
-    return prev;
-}
+// node* reverse(node* head){
+//     node* Next = head;
+//     node* curr = head;
+//     node* prev = NULL;
+//     while(curr){
+//         Next = curr->next;
+//         curr->next = prev;
+//         prev = curr;
+//         curr = Next;
+//     }
+//     return prev;
+// }
 
-void reversepart(node* head,int left,int right){
-    node* a = NULL;
-    node* b = NULL;
-    node* c = NULL;
-    node* d = NULL;
-    node* temp = head;
-    int n = 1;
-    while(temp){
-        if(n==left-1) a = temp;
-        if(n==left) b = temp;
-        if(n==right) c = temp;
-        if(n==right+1) d = temp;
-        n++;
-        temp = temp->next;
-    }
-    a->next = NULL;
-    c->next = NULL;
-    c = reverse(b);
-    a->next = c;
-    b->next = d;
-    display(head);
-}
+// void reversepart(node* head,int left,int right){
+//     node* a = NULL;
+//     node* b = NULL;
+//     node* c = NULL;
+//     node* d = NULL;
+//     node* temp = head;
+//     int n = 1;
+//     while(temp){
+//         if(n==left-1) a = temp;
+//         if(n==left) b = temp;
+//         if(n==right) c = temp;
+//         if(n==right+1) d = temp;
+//         n++;
+//         temp = temp->next;
+//     }
+//     a->next = NULL;
+//     c->next = NULL;
+//     c = reverse(b);
+//     a->next = c;
+//     b->next = d;
+//     display(head);
+// }
 
 
-int main(){
-    node *a = new node(10);
-    node *b = new node(20);
-    node *c = new node(30);
-    node *d = new node(40);
-    node *e = new node(50);
-    node *f = new node(60);
+// int main(){
+//     node *a = new node(10);
+//     node *b = new node(20);
+//     node *c = new node(30);
+//     node *d = new node(40);
+//     node *e = new node(50);
+//     node *f = new node(60);
     
-    a->next = b;
-    b->next = c;
-    c->next = d;
-    d->next = e;
-    e->next = f;
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     e->next = f;
 
-    reversepart(a,2,4);
-    //display(a);
-}
+//     reversepart(a,2,4);
+//     //display(a);
+// }
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool isbalanced(string s){
+//     int n = s.size();
+//     stack<char>st;
+//     for(int i=0;i<n;i++){
+//         if(n%2!=0) return false;
+//         else{
+//             if(s[i] == '('){
+//                 st.push(s[i]);
+//             }
+//             else{
+//                 if(st.size()==0) return false;
+//                 else{
+//                     st.pop();
+//                 }
+//             }
+//         }
+//     }
+//     if(st.size()==0) return true;
+//     else return false;
+// }
+// int main(){
+//     string s = "(())";
+//     cout << isbalanced(s);
+// }
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool isbalanced(string s){
+//     int n = s.size();
+//     stack<char>st;
+//     for(int i=0;i<n;i++){
+//         if(n%2!=0) return false;
+//         else{
+//             if(st.empty()){
+//                 st.push(s[i]);
+//             }
+            
+//             else if(st.top()=='(' && s[i]==')' || st.top()=='[' && s[i]==']' || st.top()=='{' && s[i]=='}'){
+//                 st.pop();
+//             }
+//             else{
+//                 st.push(s[i]);
+//             }
+//         }
+//     }
+//     if(st.empty()) return true;
+//     else return true;
+// }
+// int main(){
+//     string s = "(())";
+//     cout << isbalanced(s);
+// }
+// #include<bits/stdc++.h>
+// using namespace std;
+// string remove(string s){
+//     int n = s.size();
+//     stack<char>st;
+//     st.push(s[0]);
+//     for(int i=1;i<n;i++){
+//         if(st.top()!=s[i]){
+//             st.push(s[i]);
+//         }
+//     }
+//     s = " ";
+//     while(st.size()!=0){
+//         char x = st.top();
+//         s = s + x;
+//         st.pop();
+//     }
+//     reverse(s.begin(),s.end());
+//     return s;
+// }
+// int main(){
+//     string s = "aaaabbbccaaaccdddd";
+//     cout << remove(s);
+// }
