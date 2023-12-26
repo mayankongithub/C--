@@ -8,7 +8,7 @@ int main(){
     newarr[0] = -1;
     stack<int>st;
     st.push(arr[0]);
-    for(int i=0;i<n;i++){
+    for(int i=1;i<n;i++){
         while(st.size()>0 && st.top()<=arr[i]){
             st.pop();
         }
