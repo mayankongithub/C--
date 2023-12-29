@@ -863,7 +863,6 @@
 //         cout << newarr[i] << " ";
 //     }
 // }
-
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
