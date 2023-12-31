@@ -1,36 +1,117 @@
+// #include<bits/stdc++.h>
+// using namespace std;
+// void display(queue<int> &q){
+//     int n = q.size();
+//     for(int i=0;i<n;i++){
+//         int x = q.front();
+//         cout << x << " ";
+//         q.pop();
+//         q.push(x);
+//     }
+// }
+// void reverse(queue<int> &q){
+//     stack<int>st;
+//     while(q.size()!=0){
+//         int x = q.front();
+//         q.pop();
+//         st.push(x);
+//     }
+//     while(st.size()!=0){
+//         int x = st.top();
+//         st.pop();
+//         q.push(x);
+//     }
+// }
+// int main(){
+//     queue<int>q;
+//     q.push(10);
+//     q.push(20);
+//     q.push(30);
+//     q.push(40);
+//     q.push(50);
+//     display(q);
+//     cout << endl;
+//     reverse(q);
+//     display(q);
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void display(queue<int> &q){
+//     int n = q.size();
+//     for(int i=0;i<n;i++){
+//         int x = q.front();
+//         cout << x << " ";
+//         q.pop();
+//         q.push(x);
+//     }
+// }
+// int main(){
+//     queue<int>q;
+//     q.push(10);
+//     q.push(20);
+//     q.push(30);
+//     q.push(40);
+//     q.push(50);
+//     int n = q.size();
+//     for(int i=0;i<n;i++){
+//         if(i%2!=0){
+//             q.pop();
+//         }
+//         else{
+//             int x = q.front();
+//             q.pop();
+//             q.push(x);
+//         }
+//     }
+//     display(q);
+// }
+
 #include<bits/stdc++.h>
 using namespace std;
-void display(queue<int> &q){
-    int n = q.size();
-    for(int i=0;i<n;i++){
-        int x = q.front();
-        cout << x << " ";
-        q.pop();
-        q.push(x);
+class Q{
+public:
+    int f;
+    int b;
+    int arr;
+    Q(){
+        f = 0;
+        this->b = 0;
     }
-}
-void reverse(queue<int> &q){
-    stack<int>st;
-    while(q.size()!=0){
-        int x = q.front();
-        q.pop();
-        st.push(x);
+    void push(int val){
+        if(b==5){
+            cout << "queue is full!!";
+            return;
+        }
+        arr[b] = val;
+        b++;
     }
-    while(st.size()!=0){
-        int x = st.top();
-        st.pop();
-        q.push(x);
+    void pop(){
+        if(f-b==0){
+            cout << "Queue is empty!!";
+            return;
+        }
+        else{
+            f++;
+        }
     }
-}
+    void front(){
+        if(f-b==0){
+            cout << "Queue is empty!!";
+            return;
+        }
+        else{
+            
+        }
+    }
+};
 int main(){
-    queue<int>q;
+    Q q;
     q.push(10);
-    q.push(20);
-    q.push(30);
-    q.push(40);
-    q.push(50);
-    display(q);
-    cout << endl;
-    reverse(q);
-    display(q);
+    q.push(10);
+    q.push(10);
+    q.push(10);
+    q.display();
+    q.push(10);
+    q.display();
 }
