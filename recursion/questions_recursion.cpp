@@ -129,7 +129,7 @@
 //     if(b==0) return 1;
 //     if(b%2==0){
 //         int ans = pow(a,b/2);
-//         return ans;
+//         return ans*ans;
 //     }
 //     else{
 //         int ans = pow(a,b/2) * a;

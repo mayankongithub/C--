@@ -886,3 +886,92 @@
 //     }
 //     cout << endl;
 // }
+// #include<iostream>
+// using namespace std;
+// int fibo(int n){
+//     if(n==1 || n==2) return 1;
+//     else{
+//         return fibo(n-1) + fibo(n-2);
+//     }
+    
+// }
+// int main(){
+//     int x = 10;
+//     cout << fibo(x);
+// }
+// #include<iostream>
+// using namespace std;
+// int pow(int a,int b){
+//     if(b==0) return 1;
+//     if(b%2==0){
+//         int ans = pow(a,b/2);
+//         return ans;
+//     }
+//     else{
+//         int ans = pow(a,b/2) * a;
+//         return ans;
+//     }
+// }
+// int main(){
+//     int a = 2;
+//     int b = 4;
+//     cout << pow(3,4);
+// }
+
+
+
+// #include<iostream>
+// using namespace std;
+// int pow(int a,int b){
+//     if(b==1) return a;
+//     if(b%2==0){
+//         int ans = pow(a,b/2);
+//         return ans*ans;
+//     }
+//     else{
+//         int ans = pow(a,b/2) * a;
+//         return ans;
+//     }
+// }
+// int main(){
+//     cout << endl;
+//     cout << pow(2,8);
+//     cout << endl;
+// }
+
+// #include<iostream>
+// using namespace std;
+// int stair(int n){
+//     if(n==0)return 1;
+//     if(n==1)return 1;
+//     if(n==2)return 2;
+//     return stair(n-3)+stair(n-2)+stair(n-1);
+// }
+// int main(){
+//     cout << stair(5);
+// }
+
+#include<iostream>
+using namespace std;
+int maze(int sr,int sc,int er,int ec){
+    if(sc>ec || sr>er)return 0;
+    if(sc==ec && sr==er)return 1;
+    int rightway = maze(sr,sc+1,er,ec);
+    int downway = maze(sr+1,sc,er,ec);
+    return rightway + downway;
+}
+void path(int sr,int sc,int er,int ec,string s){
+    if(sc>ec || sr>er)return;
+    if(sc==ec && sr==er){
+        cout << s;
+        cout << endl;
+        return;
+    }
+    path(sr,sc+1,er,ec,s+'R');
+    path(sr+1,sc,er,ec,s+'D');
+    int downway = maze(sr+1,sc,er,ec);
+}
+int main(){
+    cout << maze(0,0,2,2) << endl;
+    path(0,0,2,2,"");
+}
