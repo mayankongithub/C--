@@ -939,16 +939,16 @@
 //     cout << endl;
 // }
 
-#include<iostream>
-using namespace std;
-int stair(int n){
-    if(n==2)return 2;
-    if(n==1)return 1;
-    return stair(n-2)+stair(n-1);
-}
-int main(){
-    cout << stair(5);
-}
+// #include<iostream>
+// using namespace std;
+// int stair(int n){
+//     if(n==2)return 2;
+//     if(n==1)return 1;
+//     return stair(n-2)+stair(n-1);
+// }
+// int main(){
+//     cout << stair(5);
+// }
 
 // #include<iostream>
 // using namespace std;
@@ -974,3 +974,51 @@ int main(){
 //     cout << maze(0,0,2,2) << endl;
 //     path(0,0,2,2,"");
 // }
+
+// #include<iostream>
+// using namespace std;
+// void print(int arr[],int n,int i){
+//     if(i==n){
+//         return;
+//     }
+//     cout << arr[i] << " ";
+//     print(arr,n,i+1);
+// }
+// int main(){
+//     int arr[5] = {1,2,3,4,55};
+//     print(arr,5,0);
+// }
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxi(int arr[],int n,int i){
+//     int max = INT_MIN;
+//     if(i==n)return max;
+//     if(arr[i]>max){
+//         swap(arr[i],max);
+//     }
+//     maxi(arr,n,i+1);
+//     //return max;
+// }
+// int main(){
+//     int arr[5] = {111,2,3,4,5};
+//     cout << maxi(arr,5,0);
+// }
+#include<iostream>
+using namespace std;
+void remove(string str,string original,int i){
+    int n = str.size();
+    if(i==n){
+        cout << original;
+        return;
+    }
+    if(str[i]=='a'){
+        remove(str,original,i+1);
+    }
+    else{
+        remove(str,original+str[i],i+1);
+    }
+}
+int main(){
+    string str = "mayank sharma";
+    remove(str,"",0);
+}
