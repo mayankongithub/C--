@@ -939,39 +939,38 @@
 //     cout << endl;
 // }
 
-// #include<iostream>
-// using namespace std;
-// int stair(int n){
-//     if(n==0)return 1;
-//     if(n==1)return 1;
-//     if(n==2)return 2;
-//     return stair(n-3)+stair(n-2)+stair(n-1);
-// }
-// int main(){
-//     cout << stair(5);
-// }
-
 #include<iostream>
 using namespace std;
-int maze(int sr,int sc,int er,int ec){
-    if(sc>ec || sr>er)return 0;
-    if(sc==ec && sr==er)return 1;
-    int rightway = maze(sr,sc+1,er,ec);
-    int downway = maze(sr+1,sc,er,ec);
-    return rightway + downway;
-}
-void path(int sr,int sc,int er,int ec,string s){
-    if(sc>ec || sr>er)return;
-    if(sc==ec && sr==er){
-        cout << s;
-        cout << endl;
-        return;
-    }
-    path(sr,sc+1,er,ec,s+'R');
-    path(sr+1,sc,er,ec,s+'D');
-    int downway = maze(sr+1,sc,er,ec);
+int stair(int n){
+    if(n==2)return 2;
+    if(n==1)return 1;
+    return stair(n-2)+stair(n-1);
 }
 int main(){
-    cout << maze(0,0,2,2) << endl;
-    path(0,0,2,2,"");
+    cout << stair(5);
 }
+
+// #include<iostream>
+// using namespace std;
+// int maze(int sr,int sc,int er,int ec){
+//     if(sc>ec || sr>er)return 0;
+//     if(sc==ec && sr==er)return 1;
+//     int rightway = maze(sr,sc+1,er,ec);
+//     int downway = maze(sr+1,sc,er,ec);
+//     return rightway + downway;
+// }
+// void path(int sr,int sc,int er,int ec,string s){
+//     if(sc>ec || sr>er)return;
+//     if(sc==ec && sr==er){
+//         cout << s;
+//         cout << endl;
+//         return;
+//     }
+//     path(sr,sc+1,er,ec,s+'R');
+//     path(sr+1,sc,er,ec,s+'D');
+//     int downway = maze(sr+1,sc,er,ec);
+// }
+// int main(){
+//     cout << maze(0,0,2,2) << endl;
+//     path(0,0,2,2,"");
+// }
