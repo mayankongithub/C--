@@ -1040,36 +1040,58 @@
 //     subset(str,"",0);
 // }
 
-#include<bits/stdc++.h>
-using namespace std;
-void sub(string str,string ans,bool flag,vector<string>&v){
-    if(str==""){
-        v.push_back(ans);
-        return;
-    }
-    char ch = str[0];
-    if(str.length()==1){
-        sub(str.substr(1),ans+ch,true,v);
-        sub(str.substr(1),ans,true,v);
-        return;
-    }
+// #include<bits/stdc++.h>
+// using namespace std;
+// void sub(string str,string ans,bool flag,vector<string>&v){
+//     if(str==""){
+//         v.push_back(ans);
+//         return;
+//     }
+//     char ch = str[0];
+//     if(str.length()==1){
+//         sub(str.substr(1),ans+ch,true,v);
+//         sub(str.substr(1),ans,true,v);
+//         return;
+//     }
     
-    char dh = str[1];
-    if(ch==dh){
-        sub(str.substr(1),ans+ch,true,v);
-        sub(str.substr(1),ans,false,v);
+//     char dh = str[1];
+//     if(ch==dh){
+//         sub(str.substr(1),ans+ch,true,v);
+//         sub(str.substr(1),ans,false,v);
+//     }
+//     else{
+//         if(flag==true)sub(str.substr(1),ans+ch,true,v);
+//         sub(str.substr(1),ans,true,v);
+//     }
+// }
+// int main(){
+//     string str = "aab";
+//     sort(str.begin(),str.end());
+//     vector<string>v;
+//     sub(str,"",true,v);
+//     for(int i=0;i<v.size();i++){
+//         cout << v[i] << endl;
+//     }
+// }
+#include<iostream>
+#include<vector>
+using namespace std;
+void sub(int arr[],int i,int n,vector<int>&v){
+    if(i==n){
+        if(v.size()>=3){
+            for(int i=0;i<v.size();i++){
+                cout << v[i] << " ";
+            }
+            cout << endl;
+        }
+        return;
     }
-    else{
-        if(flag==true)sub(str.substr(1),ans+ch,true,v);
-        sub(str.substr(1),ans,true,v);
-    }
+    sub(arr,i+1,n,v);
+    v.push_back(arr[i]);
+    sub(arr,i+1,n,v);
 }
 int main(){
-    string str = "aab";
-    sort(str.begin(),str.end());
-    vector<string>v;
-    sub(str,"",true,v);
-    for(int i=0;i<v.size();i++){
-        cout << v[i] << endl;
-    }
+    int arr[3] = {1,2,3};
+    vector<int>v;
+    sub(arr,0,3,v);
 }
