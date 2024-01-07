@@ -1073,25 +1073,42 @@
 //         cout << v[i] << endl;
 //     }
 // }
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void sub(int arr[],int i,int n,vector<int>&v){
+//     if(i==n){
+//         if(v.size()>=3){
+//             for(int i=0;i<v.size();i++){
+//                 cout << v[i] << " ";
+//             }
+//             cout << endl;
+//         }
+//         return;
+//     }
+//     sub(arr,i+1,n,v);
+//     v.push_back(arr[i]);
+//     sub(arr,i+1,n,v);
+// }
+// int main(){
+//     int arr[3] = {1,2,3};
+//     vector<int>v;
+//     sub(arr,0,3,v);
+// }
 #include<iostream>
-#include<vector>
 using namespace std;
-void sub(int arr[],int i,int n,vector<int>&v){
-    if(i==n){
-        if(v.size()>=3){
-            for(int i=0;i<v.size();i++){
-                cout << v[i] << " ";
-            }
-            cout << endl;
-        }
+void per(string str,string ans){
+    if(str==""){
+        cout << ans<<endl;
         return;
     }
-    sub(arr,i+1,n,v);
-    v.push_back(arr[i]);
-    sub(arr,i+1,n,v);
+    for(int i=0;i<str.length();i++){
+        string left = str.substr(0,i);
+        string right = str.substr(i+1);
+        per(left+right,ans+str[i]);
+    }
 }
 int main(){
-    int arr[3] = {1,2,3};
-    vector<int>v;
-    sub(arr,0,3,v);
+    string str = "abcd";
+    per(str,"");
 }
