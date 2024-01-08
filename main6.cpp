@@ -1101,6 +1101,7 @@ void per(string str,string ans){
     if(str==""){
         cout << ans<<endl;
         return;
+        
     }
     for(int i=0;i<str.length();i++){
         string left = str.substr(0,i);
