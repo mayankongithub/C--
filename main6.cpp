@@ -1108,7 +1108,6 @@ void per(string str,string ans){
         string right = str.substr(i+1);
         per(left+right,ans+str[i]);
     }
-    
 }
 int main(){
     string str = "abcd";
