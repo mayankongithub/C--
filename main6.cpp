@@ -1095,13 +1095,30 @@
 //     vector<int>v;
 //     sub(arr,0,3,v);
 // }
+// #include<iostream>
+// using namespace std;
+// void per(string str,string ans){
+//     if(str==""){
+//         cout << ans<<endl;
+//         return;
+
+//     }
+//     for(int i=0;i<str.length();i++){
+//         string left = str.substr(0,i);
+//         string right = str.substr(i+1);
+//         per(left+right,ans+str[i]);
+//     }
+// }
+// int main(){
+//     string str = "abcd";
+//     per(str,"");
+// }
 #include<iostream>
 using namespace std;
 void per(string str,string ans){
     if(str==""){
-        cout << ans<<endl;
+        cout << ans << endl;
         return;
-
     }
     for(int i=0;i<str.length();i++){
         string left = str.substr(0,i);
@@ -1110,6 +1127,6 @@ void per(string str,string ans){
     }
 }
 int main(){
-    string str = "abcd";
+    string str = "abc";
     per(str,"");
 }
