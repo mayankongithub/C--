@@ -1130,27 +1130,75 @@
 //     string str = "abc";
 //     per(str,"");
 // }
+// #include<iostream>
+// #include<stack>
+// using namespace std;
+// bool isbalanced(string str){
+//     stack<int>st;
+//     if(str.length()%2!=0)return false;
+//     for(int i=0;i<str.length();i++){
+//         if(st.size()==0){
+//             st.push(str[i]);
+//         }
+//         else if(st.top()=='(' && str[i]==')' || st.top()=='[' && str[i]==']' || st.top()=='{' && str[i]=='}'){
+//             st.pop();
+//         }
+//         else{
+//             st.push(str[i]);
+//         }
+//     }
+//     if(st.size()!=0) return false;
+//     else return true;
+// }
+// int main(){
+//     string str = "(({[]})))";
+//     cout << isbalanced(str);
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void sub(string str,string ans,int i){
+//     if(i==str.size()){
+//         cout << ans << endl;
+//         return;
+//     }
+//     sub(str,ans,i+1);
+//     sub(str,ans+str[i],i+1);
+// }
+// int main(){
+//     string str = "abc";
+//     sub(str,"",0);
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void sub(int arr[],int i,vector<int>v){
+//     if(i==3){
+//         for(int i=0;i<v.size();i++){
+//             cout << v[i]; 
+//         }
+//         cout << endl;
+//         return;
+//     }
+//     sub(arr,i+1,v);
+//     v.push_back(arr[i]);
+//     sub(arr,i+1,v);
+// }
+// int main(){
+//     int arr[3] = {1,2,3};
+//     vector<int>v;
+//     sub(arr,0,v);
+// }
+
 #include<iostream>
 #include<stack>
 using namespace std;
-bool isbalanced(string str){
+void nge(int arr[],int n){
     stack<int>st;
-    if(str.length()%2!=0)return false;
-    for(int i=0;i<str.length();i++){
-        if(st.size()==0){
-            st.push(str[i]);
-        }
-        else if(st.top()=='(' && str[i]==')' || st.top()=='[' && str[i]==']' || st.top()=='{' && str[i]=='}'){
-            st.pop();
-        }
-        else{
-            st.push(str[i]);
-        }
-    }
-    if(st.size()!=0) return false;
-    else return true;
+    
 }
 int main(){
-    string str = "(({[]})))";
-    cout << isbalanced(str);
+    int arr[] = {3,1,2,5,4,6,2,3};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    nge(arr,n);
 }

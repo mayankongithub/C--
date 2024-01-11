@@ -562,22 +562,43 @@
 // }
 
 
-#include<iostream>
+// #include<iostream>
+// using namespace std;
+// void generate(string str,int n){
+//     if(str.length()==n){
+//         cout << str << endl;
+//         return;
+//     }
+//     generate(str+'0',n);
+//     if(str.length()==0){
+//         generate(str+'1',n);
+//     }
+//     else if(str[str.length()-1]=='0'){
+//         generate(str+'1',n);
+//     }
+// }
+// int main(){
+//     int n = 3;
+//     generate("",n);
+// }
+
+
+#include<bits/stdc++.h>
 using namespace std;
-void generate(string str,int n){
-    if(str.length()==n){
-        cout << str << endl;
+void sub(int arr[],int i,vector<int>v){
+    if(i==3){
+        for(int i=0;i<v.size();i++){
+            cout << v[i]; 
+        }
+        cout << endl;
         return;
     }
-    generate(str+'0',n);
-    if(str.length()==0){
-        generate(str+'1',n);
-    }
-    else if(str[str.length()-1]=='0'){
-        generate(str+'1',n);
-    }
+    sub(arr,i+1,v);
+    v.push_back(arr[i]);
+    sub(arr,i+1,v);
 }
 int main(){
-    int n = 3;
-    generate("",n);
+    int arr[3] = {1,2,3};
+    vector<int>v;
+    sub(arr,0,v);
 }
