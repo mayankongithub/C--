@@ -1113,20 +1113,44 @@
 //     string str = "abcd";
 //     per(str,"");
 // }
+// #include<iostream>
+// using namespace std;
+// void per(string str,string ans){
+//     if(str==""){
+//         cout << ans << endl;
+//         return;
+//     }
+//     for(int i=0;i<str.length();i++){
+//         string left = str.substr(0,i);
+//         string right = str.substr(i+1);
+//         per(left+right,ans+str[i]);
+//     }
+// }
+// int main(){
+//     string str = "abc";
+//     per(str,"");
+// }
 #include<iostream>
+#include<stack>
 using namespace std;
-void per(string str,string ans){
-    if(str==""){
-        cout << ans << endl;
-        return;
-    }
+bool isbalanced(string str){
+    stack<int>st;
+    if(str.length()%2!=0)return false;
     for(int i=0;i<str.length();i++){
-        string left = str.substr(0,i);
-        string right = str.substr(i+1);
-        per(left+right,ans+str[i]);
+        if(st.size()==0){
+            st.push(str[i]);
+        }
+        else if(st.top()=='(' && str[i]==')' || st.top()=='[' && str[i]==']' || st.top()=='{' && str[i]=='}'){
+            st.pop();
+        }
+        else{
+            st.push(str[i]);
+        }
     }
+    if(st.size()!=0) return false;
+    else return true;
 }
 int main(){
-    string str = "abc";
-    per(str,"");
+    string str = "(({[]})))";
+    cout << isbalanced(str);
 }
