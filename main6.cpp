@@ -1190,15 +1190,132 @@
 //     sub(arr,0,v);
 // }
 
+// #include<iostream>
+// #include<stack>
+// using namespace std;
+// void ngee(int arr[],int n){
+//     stack<int>st;
+//     st.push(arr[n-1]);
+//     int nge[n];
+//     nge[n-1] = -1;
+//     for(int i=n-2;i>=0;i--){
+//         while(st.size()>0 && st.top()<=arr[i]){
+//             st.pop();
+//         }
+//         if(st.size()==0){
+//             nge[i] = -1;
+//         }
+//         else{
+//             nge[i] = st.top();
+//         }
+//         st.push(arr[i]);
+//     }
+//     for(int i=0;i<n;i++){
+//         cout << nge[i] << " ";
+//     }
+    
+// }
+// int main(){
+//     int arr[] = {3,1,2,7,4,6,2,3};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     ngee(arr,n);
+// }
+// #include<iostream>
+// #include<stack>
+// using namespace std;
+// void pgee(int arr[],int n){
+//     stack<int>st;
+//     st.push(arr[0]);
+//     int pge[n];
+//     pge[0] = -1;
+//     for(int i=0;i<n;i++){
+//         while(st.size()>0 && st.top()<=arr[i]){
+//             st.pop();
+//         }
+//         if(st.size()==0){
+//             pge[i] = -1;
+//         }
+//         else{
+//             pge[i] = st.top();
+//         }
+//         st.push(arr[i]);
+//     }
+//     for(int i=0;i<n;i++){
+//         cout << pge[i] << " ";
+//     }
+    
+// }
+// int main(){
+//     int arr[] = {3,1,2,7,4,6,2,3};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     pgee(arr,n);
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int arr[] = {100,80,60,81,70,60,75,85};
+//     stack<int>st;
+//     st.push(0);
+//     int pgi[8];
+//     pgi[0] = -1;
+//     for(int i=0;i<8;i++){
+//         while(st.size()>0 && arr[st.top()]<=arr[i]){
+//             st.pop();
+//         }
+//         if(st.size()==0) pgi[i] = -1;
+//         else pgi[i] = st.top();
+//         st.push(i);
+//     }
+//     for(int i=0;i<8;i++){
+//         pgi[i] = i-pgi[i];
+//         cout << pgi[i] << " ";
+//     }
+// }
+//  NEXT SMALLER ELEMENT
+// #include<iostream>
+// #include<stack>
+// using namespace std;
+// int main(){
+//     stack<int>st;
+//     int arr[6] = {2,1,5,6,2,3};
+//     int nse[6];
+//     st.push(5);
+//     nse[5] = -1;
+//     for(int i=5;i>=0;i--){
+//         while(st.size()>0 && arr[st.top()]>=arr[i]){
+//             st.pop();
+//         }
+//         if(st.size()==0)nse[i] = -1;
+//         else{
+//             nse[i] = st.top();
+//         }
+//         st.push(i);
+//     }
+//     for(int i=0;i<6;i++){
+//         cout << nse[i] << " ";
+//     }
+// }
 #include<iostream>
 #include<stack>
 using namespace std;
-void nge(int arr[],int n){
-    stack<int>st;
-    
-}
 int main(){
-    int arr[] = {3,1,2,5,4,6,2,3};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    nge(arr,n);
+    stack<int>st;
+    int arr[6] = {2,1,5,6,2,3};
+    int pse[6];
+    st.push(5);
+    pse[5] = -1;
+    for(int i=0;i<6;i++){
+        while(st.size()>0 && arr[st.top()]>=arr[i]){
+            st.pop();
+        }
+        if(st.size()==0) pse[i] = -1;
+        else{
+            pse[i] = st.top();
+        }
+        st.push(i);
+    }
+    for(int i=0;i<6;i++){
+        cout << pse[i] << " ";
+    }
 }
