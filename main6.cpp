@@ -1296,26 +1296,73 @@
 //         cout << nse[i] << " ";
 //     }
 // }
+// #include<iostream>
+// #include<stack>
+// using namespace std;
+// int main(){
+//     stack<int>st;
+//     int arr[6] = {2,1,5,6,2,3};
+//     int pse[6];
+//     st.push(5);
+//     pse[5] = -1;
+//     for(int i=0;i<6;i++){
+//         while(st.size()>0 && arr[st.top()]>=arr[i]){
+//             st.pop();
+//         }
+//         if(st.size()==0) pse[i] = -1;
+//         else{
+//             pse[i] = st.top();
+//         }
+//         st.push(i);
+//     }
+//     for(int i=0;i<6;i++){
+//         cout << pse[i] << " ";
+//     }
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void sub(int arr[],int i,vector<int>v){
+//     int sum = 0;
+//     int maxs = 0;
+//     if(i==3){
+//         for(int i=0;i<v.size();i++){
+//             sum = sum + v[i];
+//             if(sum<0){
+//                 sum = 0;
+//             } 
+//             maxs = max(sum,maxs);
+//         }
+
+//         for(int i=0;i<v.size();i++){
+//             cout << v[i]  << " ";
+//         }
+//         cout << "->" << maxs << endl;
+//         return;
+//     }
+//     sub(arr,i+1,v);
+//     v.push_back(arr[i]);
+//     sub(arr,i+1,v);
+// }
+// int main(){
+//     int arr[3] = {1,2,3};
+//     vector<int>v;
+//     sub(arr,0,v);
+// }
+
 #include<iostream>
-#include<stack>
 using namespace std;
 int main(){
-    stack<int>st;
-    int arr[6] = {2,1,5,6,2,3};
-    int pse[6];
-    st.push(5);
-    pse[5] = -1;
-    for(int i=0;i<6;i++){
-        while(st.size()>0 && arr[st.top()]>=arr[i]){
-            st.pop();
+    int arr[5] = {1,2,3,5,6};
+    int val = 4;
+    int store = 0;
+    for(int i=0;i<5;i++){
+        if(val==arr[i]){
+            store = arr[i];
+            break;
         }
-        if(st.size()==0) pse[i] = -1;
         else{
-            pse[i] = st.top();
+            
         }
-        st.push(i);
-    }
-    for(int i=0;i<6;i++){
-        cout << pse[i] << " ";
     }
 }
