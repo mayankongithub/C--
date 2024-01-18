@@ -1350,19 +1350,66 @@
 //     sub(arr,0,v);
 // }
 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x = 16;
+//     int i = 1;
+//     int result = 1;
+//     while(result<=x){
+//         i++;
+//         result = i * i;
+//     }
+//     cout << (i-1);
+// }
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int>v;
+//     v.push_back(1);
+//     v.push_back(2);
+//     v.push_back(3);
+//     v.push_back(4);
+//     int n = v.size()*2;
+//     vector<int>ans(n,0);
+//     for(int i=0;i<v.size();i++){
+//         ans[i] = v[i];
+//     }
+//     for(int i=0;i<v.size();i++){
+//         ans[i+v.size()] = v[i];
+//     }
+//     for(int i=0;i<n;i++){
+//         cout << ans[i] << " ";
+//     }
+// }
 #include<iostream>
+#include<vector>
 using namespace std;
 int main(){
-    int arr[5] = {1,2,3,5,6};
-    int val = 4;
-    int store = 0;
-    for(int i=0;i<5;i++){
-        if(val==arr[i]){
-            store = arr[i];
-            break;
+    int n = 8;
+    int arr[n] = {1,2,3,4,4,3,2,1};
+    vector<int>mid(4);
+    vector<int>first(4);
+    vector<int>ans(8,0);
+    int mide = (9)/2;
+    int j = 0;
+    for(int i=mide;i<9;i++){
+        mid[j] = arr[i];
+        j++;
+    }
+    for(int i=0;i<4;i++){
+        first[i] = arr[i];
+    }
+    for(int i=0;i<9;i++){
+        if(i%2==0){
+            ans[i] = first[i];
         }
         else{
-            
+            ans[i] = mid[i];
         }
+    }
+    for(int i=0;i<9;i++){
+        cout << ans[i] << " ";
     }
 }
