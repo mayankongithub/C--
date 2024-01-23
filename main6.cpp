@@ -1383,33 +1383,153 @@
 //         cout << ans[i] << " ";
 //     }
 // }
+//#include<iostream>
+// using namespace std;
+// void per(string str,string ans){
+//     if(str==""){
+//         cout << ans << endl;
+//         return;
+//     }
+//     for(int i=0;i<str.length();i++){
+//         string left = str.substr(0,i);
+//         string right = str.substr(i+1);
+//         per(left+right,ans+str[i]);
+//     }
+// }
+// int main(){
+//     string str = "abc";
+//     per(str,"");
+//}
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     //int arr[5] = {1,2,3,4,5};
+//     vector<int>v;
+//     int n = 5;
+//     // v.push_back(1);
+//     // v.push_back(2);
+//     // v.push_back(3);
+//     // v.push_back(4);
+//     // v.push_back(5);
+//     // cout << v.size();
+//     // cout << endl;
+//     // v.pop_back();
+//     // cout << v.size();
+//     for(int i=1;i<=n;i++){
+//         v.push_back(i);
+//     }
+//     for(int i=0;i<n;i++){
+//         cout << v[i] << endl;
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+// void del(node* head){
+//     int n = 3;
+//     node* temp = head;
+//     for(int i=1;i<3;i++){
+//         temp = temp->next;
+//     }
+//     temp->next = temp->next->next;
+// }
+// void dis(node* head){
+//     node* temp = head;
+//     while(temp){
+//         cout << temp->val << " ";
+//         temp = temp->next;
+//     }
+// }
+// int main(){
+//     node* a = new node(10);
+//     node* b = new node(20);
+//     node* c = new node(30);
+//     node* d = new node(40);
+//     node* e = new node(50);
+
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     del(a);
+//     dis(a);
+// }
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+
+// int main(){
+//     node* a = new node(10);
+//     node* b = new node(20);
+//     node* c = new node(30);
+//     node* d = new node(40);
+//     node* e = new node(50);
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     node* slow = a;
+//     node* fast = a;
+//     while(fast!=NULL && fast->next!=NULL){
+//         slow = slow->next;
+//         fast = fast->next->next;
+//     }
+//     cout << slow->val;
+// }
 #include<iostream>
-#include<vector>
 using namespace std;
+class node{
+public:
+    int val;
+    node* next;
+    node(int val){
+        this->val = val;
+        this->next = NULL;
+    }
+};
 int main(){
-    int n = 8;
-    int arr[n] = {1,2,3,4,4,3,2,1};
-    vector<int>mid(4);
-    vector<int>first(4);
-    vector<int>ans(8,0);
-    int mide = (9)/2;
-    int j = 0;
-    for(int i=mide;i<9;i++){
-        mid[j] = arr[i];
-        j++;
+    node* a = new node(10);
+    node* b = new node(20);
+    node* c = new node(30);
+    node* d = new node(40);
+    node* e = new node(50);
+    a->next = b;
+    b->next = c;
+    c->next = d;
+    d->next = e;
+
+    node* aa = new node(60);
+    node* bb = new node(70);
+    node* cc = new node(80);
+    node* dd = new node(90);
+    aa->next = bb;
+    bb->next = cc;
+    cc->next = dd;
+    int a = 20;
+    int b = 40;
+    int len = 0;
+    node* temp = a;
+    while(temp){
+        len++;
+        temp = temp->next;
     }
-    for(int i=0;i<4;i++){
-        first[i] = arr[i];
-    }
-    for(int i=0;i<9;i++){
-        if(i%2==0){
-            ans[i] = first[i];
-        }
-        else{
-            ans[i] = mid[i];
-        }
-    }
-    for(int i=0;i<9;i++){
-        cout << ans[i] << " ";
-    }
+    temp = a;
+    
 }
