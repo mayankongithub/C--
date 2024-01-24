@@ -1493,6 +1493,168 @@
 //     }
 //     cout << slow->val;
 // }
+// leetcode
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+// int main(){
+//     node* a = new node(10);
+//     node* b = new node(20);
+//     node* c = new node(30);
+//     node* d = new node(40);
+//     node* e = new node(50);
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+
+//     node* aa = new node(60);
+//     node* bb = new node(70);
+//     node* cc = new node(80);
+//     node* dd = new node(90);
+//     aa->next = bb;
+//     bb->next = cc;
+//     cc->next = dd;
+//     int a = 20;
+//     int b = 40;
+//     int len = 0;
+//     node* temp = a;
+//     while(temp){
+//         len++;
+//         temp = temp->next;
+//     }
+//     temp = a;
+    
+// }
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+// int main(){
+//     node* a = new node(10);
+//     node* b = new node(10);
+//     node* c = new node(30);
+//     node* d = new node(30);
+//     node* e = new node(50);
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     node* tempa = a;
+//     node* temp = a;
+//     node* tempb = b;
+//     while(tempb){
+//         if(tempa->val==tempb->val){
+//             tempb = tempb->next;
+//         }
+//         tempa->next = tempb;
+//         tempa = tempb;
+//         tempb = tempb->next;
+//     }
+//     while(temp){
+//         cout << temp->val << " ";
+//         temp = temp->next;
+//     }
+// }
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+// int main(){
+//     node* a = new node(1);
+//     node* b = new node(2);
+//     node* c = new node(6);
+//     node* d = new node(3);
+//     node* e = new node(4);
+//     node* f = new node(5);
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     e->next = f;
+//     node* temp = a;
+//     while(temp){
+//         if(temp->val!=6){
+//             temp = temp->next;
+//         }
+//         else{
+//             temp = temp->next->next;
+//         }
+//     }
+//     temp = a;
+//     while(temp){
+//         cout << temp->val << " ";
+//         temp = temp->next;
+//     }
+    
+// }
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+// int main(){
+//     node* a = new node(1);
+//     node* b = new node(2);
+//     node* c = new node(3);
+//     node* d = new node(4);
+//     node* e = new node(5);
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+//     node* temp = a;
+//     node*tail = a;
+//     int n = 0;
+//     while(temp){
+//         n++;
+//         if(temp->next==NULL) tail = temp;
+//         temp = temp->next;
+//     }
+//     temp = a;
+//     int k = 2;
+//     for(int i=1;i<n-k;i++){
+//         temp = temp->next;
+//     }
+//     tail->next = a;
+//     a = temp->next;
+//     temp->next = NULL;
+
+//     temp = a;
+//     node* tempp = a;
+//     while(tempp){
+//         cout << tempp->val << " ";
+//         tempp = tempp->next;
+//     }
+// }
 #include<iostream>
 using namespace std;
 class node{
@@ -1505,31 +1667,46 @@ public:
     }
 };
 int main(){
-    node* a = new node(10);
-    node* b = new node(20);
-    node* c = new node(30);
-    node* d = new node(40);
-    node* e = new node(50);
+    node* a = new node(1);
+    node* b = new node(3);
+    node* c = new node(5);
+    node* d = new node(7);
     a->next = b;
     b->next = c;
     c->next = d;
-    d->next = e;
 
-    node* aa = new node(60);
-    node* bb = new node(70);
-    node* cc = new node(80);
-    node* dd = new node(90);
+    node* aa = new node(2);
+    node* bb = new node(4);
+    node* cc = new node(6);
     aa->next = bb;
     bb->next = cc;
-    cc->next = dd;
-    int a = 20;
-    int b = 40;
-    int len = 0;
-    node* temp = a;
+    node* ans = new node(100);
+    node* tempans = ans;
+    node* tempa = a;
+    node* tempb = aa;
+    while(tempa && tempb){
+        if(tempa->val<=tempb->val){
+            node* t = new node(tempa->val);
+            tempans->next = t;
+            tempans = t;
+            tempa = tempa->next;
+        }
+        else{
+            node* t = new node(tempb->val);
+            tempans->next = t; 
+            tempans = t;
+            tempb = tempb->next;
+        }
+    }
+    if(tempa==NULL){
+        tempans->next = tempb;
+    }
+    else{
+        tempans->next = tempa;
+    }
+    node* temp = ans->next;
     while(temp){
-        len++;
+        cout << temp->val << " ";
         temp = temp->next;
     }
-    temp = a;
-    
 }
