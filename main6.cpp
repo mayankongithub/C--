@@ -1691,6 +1691,7 @@ int main(){
             tempans = t;
             tempa = tempa->next;
         }
+        
         else{
             node* t = new node(tempb->val);
             tempans->next = t; 
