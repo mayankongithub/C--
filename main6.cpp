@@ -1696,6 +1696,7 @@ int main(){
             node* t = new node(tempb->val);
             tempans->next = t; 
             tempans = t;
+            
             tempb = tempb->next;
         }
     }
