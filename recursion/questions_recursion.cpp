@@ -583,22 +583,55 @@
 // }
 
 
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+// using namespace std;
+// void sub(int arr[],int i,vector<int>v){
+//     if(i==3){
+//         for(int i=0;i<v.size();i++){
+//             cout << v[i]; 
+//         }
+//         cout << endl;
+//         return;
+//     }
+//     sub(arr,i+1,v);
+//     v.push_back(arr[i]);
+//     sub(arr,i+1,v);
+// }
+// int main(){
+//     int arr[3] = {1,2,3};
+//     vector<int>v;
+//     sub(arr,0,v);
+// }
+// #include<iostream>
+// using namespace std;
+// void skip(string &str,int i,string ori){
+//     if(i==str.size()){
+//         cout << ori;
+//         return;
+//     }
+//     if(str[i]=='a'){
+//         skip(str,i+1,ori);
+//     }
+//     else skip(str,i+1,ori+str[i]);
+// }
+// int main(){
+//     string str = "mayank";
+//     skip(str,0,"");
+// }
+
+#include<iostream>
 using namespace std;
-void sub(int arr[],int i,vector<int>v){
-    if(i==3){
-        for(int i=0;i<v.size();i++){
-            cout << v[i]; 
-        }
-        cout << endl;
+void sub(string str,string newo){
+    if(str==""){
+        cout << newo << endl;
         return;
     }
-    sub(arr,i+1,v);
-    v.push_back(arr[i]);
-    sub(arr,i+1,v);
+    char ch = str[0];
+    sub(str.substr(1),newo+str[0]);
+    sub(str.substr(1),newo);
 }
 int main(){
-    int arr[3] = {1,2,3};
-    vector<int>v;
-    sub(arr,0,v);
+    string str = "abc";
+    sub(str,"");
+   
 }
