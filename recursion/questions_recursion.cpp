@@ -619,19 +619,134 @@
 //     skip(str,0,"");
 // }
 
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void subset(string str,string ans,vector<string>&v,bool flag){
+//     if(str==""){
+//         v.push_back(ans);
+//         return;
+//     }
+//     char ch = str[0];
+    
+//     if(str.size()==1){
+//         if(flag==true) subset(str.substr(1),ans,v,true);
+//         subset(str.substr(1),ans+ch,v,true);
+//         return;
+//     }
+//     char dh = str[1];
+//     if(ch==dh){
+//         subset(str.substr(1),ans,v,false);
+//         if(flag==true) subset(str.substr(1),ans+ch,v,true);
+//     }
+//     else{
+//         subset(str.substr(1),ans,v,true);
+//         if(flag==true) subset(str.substr(1),ans+ch,v,true);
+//     }
+// }
+// int main(){
+//     vector<string>v;
+//     string str = "aabc";
+//     subset(str,"",v,true);
+//     for(int i=0;i<v.size();i++){
+//         cout << v[i] << endl;
+//     }
+// }
+// #include<bits/stdc++.h>
+// #include<vector>
+// using namespace std;
+// void sub(int arr[],int n,int i,vector<int>v){
+//     if(i==5 ){
+//         if(v.size()==3){
+//             for(int i=0;i<v.size();i++){
+//                 cout << v[i];
+//             }
+//             cout << endl;
+//         }
+//         return;
+//     }
+//     sub(arr,n,i+1,v);
+//     v.push_back(arr[i]);
+//     sub(arr,n,i+1,v);
+// }
+// int main(){
+    
+//     int arr[] = {1,2,3,4,5};
+//     vector<int>v;
+//     int i = 0;
+//     sub(arr,5,i,v);
+// }
+
+// #include<iostream>
+// using namespace std;
+// int find(int arr[],int n,int i,int target){
+//     if(i==n) return -1;
+//     if(arr[i]==target){
+//         return i;
+//     }
+//     return find(arr,n,i+1,target);
+// }
+// int main(){
+//     int arr[] = {1,2,3,4,5};
+//     cout << find(arr,5,0,3);
+// }
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void rev(int arr[],int n,int i){
+//     if(i==n){
+//         return;
+//     }
+//     rev(arr,n,i+1);
+//     cout << arr[i] << " ";
+// }
+// int main(){
+//     int arr[] = {1,2,3,4,5};
+//     rev(arr,5,0);
+// }
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void printsubset(int arr[],int n,int i,vector<int>ans){
+//     if(i==n){
+//         for(int i=0;i<ans.size();i++){
+//             cout << ans[i] << " ";
+//         }
+//         cout << endl;
+//         return;
+//     }
+//     printsubset(arr,n,i+1,ans);
+//     if(i==0 || ans.size()==0 || arr[i-1]==ans[ans.size()-1]){
+//         ans.push_back(arr[i]);
+//         printsubset(arr,n,i+1,ans);
+//     }
+// }
+// int main(){
+//     int arr[] = {1,2,3,4};
+//     int n = 4;
+//     vector<int>v;
+//     printsubset(arr,n,0,v);
+// }
+
+// #include<iostream>
+// using namespace std;
+// bool palin(string s){
+//     int i = 0;
+//     int j = s.size()-1;
+//     while(i<j){
+//         if(s[i]!=s[j]) return false;
+//         i++;
+//         j--;
+//     }
+//     return true;
+// }
+// int main(){
+//     string s = "amanaplanacanalpanama";
+//     cout << palin(s);
+// }
+
 #include<iostream>
 using namespace std;
-void sub(string str,string newo){
-    if(str==""){
-        cout << newo << endl;
-        return;
-    }
-    char ch = str[0];
-    sub(str.substr(1),newo+str[0]);
-    sub(str.substr(1),newo);
-}
 int main(){
-    string str = "abc";
-    sub(str,"");
-   
+    
 }
