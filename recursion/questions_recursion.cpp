@@ -745,14 +745,30 @@
 //     cout << palin(s);
 // }
 
+// #include<iostream>
+// using namespace std;
+// int gcd(int a,int b){
+//     if(a==0) return b;
+//     else return gcd(b%a,a);
+// }
+// int main(){
+//     int a = 27;
+//     int b = 45;
+//     cout << gcd(a,b); 
+// }
 #include<iostream>
 using namespace std;
-int gcd(int a,int b){
-    if(a==0) return b;
-    else return gcd(b%a,a);
+void generate(string str,int i){
+    if(i==4){
+        cout << str << endl;
+        return;
+    }
+    generate(str+'0',i+1);
+    if(i==0 || str[str.length()-1]!='1'){
+        generate(str+'1',i+1);
+    }
 }
 int main(){
-    int a = 27;
-    int b = 45;
-    cout << gcd(a,b); 
+    string str = " ";
+    generate(str,0);
 }
