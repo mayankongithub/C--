@@ -923,22 +923,32 @@
 //         cout << arr[i] << " ";
 //     }
 // }
-#include<iostream>
-#include<algorithm>
-using namespace std;
-bool palin(string str,int n,int i,bool flag){
-    if(i>=n/2){
-        if(flag==true) return 1;
-        else return 0;
-    }
+// #include<iostream>
+// #include<algorithm>
+// using namespace std;
+// bool palin(string str,int i){
+//     int n = str.size();
+//     if(i>=n/2){
+//         return true;
+//     }
     
-    if(str[i]!=str[n-i-1]){
-        flag==false;
-    }
-    return palin(str,n,i+1,flag);
+//     if(str[i]!=str[n-i-1]){
+//         return false;
+//     }
+//     return palin(str,i+1);
+// }
+// int main(){
+//     string str = "madam";
+//     int n = str.length();
+//     cout << palin(str,0);
+// }
+#include<iostream>
+using namespace std;
+int fibo(int n){
+    if(n==1 || n==2) return n;
+    return fibo(n-1) + fibo(n-2);
 }
 int main(){
-    string str = "rac";
-    int n = str.length();
-    cout << palin(str,n,0,true);
+    int n = 10;
+    cout << fibo(n);
 }
