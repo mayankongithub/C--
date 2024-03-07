@@ -756,19 +756,189 @@
 //     int b = 45;
 //     cout << gcd(a,b); 
 // }
+// #include<iostream>
+// using namespace std;
+// void generate(string str,int i){
+//     if(i==4){
+//         cout << str << endl;
+//         return;
+//     }
+//     generate(str+'0',i+1);
+//     if(i==0 || str[str.length()-1]!='1'){
+//         generate(str+'1',i+1);
+//     }
+// }
+// int main(){    
+//     string str = " ";
+//     generate(str,0);
+// }
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+//     node(int val){
+//         this->val = val;
+//         next = NULL;
+//     }
+// };
+// int main(){
+//     node* a = new node(10);
+//     node* b = new node(20);
+//     node* c = new node(30);
+//     node* d = new node(40);
+//     node* e = new node(50);
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = e;
+
+//     int val = 100;
+//     int idx = 0;
+//     node* temp = a;
+//     node* val1 = new node(val);
+//     for(int i=0;i<idx;i++){
+//         temp = temp->next;
+//     }
+//     val1->next = temp->next;
+//     temp->next = val1;
+//     temp = a;
+//     while(temp){
+//         cout << temp->val << " ";
+//         temp = temp->next;
+//     }
+
+// }
+// #include<iostream>
+// using namespace std;
+// void gene(string s,int open,int close,int n){
+//     if(close==n){
+//         cout << s << endl;
+//         return;
+//     }
+//     if(open<n) gene(s+'(',open+1,close,n);
+//     if(close<open) gene(s+')',open,close+1,n);
+// }
+// int main(){
+//     int n = 3;
+//     gene("",0,0,n);
+// }
+// #include<iostream>
+// using namespace std;
+// void print(string name,int n,int i){
+//     if(i == n){
+//         return;
+//     }
+//     cout << name << endl;
+//     print(name,n,i+1);
+// }
+// int main(){
+//     string name = "mayank";
+//     print(name,5,0);
+// }
+// #include<iostream>
+// using namespace std;
+// void print(int n,int i){
+//     if(i > n){
+//         return;
+//     }
+//     print(n,i+1);
+//     cout << i << endl;
+// }
+// int main(){
+//     int n = 10;
+//     print(n,1);
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     string str = "  -43 words";
+//     int n = 0;
+//     bool flag = false;
+//     for(int i=0;i<str.length();i++){
+//         if(str[i]=='-'){
+//             flag = true;
+//             continue;
+//         }
+//         else if(str[i] == ' '){
+//             continue;
+//         }
+//         else if(str[i]==' ' && str[i-1]==' '){
+//             continue;
+//         }
+//         else if(!isdigit(str[i])&&str[i]!='-'){
+//             break;
+//         }
+
+
+//         n = n*10 + (str[i]-'0');
+//     }
+//     if(flag == true){
+//          n = n * -1;
+//     }
+//     cout << n;
+// }
+// #include<iostream>
+// using namespace std;
+// void sum(int n,int i,int add){
+//     if(i>n){
+//         cout << add;
+//         return;
+//     }
+//     sum(n,i+1,add+i);
+// }
+// int main(){
+//     int n = 5;
+//     sum(n,0,0);
+// }
+// #include<iostream>
+// using namespace std;
+// int sum(int n){
+//     if(n==0){
+//         return 0;
+//     }
+//     return n + sum(n-1);
+// }
+// int main(){
+//     int n = 5;
+//     cout << sum(n);
+// }
+
+// #include<iostream>
+// #include<algorithm>
+// using namespace std;
+// void reverse(int i,int arr[],int n){
+//     if(i>=n/2){
+//         return ;
+//     }
+//     swap(arr[i],arr[n-i-1]);
+//     reverse(i+1,arr,n);
+// }
+// int main(){
+//     int arr[] = {1,2,3,4,5};
+//     int n = 5;
+//     reverse(0,arr,n);
+//     for(int i=0;i<n;i++){
+//         cout << arr[i] << " ";
+//     }
+// }
 #include<iostream>
+#include<algorithm>
 using namespace std;
-void generate(string str,int i){
-    if(i==4){
-        cout << str << endl;
-        return;
+bool palin(string str,int n,int i,bool flag){
+    if(i>=n/2){
+        if(flag==true) return 1;
+        else return 0;
     }
-    generate(str+'0',i+1);
-    if(i==0 || str[str.length()-1]!='1'){
-        generate(str+'1',i+1);
+    
+    if(str[i]!=str[n-i-1]){
+        flag==false;
     }
+    return palin(str,n,i+1,flag);
 }
 int main(){
-    string str = " ";
-    generate(str,0);
+    string str = "rac";
+    int n = str.length();
+    cout << palin(str,n,0,true);
 }
