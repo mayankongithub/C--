@@ -942,13 +942,92 @@
 //     int n = str.length();
 //     cout << palin(str,0);
 // }
+// #include<iostream>
+// using namespace std;
+// int fibo(int n){
+//     if(n==1 || n==2) return n;
+//     return fibo(n-1) + fibo(n-2);
+// }
+// int main(){
+//     int n = 10;
+//     cout << fibo(n);
+// }
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void sub(int arr[],int n,vector<int>&v,int i,int sum){
+//     if(i== n){
+//         if(sum==6){
+//             for(auto it : v){
+//                 cout << it << " ";
+//             }
+//         }
+//         return;
+//     }
+//     v.push_back(arr[i]);
+//     sum += arr[i];
+//     sub(arr,n,v,i+1,sum);
+//     v.pop_back();
+//     sum -= arr[i];
+//     sub(arr,n,v,i+1,sum);
+// }
+// int main(){
+//     int arr[] = {3,1,2};
+//     int sum = 0;
+//     vector<int>v;
+//     sub(arr,3,v,0,sum);
+// }
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// bool sub(int arr[],int n,vector<int>&v,int i,int sum){
+//     if(i==n){
+//         if(sum==2){
+//             for(auto it : v){
+//                 cout << it << " ";
+//                 return true;
+//             }
+//         }
+//         else return false;
+//     }
+//     v.push_back(arr[i]);
+//     sum += arr[i];
+//     if(sub(arr,n,v,i+1,sum)==true)return true;
+//     sum -= arr[i];
+//     v.pop_back();
+//     if(sub(arr,n,v,i+1,sum)==true) return true;
+//     return false;
+// }
+// int main(){
+//     int arr[] = {1,2,1};
+//     vector<int>v;
+//     int n = 3;
+//     cout << sub(arr,n,v,0,0);
+// }
 #include<iostream>
+#include<vector>
 using namespace std;
-int fibo(int n){
-    if(n==1 || n==2) return n;
-    return fibo(n-1) + fibo(n-2);
+int sub(int arr[],int n,int i,int sum){
+    if(i==n){
+        if(sum>=0){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+    
+    int l = sub(arr,n,i+1,sum);
+    int r = sub(arr,n,i+1,sum);
+    return l+r;
 }
 int main(){
-    int n = 10;
-    cout << fibo(n);
+    int arr[] = {1,2,1};
+    int n = 3;
+    cout << sub(arr,n,0,0);
 }
+
+
+
+
+
