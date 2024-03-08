@@ -1004,29 +1004,73 @@
 //     int n = 3;
 //     cout << sub(arr,n,v,0,0);
 // }
-#include<iostream>
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int sub(int arr[],int n,int i,int sum){
+//     if(i==n){
+//         if(sum>=0){
+//             return 1;
+//         }
+//         else{
+//             return 0;
+//         }
+//     }
+    
+//     int l = sub(arr,n,i+1,sum);
+//     int r = sub(arr,n,i+1,sum);
+//     return l+r;
+// }
+// int main(){
+//     int arr[] = {1,2,1};
+//     int n = 3;
+//     cout << sub(arr,n,0,0);
+// }
+#include<bits/stdc++.h>
 #include<vector>
 using namespace std;
-int sub(int arr[],int n,int i,int sum){
-    if(i==n){
-        if(sum>=0){
-            return 1;
+void merge(int arr[],int low,int mid,int high){
+    int left = low;
+    vector<int> temp;
+    int right = mid+1;
+    while(left<=mid && right<=high){
+        if(arr[left]<=arr[right]){
+            temp.push_back(arr[left]);
+            left++;
         }
         else{
-            return 0;
+            temp.push_back(arr[right]);
+            right++;
         }
     }
-    
-    int l = sub(arr,n,i+1,sum);
-    int r = sub(arr,n,i+1,sum);
-    return l+r;
+    while(left<=mid){
+        temp.push_back(arr[left]);
+        left++;
+    }
+    while(right<=high){
+        temp.push_back(arr[right]);
+        right++;
+    }
+    for(int i=low;i<=high;i++){
+        arr[i] = temp[i-low];
+    }
+
+}
+void sort(int arr[],int low,int high){
+    if(low==high) return;
+    int mid = (low + high)/2;
+    sort(arr,low,mid);
+    sort(arr,mid+1,high);
+    merge(arr,low,mid,high);
 }
 int main(){
-    int arr[] = {1,2,1};
-    int n = 3;
-    cout << sub(arr,n,0,0);
+    int arr[6] = {1,6,5,3,2,4};
+    int n = 6;
+    sort(arr,0,n-1);
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
 }
-
 
 
 
