@@ -1026,52 +1026,89 @@
 //     int n = 3;
 //     cout << sub(arr,n,0,0);
 // }
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+// #include<vector>
+// using namespace std;
+// void merge(int arr[],int low,int mid,int high){
+//     int left = low;
+//     vector<int> temp;
+//     int right = mid+1;
+//     while(left<=mid && right<=high){
+//         if(arr[left]<=arr[right]){
+//             temp.push_back(arr[left]);
+//             left++;
+//         }
+//         else{
+//             temp.push_back(arr[right]);
+//             right++;
+//         }
+//     }
+//     while(left<=mid){
+//         temp.push_back(arr[left]);
+//         left++;
+//     }
+//     while(right<=high){
+//         temp.push_back(arr[right]);
+//         right++;
+//     }
+//     for(int i=low;i<=high;i++){
+//         arr[i] = temp[i-low];
+//     }
+
+// }
+// void sort(int arr[],int low,int high){
+//     if(low==high) return;
+//     int mid = (low + high)/2;
+//     sort(arr,low,mid);
+//     sort(arr,mid+1,high);
+//     merge(arr,low,mid,high);
+// }
+// int main(){
+//     int arr[6] = {1,6,5,3,2,4};
+//     int n = 6;
+//     sort(arr,0,n-1);
+//     for(int i = 0; i < n; i++) {
+//         cout << arr[i] << " ";
+//     }
+// }
+
+#include<iostream>
 #include<vector>
 using namespace std;
-void merge(int arr[],int low,int mid,int high){
-    int left = low;
-    vector<int> temp;
-    int right = mid+1;
-    while(left<=mid && right<=high){
-        if(arr[left]<=arr[right]){
-            temp.push_back(arr[left]);
-            left++;
+void find(int arr[],vector<int>&v,int n,int target,int i){
+    if(target==0){
+        for(int i=0;i<v.size();i++){
+            cout << v[i] << " ";
         }
-        else{
-            temp.push_back(arr[right]);
-            right++;
-        }
+        cout << endl;
     }
-    while(left<=mid){
-        temp.push_back(arr[left]);
-        left++;
-    }
-    while(right<=high){
-        temp.push_back(arr[right]);
-        right++;
-    }
-    for(int i=low;i<=high;i++){
-        arr[i] = temp[i-low];
+    if(target<0)return;
+    for(int j=i;j<n;j++){
+        v.push_back(arr[j]);
+        find(arr,v,n,target-arr[j],i+1);
+        v.pop_back();
     }
 
-}
-void sort(int arr[],int low,int high){
-    if(low==high) return;
-    int mid = (low + high)/2;
-    sort(arr,low,mid);
-    sort(arr,mid+1,high);
-    merge(arr,low,mid,high);
 }
 int main(){
-    int arr[6] = {1,6,5,3,2,4};
-    int n = 6;
-    sort(arr,0,n-1);
-    for(int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }
+    int arr[] = {1,1,2,5,6,7,10};
+    vector<int>v;
+    find(arr,v,7,8,0);
 }
 
 
 
-
+// void sum(int arr[],int n,vector<int>v,int target,int idx){
+//     if(target==0){
+//         for(int i=0;i<v.size();i++){
+//             cout << v[i];
+//         }
+//         cout << endl;
+//     }
+//     if(target<0) return;
+//     for(int i=idx;i<n;i++){
+//         v.push_back(arr[i]);
+//         sum(arr,n,v,target-arr[i],i);
+//         v.pop_back();
+//     }
+// }
