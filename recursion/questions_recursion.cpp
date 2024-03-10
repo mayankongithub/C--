@@ -1083,6 +1083,7 @@ void find(int arr[],vector<int>&v,int n,int target,int i){
         cout << endl;
     }
     if(target<0)return;
+    
     for(int j=i;j<n;j++){
         v.push_back(arr[j]);
         find(arr,v,n,target-arr[j],i+1);
