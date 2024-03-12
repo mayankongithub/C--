@@ -1655,60 +1655,141 @@
 //         tempp = tempp->next;
 //     }
 // }
-#include<iostream>
-using namespace std;
-class node{
-public:
-    int val;
-    node* next;
-    node(int val){
-        this->val = val;
-        this->next = NULL;
-    }
-};
-int main(){
-    node* a = new node(1);
-    node* b = new node(3);
-    node* c = new node(5);
-    node* d = new node(7);
-    a->next = b;
-    b->next = c;
-    c->next = d;
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+// int main(){
+//     node* a = new node(1);
+//     node* b = new node(3);
+//     node* c = new node(5);
+//     node* d = new node(7);
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
 
-    node* aa = new node(2);
-    node* bb = new node(4);
-    node* cc = new node(6);
-    aa->next = bb;
-    bb->next = cc;
-    node* ans = new node(100);
-    node* tempans = ans;
-    node* tempa = a;
-    node* tempb = aa;
-    while(tempa && tempb){
-        if(tempa->val<=tempb->val){
-            node* t = new node(tempa->val);
-            tempans->next = t;
-            tempans = t;
-            tempa = tempa->next;
-        }
+//     node* aa = new node(2);
+//     node* bb = new node(4);
+//     node* cc = new node(6);
+//     aa->next = bb;
+//     bb->next = cc;
+//     node* ans = new node(100);
+//     node* tempans = ans;
+//     node* tempa = a;
+//     node* tempb = aa;
+//     while(tempa && tempb){
+//         if(tempa->val<=tempb->val){
+//             node* t = new node(tempa->val);
+//             tempans->next = t;
+//             tempans = t;
+//             tempa = tempa->next;
+//         }
         
-        else{
-            node* t = new node(tempb->val);
-            tempans->next = t; 
-            tempans = t;
+//         else{
+//             node* t = new node(tempb->val);
+//             tempans->next = t; 
+//             tempans = t;
             
-            tempb = tempb->next;
-        }
+//             tempb = tempb->next;
+//         }
+//     }
+//     if(tempa==NULL){
+//         tempans->next = tempb;
+//     }
+//     else{
+//         tempans->next = tempa;
+//     }
+//     node* temp = ans->next;
+//     while(temp){
+//         cout << temp->val << " ";
+//         temp = temp->next;
+//     }
+// }
+// #include<iostream>
+// #include<stack>
+// using namespace std;
+// int main(){
+//     stack<int>st;
+//     stack<int>temp;
+//     st.push(1);
+//     st.push(2);
+//     st.push(3);
+//     st.push(4);
+//     st.push(5);
+//     while(!st.empty()){
+//         temp.push(st.top());
+//         st.pop();
+//     }
+//     while(!temp.empty()){
+//         cout << temp.top() << " ";
+//         st.push(temp.top());
+//         temp.pop();
+//     }
+// }
+// #include<iostream>
+// #include<stack>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     stack<int>st;
+//     st.push(1);
+//     st.push(2);
+//     st.push(3);
+//     st.push(4);
+//     st.push(5);
+//     vector<int>v;
+//     int n = st.size();
+//     for(int i=0;i<n;i++){
+//         v.push_back(st.top());
+//         st.pop();
+//     }
+//     for(int i=0;i<v.size();i++){
+//         st.push(v[i]);
+//     }
+//     while(!st.empty()){
+//         cout << st.top() << " ";
+//         st.pop();
+//     }
+// }
+#include<iostream>
+#include<stack>
+#include<vector>
+using namespace std;
+void display(stack<int>st){
+    stack<int>temp;
+    while(!st.empty()){
+        temp.push(st.top());
+        st.pop();
     }
-    if(tempa==NULL){
-        tempans->next = tempb;
+    while(!temp.empty()){
+        cout << temp.top() << "    ";
+        st.push(temp.top());
+        temp.pop();
     }
-    else{
-        tempans->next = tempa;
+}
+int main(){
+    stack<int>st;
+    stack<int>temp;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
+    st.push(50);
+    while(!st.empty()){
+        temp.push(st.top());
+        st.pop();
     }
-    node* temp = ans->next;
-    while(temp){
-        cout << temp->val << " ";
-        temp = temp->next;
+    st.push(100);
+    while(!temp.empty()){
+        st.push(temp.top());
+        temp.pop();
     }
+    display(st);
 }
