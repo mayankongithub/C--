@@ -1758,38 +1758,178 @@
 //         st.pop();
 //     }
 // }
-#include<iostream>
-#include<stack>
-#include<vector>
+// #include<iostream>
+// #include<stack>
+// #include<vector>
+// using namespace std;
+// void display(stack<int>st){
+//     stack<int>temp;
+//     while(!st.empty()){
+//         temp.push(st.top());
+//         st.pop();
+//     }
+//     while(!temp.empty()){
+//         cout << temp.top() << "    ";
+//         st.push(temp.top());
+//         temp.pop();
+//     }
+// }
+// int main(){
+//     stack<int>st;
+//     s
+//     st.push(10);
+//     st.push(20);
+//     st.push(30);
+//     st.push(40);
+//     st.push(50);
+//     while(!st.empty()){
+//         temp.push(st.top());
+//         st.pop();
+//     }
+//     st.push(100);
+//     stack<int>temp;
+//     while(!temp.empty()){
+//         st.push(temp.top());
+//         temp.pop();
+//     }
+//     display(st);
+// }
+// #include<iostream>
+// #include<string>
+// #include<stack>
+// using namespace std;
+// bool balance(string str){
+//     stack<char>st;
+//     if(str.size()%2!=0) return false;
+//     for(int i=0;i<str.size();i++){
+//         if(st.empty()){
+//             st.push(str[i]);
+//         }
+//         else if(st.top()=='(' && str[i]==')' || st.top()=='{' && str[i]=='}' || st.top()=='[' && str[i]==']'){
+//             st.pop();
+//         }
+//         else{
+//             st.push(str[i]);
+//         }
+//     }
+//     if(st.size()==0)return true;
+//     else{
+//         return false;
+//     }
+// }
+// int main(){
+//     string str = "(())[]{}}";
+//     cout << balance(str);
+// }
+// #include<iostream>
+// #include<stack>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     string str = "ababcbabcbbacbabcbagfehiwert";
+//     sort(str.begin(),str.end());
+//     stack<char>st;
+//     for(int i=0;i<str.length();i++){
+//         if(st.empty()){
+//             st.push(str[i]);
+//         }
+//         else if(str[i]!=st.top()){
+//             st.push(str[i]);
+//         }
+//     }
+//     stack<char>temp;
+//     string newstr = "";
+//     while(st.size()>0){
+//         newstr += st.top();
+//         st.pop();
+//     }
+//     reverse(newstr.begin(),newstr.end());
+//     cout << newstr;
+// }
+// #include<iostream>
+// #include<stack>
+// using namespace std;
+// int main(){
+//     int arr[8] = {3,1,2,7,4,6,2,3};
+//     int newarr[8];
+//     newarr[8-1] = -1;
+//     stack<int>st;
+//     st.push(arr[8-1]);
+//     for(int i=7;i>=0;i--){
+//         while(st.size()!=0 && st.top()<=arr[i]){
+//             st.pop();
+//         }
+//         if(st.size()>0){
+//             newarr[i] = st.top();
+//         }
+//         else{
+//             newarr[i] = -1;
+//         }
+//         st.push(arr[i]);
+//     }
+//     for(int i=0;i<8;i++){
+//         cout << newarr[i] << " ";
+//     }
+// }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// #include<stack>
+// using namespace std;
+// int main(){
+//     int arr[8] = {3,1,2,7,4,6,2,3};
+//     int newarr[8];
+//     stack<int>st;
+//     st.push(0);
+//     for(int i=0;i<8;i++){
+//         while(st.size()!=0 && st.top()<=arr[i]){
+//             st.pop();
+//         }
+//         if(st.size()==0) newarr[i] = -1;
+//         else newarr[i] = arr[i];
+//         st.push(arr[i]);
+//     }
+//     for(int i=0;i<8;i++){
+//         newarr[i] = newarr[i]-i;
+//     }
+//     for(int i=0;i<8;i++){
+//         cout << newarr[i] << " ";
+//     }
+// }
+#include<bits/stdc++.h>
 using namespace std;
-void display(stack<int>st){
-    stack<int>temp;
-    while(!st.empty()){
-        temp.push(st.top());
-        st.pop();
+void check(stack<int>&st,int x){
+    if(st.size()==0 || st.top()<=x){
+        st.push(x);
+        return;
     }
-    while(!temp.empty()){
-        cout << temp.top() << "    ";
-        st.push(temp.top());
-        temp.pop();
+    int n = st.top();
+    st.pop();
+    check(st,x);
+    st.push(n);
+}
+void sortstack(stack<int>&st){
+    if(st.size()==0)return;
+    int x = st.top();
+    st.pop();
+    sortstack(st);
+    check(st,x);
+}
+void print(stack<int>st){
+    if(st.empty()){
+        return;
     }
+    cout << st.top() << " ";
+    st.pop();
+    print(st);
 }
 int main(){
     stack<int>st;
+    st.push(247);
+    st.push(34);
+    st.push(8);
+    st.push(45);
+    st.push(1);
+    sortstack(st);
     stack<int>temp;
-    st.push(10);
-    st.push(20);
-    st.push(30);
-    st.push(40);
-    st.push(50);
-    while(!st.empty()){
-        temp.push(st.top());
-        st.pop();
-    }
-    st.push(100);
-    while(!temp.empty()){
-        st.push(temp.top());
-        temp.pop();
-    }
-    display(st);
+    print(st);
 }
