@@ -1764,27 +1764,67 @@
 //     pushatbottom(st,val);
 //     print(st);
 // }
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     stack<char>st;
+//     string str = "(a+b)";
+//     bool mainflag=false;
+//     for(int i=0;i<str.length();i++){
+//         if(str[i]=='(' || str[i]=='+' || str[i]=='-'){
+//             st.push(str[i]);
+//         }
+//         else if(str[i]==')'){
+//             bool flag=true;
+//             while(st.top()!='('){
+//                 char ch = st.top();
+//                 if(ch=='+'|| ch=='-'){
+//                     flag = false;
+//                 }
+//                 st.pop();
+//             }
+//             if(flag==true){
+//                 mainflag=true;
+//                 break;
+//             }
+//             st.pop();
+//         }
+//     }
+//     if(mainflag == true)cout << "redudant";
+//     else cout << "not redudant";
+// }
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void subset(string str,string ans,vector<string>&v,int i,bool flag){
+//     if(str==""){
+//         cout << ans << endl;
+//         return;
+//     }
+//     char ch = str[0];
+
+//     if(str.length()==1){
+//         if(flag==true)subset(str.substr(1),ans+ch,v,i+1,true);
+//         subset(str.substr(1),ans,v,i+1,true);
+//         return ;
+//     }
+//     char next = str[1];
+//     if(ch==next){
+//         if(flag==true)subset(str.substr(1),ans+ch,v,i+1,true);
+//         subset(str.substr(1),ans,v,i+1,false);
+//     }
+//     else{
+//         if(flag==true)subset(str.substr(1),ans+ch,v,i+1,true);
+//         subset(str.substr(1),ans,v,i+1,true);
+//     }
+// }
+// int main(){
+//     string str = "abcc";
+//     vector<string>v;
+//     subset(str,"",v,0,true);
+// }
+#include<iostream>
 using namespace std;
 int main(){
-    stack<char>st;
-    string str = "((a+b))";
-    bool flag = true;
-    for(int i=0;i<str.length();i++){
-        if(str[i]=='(' || str[i]=='+' || str[i]=='-'){
-            st.push(str[i]);
-        }
-        else if(str[i]==')'){
-            while(st.top()!='('){
-                char ch = st.top();
-                if(ch=='+'|| ch=='-'){
-                    flag = false;
-                }
-                st.pop();
-            }
-            st.pop();
-        }
-    }
-    if(flag == true)cout << "not r";
-    else cout << "yes";
+    cout << 1/2 + 1;
 }
