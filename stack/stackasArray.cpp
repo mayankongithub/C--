@@ -79,4 +79,5 @@ int main(){
     st.push(40);
     st.push(50);
     cout << st.top();
+    cout << st.size;
 }

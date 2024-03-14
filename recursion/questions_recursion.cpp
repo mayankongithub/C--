@@ -1072,30 +1072,30 @@
 //     }
 // }
 
-#include<iostream>
-#include<vector>
-using namespace std;
-void find(int arr[],vector<int>&v,int n,int target,int i){
-    if(target==0){
-        for(int i=0;i<v.size();i++){
-            cout << v[i] << " ";
-        }
-        cout << endl;
-    }
-    if(target<0)return;
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void find(int arr[],vector<int>&v,int n,int target,int i){
+//     if(target==0){
+//         for(int i=0;i<v.size();i++){
+//             cout << v[i] << " ";
+//         }
+//         cout << endl;
+//     }
+//     if(target<0)return;
     
-    for(int j=i;j<n;j++){
-        v.push_back(arr[j]);
-        find(arr,v,n,target-arr[j],i+1);
-        v.pop_back();
-    }
+//     for(int j=i;j<n;j++){
+//         v.push_back(arr[j]);
+//         find(arr,v,n,target-arr[j],i+1);
+//         v.pop_back();
+//     }
 
-}
-int main(){
-    int arr[] = {1,1,2,5,6,7,10};
-    vector<int>v;
-    find(arr,v,7,8,0);
-}
+// }
+// int main(){
+//     int arr[] = {1,1,2,5,6,7,10};
+//     vector<int>v;
+//     find(arr,v,7,8,0);
+// }
 
 
 
@@ -1113,3 +1113,102 @@ int main(){
 //         v.pop_back();
 //     }
 // }
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void sub(int arr[],int n,vector<int>&v,int i){
+//     if(i==n){
+//         for(auto it : v){
+//             cout << it << " ";
+//         }
+//         cout << endl;
+//         return;
+//     }
+    
+    
+//     v.push_back(arr[i]);
+//     sub(arr,n,v,i+1);
+//     v.pop_back();
+//     sub(arr,n,v,i+1);
+// }
+// int main(){
+//     int arr[] = {3,1,2};
+//     vector<int>v;
+//     sub(arr,3,v,0);
+// }
+
+// #include<iostream>
+// using namespace std;
+// class stack{
+// public:
+//     int arr[5];
+//     int idx;
+//     stack(){
+//         this->idx = -1;
+//     }
+//     void push(int val){
+//         idx++;
+//         arr[idx] = val;
+//     }
+//     void pop(){
+//         idx--;
+//     }
+//     int size(){
+//         return idx+1;
+//     }
+//     int top(){
+//         return arr[idx];
+//     }
+// };
+// int main(){
+//     stack st;
+//     st.push(1);
+//     st.push(2);
+//     st.push(3);
+//     st.push(4);
+//     st.pop();
+//     cout << st.top();
+// }
+#include<iostream>
+using namespace std;
+class node{
+public:
+    int val;
+    node* next;
+    node(int val){
+        this->val = val;
+        this->next = NULL;
+    }
+};
+class stack{
+public:
+    node* head;
+    int size;
+    stack(){
+        head = NULL;
+        size = 0;
+    }
+    void push(int val){
+        node* temp = new node(val);
+        temp->next = head;
+        head = temp;
+        size++;
+    }
+    void pop(){
+        head = head->next;
+        size--;
+    }
+    int top(){
+        return head->val;
+    }
+};
+int main(){
+    stack st;
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(4);
+    st.pop();
+    cout << st.size;
+}

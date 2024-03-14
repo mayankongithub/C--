@@ -1655,60 +1655,136 @@
 //         tempp = tempp->next;
 //     }
 // }
-#include<iostream>
-using namespace std;
-class node{
-public:
-    int val;
-    node* next;
-    node(int val){
-        this->val = val;
-        this->next = NULL;
-    }
-};
-int main(){
-    node* a = new node(1);
-    node* b = new node(3);
-    node* c = new node(5);
-    node* d = new node(7);
-    a->next = b;
-    b->next = c;
-    c->next = d;
+// #include<iostream>
+// using namespace std;
+// class node{
+// public:
+//     int val;
+//     node* next;
+//     node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+// int main(){
+//     node* a = new node(1);
+//     node* b = new node(3);
+//     node* c = new node(5);
+//     node* d = new node(7);
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
 
-    node* aa = new node(2);
-    node* bb = new node(4);
-    node* cc = new node(6);
-    aa->next = bb;
-    bb->next = cc;
-    node* ans = new node(100);
-    node* tempans = ans;
-    node* tempa = a;
-    node* tempb = aa;
-    while(tempa && tempb){
-        if(tempa->val<=tempb->val){
-            node* t = new node(tempa->val);
-            tempans->next = t;
-            tempans = t;
-            tempa = tempa->next;
-        }
+//     node* aa = new node(2);
+//     node* bb = new node(4);
+//     node* cc = new node(6);
+//     aa->next = bb;
+//     bb->next = cc;
+//     node* ans = new node(100);
+//     node* tempans = ans;
+//     node* tempa = a;
+//     node* tempb = aa;
+//     while(tempa && tempb){
+//         if(tempa->val<=tempb->val){
+//             node* t = new node(tempa->val);
+//             tempans->next = t;
+//             tempans = t;
+//             tempa = tempa->next;
+//         }
         
-        else{
-            node* t = new node(tempb->val);
-            tempans->next = t; 
-            tempans = t;
+//         else{
+//             node* t = new node(tempb->val);
+//             tempans->next = t; 
+//             tempans = t;
             
-            tempb = tempb->next;
+//             tempb = tempb->next;
+//         }
+//     }
+//     if(tempa==NULL){
+//         tempans->next = tempb;
+//     }
+//     else{
+//         tempans->next = tempa;
+//     }
+//     node* temp = ans->next;
+//     while(temp){
+//         cout << temp->val << " ";
+//         temp = temp->next;
+//     }
+// }
+// #include<iostream>
+// #include<stack>
+// using namespace std;
+// int main(){
+//     stack<int>st;
+//     stack<int>temp;
+//     st.push(1);
+//     st.push(2);
+//     st.push(3);
+//     st.push(4);
+//     st.push(5);
+//     int mid = st.size()/2;
+//     cout << "mid is -> " << mid << endl;
+//     while(st.size()>mid+1){
+//         int top = st.top();
+//         temp.push(top);
+//         st.pop();
+//     }
+//     cout << st.top();
+// }
+// #include<bits/stdc++.h>
+// using namespace std;
+// void print(stack<int>st){
+//     if(st.size()==0){
+//         return;
+//     }
+//     int val = st.top();
+//     st.pop();
+//     print(st);
+//     cout << val << " ";
+//     st.push(val);
+// }
+// void pushatbottom(stack<int>&st,int val){
+//     if(st.size()==0){
+//         st.push(val);
+//         return;
+//     }
+//     int top = st.top();
+//     st.pop();
+//     pushatbottom(st,val);
+//     st.push(top);
+// }
+// int main(){
+//     stack<int>st;
+//     int val = 1;
+//     st.push(2);
+//     st.push(3);
+//     st.push(4);
+//     st.push(5);
+//     pushatbottom(st,val);
+//     print(st);
+// }
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    stack<char>st;
+    string str = "((a+b))";
+    bool flag = true;
+    for(int i=0;i<str.length();i++){
+        if(str[i]=='(' || str[i]=='+' || str[i]=='-'){
+            st.push(str[i]);
+        }
+        else if(str[i]==')'){
+            while(st.top()!='('){
+                char ch = st.top();
+                if(ch=='+'|| ch=='-'){
+                    flag = false;
+                }
+                st.pop();
+            }
+            st.pop();
         }
     }
-    if(tempa==NULL){
-        tempans->next = tempb;
-    }
-    else{
-        tempans->next = tempa;
-    }
-    node* temp = ans->next;
-    while(temp){
-        cout << temp->val << " ";
-        temp = temp->next;
-    }
+    if(flag == true)cout << "not r";
+    else cout << "yes";
 }
