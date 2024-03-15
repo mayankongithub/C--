@@ -321,7 +321,7 @@
 //             break;
 //         }
 //     }
-    
+
 //     if(flag == true){
 //         node* temp = a;
 //         while(temp!=slow){
@@ -333,8 +333,7 @@
 //     else{
 //         cout << "Not a linked list cycle";
 //     }
-    
-    
+
 //     //display(a);
 // }
 
@@ -385,7 +384,7 @@
 //             tempb = tempb->next;
 //         }
 //     }
-    
+
 //     display(a);
 // }
 
@@ -413,7 +412,7 @@
 //     node *c = new node(3);
 //     node *d = new node(4);
 //     node *e = new node(5);
-    
+
 //     a->next = b;
 //     b->next = c;
 //     c->next = d;
@@ -461,7 +460,7 @@
 //     node *c = new node(3);
 //     node *d = new node(4);
 //     node *e = new node(5);
-    
+
 //     a->next = b;
 //     b->next = c;
 //     c->next = d;
@@ -507,7 +506,7 @@
 //     node *c = new node(30);
 //     node *d = new node(30);
 //     node *e = new node(50);
-    
+
 //     a->next = b;
 //     b->next = c;
 //     c->next = d;
@@ -525,7 +524,7 @@
 //         }
 //     }
 //     display(a);
-    
+
 // }
 
 // #include <bits/stdc++.h>
@@ -552,19 +551,18 @@
 //     node *c = new node(30);
 //     node *d = new node(40);
 //     node *e = new node(50);
-    
+
 //     a->next = b;
 //     b->next = c;
 //     c->next = d;
 //     d->next = e;
-   
 
 //     node *pa = new node(60);
 //     node *pb = new node(70);
 //     node *pc = new node(80);
 //     node *pd = new node(90);
 //     node *pe = new node(100);
-    
+
 //     pa->next = pb;
 //     pb->next = pc;
 //     pc->next = pd;
@@ -575,7 +573,7 @@
 //         if(a->val <= pa->val){
 //             temp->next = a;
 //             a = a->next;
-            
+
 //             temp = temp->next;
 //         }
 //         else{
@@ -583,7 +581,7 @@
 //             pa = pa->next;
 //             temp = temp->next;
 //         }
-//     }    
+//     }
 //     if(a==NULL){
 //         temp->next = pa;
 //     }
@@ -654,7 +652,7 @@
 //     node *d = new node(30);
 //     node *e = new node(20);
 //     node *f = new node(10);
-    
+
 //     a->next = b;
 //     b->next = c;
 //     c->next = d;
@@ -662,7 +660,7 @@
 //     e->next = f;
 
 //     string r = palindrome(a);
-//     cout << r;    
+//     cout << r;
 
 // }
 
@@ -719,7 +717,6 @@
 //     display(head);
 // }
 
-
 // int main(){
 //     node *a = new node(10);
 //     node *b = new node(20);
@@ -727,7 +724,7 @@
 //     node *d = new node(40);
 //     node *e = new node(50);
 //     node *f = new node(60);
-    
+
 //     a->next = b;
 //     b->next = c;
 //     c->next = d;
@@ -774,7 +771,7 @@
 //             if(st.empty()){
 //                 st.push(s[i]);
 //             }
-            
+
 //             else if(st.top()=='(' && s[i]==')' || st.top()=='[' && s[i]==']' || st.top()=='{' && s[i]=='}'){
 //                 st.pop();
 //             }
@@ -893,7 +890,7 @@
 //     else{
 //         return fibo(n-1) + fibo(n-2);
 //     }
-    
+
 // }
 // int main(){
 //     int x = 10;
@@ -917,8 +914,6 @@
 //     int b = 4;
 //     cout << pow(3,4);
 // }
-
-
 
 // #include<iostream>
 // using namespace std;
@@ -1023,7 +1018,6 @@
 //     remove(str,"",0);
 // }
 
-
 // #include<iostream>
 // using namespace std;
 // void subset(string str,string ans,int i){
@@ -1053,7 +1047,7 @@
 //         sub(str.substr(1),ans,true,v);
 //         return;
 //     }
-    
+
 //     char dh = str[1];
 //     if(ch==dh){
 //         sub(str.substr(1),ans+ch,true,v);
@@ -1175,7 +1169,7 @@
 // void sub(int arr[],int i,vector<int>v){
 //     if(i==3){
 //         for(int i=0;i<v.size();i++){
-//             cout << v[i]; 
+//             cout << v[i];
 //         }
 //         cout << endl;
 //         return;
@@ -1213,7 +1207,7 @@
 //     for(int i=0;i<n;i++){
 //         cout << nge[i] << " ";
 //     }
-    
+
 // }
 // int main(){
 //     int arr[] = {3,1,2,7,4,6,2,3};
@@ -1243,7 +1237,7 @@
 //     for(int i=0;i<n;i++){
 //         cout << pge[i] << " ";
 //     }
-    
+
 // }
 // int main(){
 //     int arr[] = {3,1,2,7,4,6,2,3};
@@ -1330,7 +1324,7 @@
 //             sum = sum + v[i];
 //             if(sum<0){
 //                 sum = 0;
-//             } 
+//             }
 //             maxs = max(sum,maxs);
 //         }
 
@@ -1383,7 +1377,7 @@
 //         cout << ans[i] << " ";
 //     }
 // }
-//#include<iostream>
+// #include<iostream>
 // using namespace std;
 // void per(string str,string ans){
 //     if(str==""){
@@ -1532,7 +1526,7 @@
 //         temp = temp->next;
 //     }
 //     temp = a;
-    
+
 // }
 // #include<iostream>
 // using namespace std;
@@ -1608,7 +1602,7 @@
 //         cout << temp->val << " ";
 //         temp = temp->next;
 //     }
-    
+
 // }
 // #include<iostream>
 // using namespace std;
@@ -1691,12 +1685,12 @@
 //             tempans = t;
 //             tempa = tempa->next;
 //         }
-        
+
 //         else{
 //             node* t = new node(tempb->val);
-//             tempans->next = t; 
+//             tempans->next = t;
 //             tempans = t;
-            
+
 //             tempb = tempb->next;
 //         }
 //     }
@@ -1823,8 +1817,81 @@
 //     vector<string>v;
 //     subset(str,"",v,0,true);
 // }
-#include<iostream>
+#include <iostream>
+#include <stack>
 using namespace std;
-int main(){
-    cout << 1/2 + 1;
+int cal(char ch,int val1,int val2){
+    if(ch=='*'){
+        return (val1 * val2);
+    }
+    else if(ch=='-'){
+        return (val1 - val2);
+    }
+    else if(ch=='+'){
+        return (val1 + val2);
+    }
+    else{
+        return (val1 / val2);
+    }
+}
+int pri(char c){
+    if(c=='+'|| c=='-'){
+        return 1;
+    }
+    else{
+        return 2;
+    }
+}
+int main()
+{
+    string str = "2+6*4/8-3";
+    stack<char> op;
+    stack<int> st;
+    for (int i = 0; i < str.size(); i++)
+    {
+        if (isdigit(str[i]))
+        {
+            st.push(str[i]-48);
+        }
+        else
+        {
+            if (op.size() == 0)
+            {
+                op.push(str[i]);
+            }
+            else
+            {
+                if (pri(str[i] > pri(op.top())))
+                {
+                    op.push(str[i]);
+                }
+                else
+                {
+                    while (op.size() > 0 && pri(str[i] <= pri(op.top())))
+                    {
+                        char ch = op.top();
+                        op.pop();
+                        int val2 = st.top();
+                        st.pop();
+                        int val1 = st.top();
+                        st.pop();
+                        int ans = cal(ch, val1, val2);
+                        st.push(ans);
+                    }
+                    op.push(str[i]);
+                }
+            }
+        }
+    }
+    while(op.size() != 0){
+        char ch = op.top();
+        op.pop();
+        int val2 = st.top();
+        st.pop();
+        int val1 = st.top();
+        st.pop();
+        int ans = cal(ch, val1, val2);
+        st.push(ans);
+    }
+    cout << st.top() << endl;
 }

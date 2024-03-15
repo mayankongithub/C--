@@ -2,21 +2,19 @@
 #include<stack>
 using namespace std;
 int main(){
-    string str = "}{}";
+    string str = "{{{}";// 5/2 + 1 = 2 + 1
     stack<char>st;
     for(int i=0;i<str.length();i++){
         if(str[i]=='('){
             st.push(str[i]);
         }
         else{
-            if(!st.empty() && st.top()==')'){
+            if(!st.empty() && st.top()=='(' && str[i]==')'){
                 st.pop();
             }
             else{
                 st.push(str[i]);
             }
-            
-
         }
     }
     int opening = 0;
