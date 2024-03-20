@@ -36,4 +36,8 @@ int main(){
     for(int i=0;i<y;i++){
         cout << ans[i] << " ";
     }
+    cout << endl;
+    for(int i=0;i<n;i++){
+        cout << ngi[i] << " ";
+    }
 }
