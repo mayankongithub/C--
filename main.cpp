@@ -1783,10 +1783,11 @@ int main(){
     vector<int>ans;
     for(int i=0;i<n-k+1;i++){
         if(j<i)j=i;
+        int j=0;
         int mx = arr[j];
         while(j<i+k){
             mx = arr[j];
-            if(ngi[j]>=i+k)break;
+            if(j>=i+k)break;
             j = ngi[j];
         }
         ans.push_back(mx);
