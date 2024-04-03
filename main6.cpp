@@ -1817,81 +1817,172 @@
 //     vector<string>v;
 //     subset(str,"",v,0,true);
 // }
-#include <iostream>
-#include <stack>
+// #include <iostream>
+// #include <stack>
+// using namespace std;
+// int cal(char ch,int val1,int val2){
+//     if(ch=='*'){
+//         return (val1 * val2);
+//     }
+//     else if(ch=='-'){
+//         return (val1 - val2);
+//     }
+//     else if(ch=='+'){
+//         return (val1 + val2);
+//     }
+//     else{
+//         return (val1 / val2);
+//     }
+// }
+// int pri(char c){
+//     if(c=='+'|| c=='-'){
+//         return 1;
+//     }
+//     else{
+//         return 2;
+//     }
+// }
+// int main()
+// {
+//     string str = "2+6*4/8-3";
+//     stack<char> op;
+//     stack<int> st;
+//     for (int i = 0; i < str.size(); i++)
+//     {
+//         if (isdigit(str[i]))
+//         {
+//             st.push(str[i]-48);
+//         }
+//         else
+//         {
+//             if (op.size() == 0)
+//             {
+//                 op.push(str[i]);
+//             }
+//             else
+//             {
+//                 if (pri(str[i] > pri(op.top())))
+//                 {
+//                     op.push(str[i]);
+//                 }
+//                 else
+//                 {
+//                     while (op.size() > 0 && pri(str[i] <= pri(op.top())))
+//                     {
+//                         char ch = op.top();
+//                         op.pop();
+//                         int val2 = st.top();
+//                         st.pop();
+//                         int val1 = st.top();
+//                         st.pop();
+//                         int ans = cal(ch, val1, val2);
+//                         st.push(ans);
+//                     }
+//                     op.push(str[i]);
+//                 }
+//             }
+//         }
+//     }
+//     while(op.size() != 0){
+//         char ch = op.top();
+//         op.pop();
+//         int val2 = st.top();
+//         st.pop();
+//         int val1 = st.top();
+//         st.pop();
+//         int ans = cal(ch, val1, val2);
+//         st.push(ans);
+//     }
+//     cout << st.top() << endl;
+// }
+// #include<iostream>
+// #include<stack>
+// using namespace std;
+// void sorted(stack<int>&st,int val){
+//     if(st.size()==0 || st.top()<val){
+//         st.push(val);
+//         return;
+//     }
+//     int top = st.top();
+//     st.pop();
+//     sorted(st,val);
+//     st.push(top);
+    
+// }
+// void sort(stack<int>&st){
+//     if(st.size()==0){
+//         return;
+//     }
+//     int top = st.top(); 
+//     st.pop();
+//     sort(st);
+//     sorted(st,top);
+// }
+// int main(){
+//     stack<int>st;
+//     st.push(10);
+//     st.push(50);
+//     st.push(30);
+//     st.push(40);
+//     st.push(20);
+//     sort(st);
+//     stack<int>temp;
+//     while(st.size()!=0){
+//         cout << st.top() << endl;
+//         temp.push(st.top());
+//         st.pop();
+//     }
+// }
+#include<iostream>
 using namespace std;
-int cal(char ch,int val1,int val2){
-    if(ch=='*'){
-        return (val1 * val2);
+class Queue{
+public:
+    int f;
+    int b;
+    int arr[5];
+    Queue(){
+        f = 0;
+        b = 0;
     }
-    else if(ch=='-'){
-        return (val1 - val2);
-    }
-    else if(ch=='+'){
-        return (val1 + val2);
-    }
-    else{
-        return (val1 / val2);
-    }
-}
-int pri(char c){
-    if(c=='+'|| c=='-'){
-        return 1;
-    }
-    else{
-        return 2;
-    }
-}
-int main()
-{
-    string str = "2+6*4/8-3";
-    stack<char> op;
-    stack<int> st;
-    for (int i = 0; i < str.size(); i++)
-    {
-        if (isdigit(str[i]))
-        {
-            st.push(str[i]-48);
+    void push(int val){
+        if(b==5){
+            cout << "Queue is full! push" << endl;
+            return;
         }
-        else
-        {
-            if (op.size() == 0)
-            {
-                op.push(str[i]);
-            }
-            else
-            {
-                if (pri(str[i] > pri(op.top())))
-                {
-                    op.push(str[i]);
-                }
-                else
-                {
-                    while (op.size() > 0 && pri(str[i] <= pri(op.top())))
-                    {
-                        char ch = op.top();
-                        op.pop();
-                        int val2 = st.top();
-                        st.pop();
-                        int val1 = st.top();
-                        st.pop();
-                        int ans = cal(ch, val1, val2);
-                        st.push(ans);
-                    }
-                    op.push(str[i]);
-                }
-            }
+        arr[b] = val;
+        b++;
+    }
+    void pop(){
+        if(f-b==0){
+            cout << "Queue is empty! pop" << endl;
+            return;
         }
+        f++;
     }
-    while(op.size() != 0){
-        char ch = op.top();
-        op.pop();
-        int val2 = st.top();
-        st.pop();
-        int val1 = st.top();
-        st.pop();
-        int ans = cal(ch, val1, val2);
-        st.push(ans);
+    void display(){
+        for(int i=f;i<b;i++){
+            cout << arr[i] << " ";
+        }
+        cout << endl;
     }
-    cout << st.top() << endl;
+    int top(){
+        if(b==0){
+            cout << "Queue is empty! top" << endl;
+            return -1;
+        }
+        return arr[f];
+    }
+};
+int main(){
+    Queue q;
+    q.push(10);
+    q.push(20);
+    q.push(30);
+    q.push(40);
+    q.pop();
+    q.display();
+    q.push(50);
+    q.push(60);
+    q.display();
+    q.top();
 }
