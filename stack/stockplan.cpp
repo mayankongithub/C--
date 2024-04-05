@@ -19,6 +19,10 @@ int main(){
         st.push(i);
     }
     for(int i=0;i<n;i++){
+        cout << pgi[i] << " ";
+    }
+    cout << endl << endl;
+    for(int i=0;i<n;i++){
         pgi[i] = i - pgi[i];
     }
     for(int i=0;i<n;i++){

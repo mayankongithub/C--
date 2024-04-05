@@ -4,22 +4,22 @@ using namespace std;
 int main(){
     int arr[] = {2,1,5,6,2,3};
     int n = 6;
-    int nse[n];
-    nse[n-1] = n;
+    int nsi[n];
+    nsi[n-1] = n;
     stack<int>st;
     st.push(n-1);
     for(int i=n-2;i>=0;i--){
         while(st.size()>0 && arr[st.top()]>=arr[i]){
             st.pop();
         }
-        if(st.size()==0) nse[i] = n;
+        if(st.size()==0) nsi[i] = n;
         else{
-            nse[i] = st.top();
+            nsi[i] = st.top();
         }
         st.push(i);
     }
     for(int i=0;i<n;i++){
-        cout << nse[i] << " ";
+        cout << nsi[i] << " ";
     }
     cout << endl;
 
@@ -43,7 +43,7 @@ int main(){
     int maxarea = 0;
     for(int i=0;i<n;i++){
         int height = arr[i];
-        int breath = nse[i] - pse[i] -1;
+        int breath = nsi[i] - pse[i] -1;
         int area = height * breath;
         maxarea = max(area,maxarea);
     }
