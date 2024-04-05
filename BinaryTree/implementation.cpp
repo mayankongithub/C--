@@ -15,6 +15,10 @@ int sum(Node* root){
     if(root==NULL)return 0;
     return root->val + sum(root->left) + sum(root->right);
 }
+int size(Node* root){
+    if(root==NULL)return 0;
+    return 1 + size(root->left) + size(root->right); 
+}
 void display(Node* root){
     if(root==NULL)return;
     cout << root->val << " ";
@@ -34,7 +38,10 @@ int main(){
     b->right = e;
     a->right = c;
     c->right = g;
+    c->left = f;
     display(a);
     cout << endl;
     cout << sum(a);
+    cout << endl;
+    cout << size(a);
 }
