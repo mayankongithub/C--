@@ -51,10 +51,10 @@ int main(){
     g->right = h;
     h->left = i;
     h->right = j;
-    // display(a);
-    // cout << endl;
-    // cout << sum(a);
-    // cout << endl;
-    // cout << size(a);
-    pre(a);
+    display(a);
+    cout << endl;
+    cout << sum(a);
+    cout << endl;
+    cout << size(a);
+    //pre(a);
 }
