@@ -1,4 +1,5 @@
 #include<iostream>
+#include<limits.h>
 using namespace std;
 class Node{
 public:
@@ -19,8 +20,8 @@ int size(Node* root){
     if(root==NULL)return 0;
     return 1 + size(root->left) + size(root->right); 
 }
-void display(Node* root){
-    if(root==NULL)return;
+int display(Node* root){
+    if(root==NULL)return 0;
     cout << root->val << " ";
     display(root->left);
     display(root->right);
@@ -30,6 +31,22 @@ void pre(Node* root){
     cout << root->val << " ";
     pre(root->left);
     pre(root->right);
+}
+int pro(Node* root){
+    if(root==NULL)return 1;
+    return root->val * pro(root->left) * pro(root->right);
+}
+int mini(Node* root){
+    if(root==NULL)return INT_MAX;
+    int leftmax = mini(root->left);
+    int rightmax = mini(root->right);
+    return min(root->val,min(leftmax,rightmax));
+}
+int maxi(Node* root){
+    if(root==NULL)return INT_MIN;
+    int leftmax = maxi(root->left);
+    int rightmax = maxi(root->right);
+    return max(root->val,max(leftmax,rightmax));
 }
 int main(){
     Node* a = new Node(1);
@@ -51,10 +68,13 @@ int main(){
     g->right = h;
     h->left = i;
     h->right = j;
-    // display(a);
+    // cout << display(a);
+    // cout << pro(a);
+    // cout << mini(a);
+    // cout << maxi(a);
     // cout << endl;
     // cout << sum(a);
     // cout << endl;
     // cout << size(a);
-    pre(a);
+    //pre(a);
 }
