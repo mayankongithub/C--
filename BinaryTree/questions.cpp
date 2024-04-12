@@ -312,7 +312,27 @@
 //         cout << v[i] << " ";
 //     }
 // }
-
+#include<bits/stdc++.h>
+using namespace std;
+class node{
+public: 
+    int val;
+    node* left,*right;
+    node(int val){
+        this->val = val;
+        left = right = NULL;
+    }
+};
+node* construct(int arr[],int n){
+    int i = 1;
+    int j = 2;
+    queue<node*>q;
+    node* root = new node(arr[0]);
+    q.push(root);
+    
+    while(i<n && q.size()>0){
+        node* temp = q.front();
+        q.pop();
         node* l;
         node* r;
         if(arr[i]!=INT_MIN) l = new node(arr[i]);
