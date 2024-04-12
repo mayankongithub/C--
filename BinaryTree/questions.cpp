@@ -312,44 +312,7 @@
 //         cout << v[i] << " ";
 //     }
 // }
-#include<iostream>
-#include<stack>
-#include<queue>
-using namespace std;
-int main(){
-    queue<int>q;
-    q.push(1);
-    q.push(2);
-    q.push(3);
-    q.push(4);
-    q.push(5);
-    int n = q.size();
-    stack<int>st;
-    int k = 3;
-    int x = k;
-    while(x!=0){
-        int store = q.front();
-        q.pop();
-        st.push(store);
-        x--;
-    }
-    while(st.size()!=0){
-        int store = st.top();
-        st.pop();
-        q.push(store);
-    }
-    for(int i=0;i<n-k;i++){
-        int temp = q.front();
-        q.pop();
-        q.push(temp);
-    }
-    while(n!=0){
-        int store = q.front();
-        q.pop();
-        cout << store << " ";
-        q.push(store);
-        n--;
-    }
+
         node* l;
         node* r;
         if(arr[i]!=INT_MIN) l = new node(arr[i]);
