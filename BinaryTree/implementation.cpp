@@ -1,5 +1,7 @@
 #include<iostream>
+#include<bits/stdc++.h>
 #include<limits.h>
+#include<algorithm>
 using namespace std;
 class Node{
 public:
@@ -48,6 +50,10 @@ int maxi(Node* root){
     int rightmax = maxi(root->right);
     return max(root->val,max(leftmax,rightmax));
 }
+int level(Node* root){
+    if(root==NULL)return 1;
+    return 1 + max(level(root->left),level(root->right));
+}
 int main(){
     Node* a = new Node(1);
     Node* b = new Node(2);
@@ -77,4 +83,5 @@ int main(){
     // cout << endl;
     // cout << size(a);
     //pre(a);
+    cout << level(a);
 }

@@ -43,6 +43,7 @@
 // }
 
 
+// PRINT THE SUM IN AN RANGE
 // #include<iostream>
 // #include<queue>
 // #include<string>
@@ -84,62 +85,7 @@
 //      cout<<sum;
 // }
 
-// PRE ORDEDR USING ITERATIVE METHOD
-// #include<iostream>
-// #include<queue>
-// #include<string>
-// #include<stack>
-// #include<vector>
-// using namespace std;
-// class Node{
-// public:
-//     int val;
-//     Node* left;
-//     Node* right;
-//     Node(int val){
-//         this->val = val;
-//         left = NULL;
-//         right = NULL;
-//     }
-// };
-// vector<int> pre(Node* root){
-//     vector<int>v;
-//     stack<Node*>st;
-//     st.push(root);
-//     while(st.size()>0){
-//         Node* temp = st.top();
-//         st.pop();
-//         v.push_back(temp->val);
-//         if(temp->right!=NULL)st.push(temp->right);
-//         if(temp->left!=NULL)st.push(temp->left);
-//     }
-//     return v;
-// }
-// int main(){
-//     Node* a = new Node(1);
-//     Node* b = new Node(2);
-//     Node* c = new Node(3);
-//     Node* d = new Node(5);
-    
-//     a->left = b;
-//     b->right = d;
-//     a->right = c;
- 
-// }
-// #include<iostream>
-// #include<string>
-// using namespace std;
-// int main(){
-//     string str[] = {"495","491","40"};
-//     int sum = 0;
-//     for(int i=0;i<3;i++){
-//         int c = stoi(str[i]);
-//         sum += c;
-//     }
-//     cout << sum;
-// }
-
-// // PRINT THE PATH OF A BINARY TREE
+// PRINT THE PATH OF BINARY TREE
 // #include<iostream>
 // #include<queue>
 // #include<string>
@@ -156,37 +102,16 @@
 //         right = NULL;
 //     }
 // };
-// void display(Node* root,vector<string>&ans,string s){
+// void path(Node* root,string s,vector<string>&ans){
 //     if(root==NULL)return;
 //     string a = to_string(root->val);
 //     if(root->left==NULL && root->right==NULL){
-//         s += a;
+//         s+=a;
 //         ans.push_back(s);
 //         return;
 //     }
-//     display(root->left,ans,s+a);
-//     display(root->right,ans,s+a);
-// }
-
-// int sumNumbers(Node* root){
-//     vector<string>ans;
-//     string s= "";
-//     display(root,ans,s);
-//     int sum = 0;
-//     int size = ans.size();
-//     for(int i=0;i<size;i++){
-//         int c = stoi(ans[i]);
-//         sum += c;
-//     }
-//     return sum;
-// }
-//  int add(vector<string>ans,int& sum){
-//     int size = ans.size();
-//     for(int i=0;i<size;i++){
-//         int c = stoi(ans[i]);
-//         sum += c;
-//     }
-//     return sum;
+//     path(root->left,s+a,ans);
+//     path(root->right,s+a,ans);
 // }
 // int main(){
 //     Node* a = new Node(1);
@@ -197,38 +122,234 @@
 //     a->left = b;
 //     b->right = d;
 //     a->right = c;
+//     string s = "";
 //     vector<string>ans;
-//     display(a,ans,"");
+//     path(a,s,ans);
 //     for(int i=0;i<ans.size();i++){
 //         cout << ans[i] << " ";
 //     }
-//     cout << endl;
-//     int sum = 0;
-//     cout << add(ans,sum);
+// }
+//          1
+//      2       3
+//          5
+
+// #include<iostream>
+// #include<queue>
+// #include <bits/stdc++.h>
+// #include<vector>
+// using namespace std;
+// class Node{
+// public:
+//     int val;
+//     Node* left;
+//     Node* right;
+//     Node(int val){
+//         this->val = val;
+//         left = NULL;
+//         right = NULL;
+//     }
+// };
+// void reverse(vector<int>&level){
+//     reverse(level.begin(),level.end());
+// }
+// vector<vector<int>> level(Node* root,vector<vector<int>> &ans){
+//     if(root==NULL){
+//         return ans;
+//     }
+//     queue<Node*>q;
+//     q.push(root);
+//     int r = 0;
+//     while(!q.empty()){
+//         int size = q.size();
+//         vector<int>level;
+//         for(int i=0;i<size;i++){
+//             Node* node = q.front();
+//             q.pop();
+//             if(node->left!=NULL)q.push(node->left);
+//             if(node->right!=NULL)q.push(node->right);
+//             level.push_back(node->val);
+//         }
+//         if(r%2!=0){
+//             reverse(level);
+//             ans.push_back(level);
+//             r++;
+//         }
+//         else{
+//             ans.push_back(level);
+//             r++;
+//         }
+//     }
+//     return ans;
+// }
+// int main(){
+//     Node* a = new Node(3);
+//     Node* b = new Node(9);
+//     Node* c = new Node(20);
+//     Node* d = new Node(15);
+//     Node* e = new Node(7);
+    
+//     a->left = b;
+//     a->right = c;
+//     c->left = d;
+//     c->right = e;
+
+    
+//     vector<vector<int>> ans;
+//     level(a,ans);
+//     for(int i=0;i<ans.size();i++){
+//         for(int j=0;j<ans[i].size();j++){
+//             cout << ans[i][j] << " ";
+//         }
+//     }
+// }
+//          1
+//     2        
+//          5
+
+
+// #include<iostream>
+// #include<queue>
+// #include <bits/stdc++.h>
+// #include<vector>
+// using namespace std;
+// class Node{
+// public:
+//     int val;
+//     Node* left;
+//     Node* right;
+//     Node(int val){
+//         this->val = val;
+//         left = NULL;
+//         right = NULL;
+//     }
+// };
+// vector<vector<int>> level(Node* root,vector<vector<int>> &ans,int i){
+//     if(root==NULL){
+//         return ans;
+//     }
+//     level(root->left,ans,i+1);
+//     level(root->right,ans,i+1);
+//     if(i==2){
+//         i++;
+//         queue<Node*>q;
+//         q.push(root);
+//         int r = 0;
+//         while(!q.empty()){
+//             int size = q.size();
+//             vector<int>level;
+//             for(int i=0;i<size;i++){
+//                 Node* node = q.front();
+//                 q.pop();
+//                 if(node->left!=NULL)q.push(node->left);
+//                 if(node->right!=NULL)q.push(node->right);
+//                 level.push_back(node->val);
+//             }
+//             ans.push_back(level);
+//         }
+//         return ans;
+//     }
+//     return ans;
+// }
+// int main(){
+//     Node* a = new Node(3);
+//     Node* b = new Node(9);
+//     Node* c = new Node(20);
+//     Node* d = new Node(15);
+//     Node* e = new Node(7);
+    
+//     a->left = b;
+//     a->right = c;
+//     c->left = d;
+//     c->right = e;
+
+    
+//     vector<vector<int>> ans;
+//     level(a,ans,0);
+//     for(int i=0;i<ans.size();i++){
+//         for(int j=0;j<ans[i].size();j++){
+//             cout << ans[i][j] << " ";
+//         }
+//     }
+// }
+
+// #include<iostream>
+// #include<queue>
+// #include <bits/stdc++.h>
+// #include<vector>
+// using namespace std;
+// class Node{
+// public:
+//     int val;
+//     Node* left;
+//     Node* right;
+//     Node(int val){
+//         this->val = val;
+//         left = NULL;
+//         right = NULL;
+//     }
+// };
+// void leftside(Node* root,vector<int>&v){
+//     if(root==NULL)return;
+//     v.push_back(root->val);
+//     leftside(root->left,v);
+// }
+// int main(){
+//     Node* a = new Node(3);
+//     Node* b = new Node(9);
+//     Node* c = new Node(20);
+//     Node* d = new Node(15);
+//     Node* e = new Node(7);
+    
+//     a->left = b;
+//     a->right = c;
+//     c->left = d;
+//     c->right = e;
+
+    
+//     vector<int> v;
+//     leftside(a,v);
+//     for(int i=0;i<v.size();i++){
+//         cout << v[i] << " ";
+//     }
 // }
 #include<iostream>
+#include<stack>
 #include<queue>
-#include<bits/stdc++.h>
 using namespace std;
-class node{
-public:
-    int val;
-    node* left,*right;
-    node(int val){
-        this->val = val;
-        left = right = NULL;
-    }
-};
-node* construct(int arr[],int n){
-    int i = 1;
-    int j = 2;
-    queue<node*>q;
-    node* root = new node(arr[0]);
-    q.push(root);
-    
-    while(i<n && q.size()>0){
-        node* temp = q.front();
+int main(){
+    queue<int>q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);
+    int n = q.size();
+    stack<int>st;
+    int k = 3;
+    int x = k;
+    while(x!=0){
+        int store = q.front();
         q.pop();
+        st.push(store);
+        x--;
+    }
+    while(st.size()!=0){
+        int store = st.top();
+        st.pop();
+        q.push(store);
+    }
+    for(int i=0;i<n-k;i++){
+        int temp = q.front();
+        q.pop();
+        q.push(temp);
+    }
+    while(n!=0){
+        int store = q.front();
+        q.pop();
+        cout << store << " ";
+        q.push(store);
+        n--;
+    }
         node* l;
         node* r;
         if(arr[i]!=INT_MIN) l = new node(arr[i]);
