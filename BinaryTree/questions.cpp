@@ -377,3 +377,11 @@
 //     //boundary(root);
 //     //rightboundary(root);
 // }
+#include<iostream>
+#include<string>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string n = "z";
+    cout << "t"+n;
+}
