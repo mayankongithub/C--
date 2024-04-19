@@ -382,8 +382,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    string n = "z";
-    cout << "t"+n;
-
+    char s = 'e';
+    char t = 'e';
+    int f = s-t;
+    cout << f;
 }
 
