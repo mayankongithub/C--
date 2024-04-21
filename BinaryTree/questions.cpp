@@ -378,14 +378,23 @@
 //     //rightboundary(root);
 // }
 #include<iostream>
+#include<vector>
 #include<string>
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    char s = 'e';
-    char t = 'e';
-    int f = s-t;
-    cout << f;
+    int arr[][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    vector<vector<int>>ans;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            ans[i].push_back(arr[i][j]);
+        }
+    }
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout << ans[i][j] << " ";
+        }
+    }
 }
 
 
