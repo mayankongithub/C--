@@ -382,21 +382,41 @@
 #include<string>
 #include<bits/stdc++.h>
 using namespace std;
-int main(){
-    int arr[][3] = {{1,2,3},{4,5,6},{7,8,9}};
-    vector<vector<int>>ans;
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            ans[i].push_back(arr[i][j]);
+
+int mini(vector<int>&nums){
+    int miin = INT_MAX;
+    int idx = -1;
+    for(int i=0;i<nums.size();i++){
+        if(nums[i]<miin){
+            idx = i;
+            miin = nums[i];
         }
     }
-    
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            cout << ans[i][j] << " ";
-        }
+    nums.erase(nums.begin() + idx); 
+    return miin;
+}
+int main(){
+    vector<int>nums;
+    nums.push_back(5);
+    nums.push_back(4);
+    nums.push_back(2);
+    nums.push_back(3);
+    int alice, bob;
+    vector<int>v;
+        
+    for(int i=0;i<nums.size();i++){
+        alice = mini(nums);
+            // nums.erase(alice);
+        bob = mini(nums);
+            // nums.erase(bob);
+        v.push_back(bob);
+        v.push_back(alice);
+    }
+    for(int i=0;i<v.size();i++){
+        cout << v[i] << " ";
     }
 }
+
 
 
 
