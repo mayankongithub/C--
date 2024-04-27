@@ -403,7 +403,6 @@ int main(){
     nums.push_back(3);
     int alice, bob;
     vector<int>v;
-        
     for(int i=0;i<nums.size();i++){
         alice = mini(nums);
             // nums.erase(alice);
