@@ -377,47 +377,82 @@
 //     //boundary(root);
 //     //rightboundary(root);
 // }
-#include<iostream>
-#include<vector>
-#include<string>
+// #include<iostream>
+// #include<vector>
+// #include<string>
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int mini(vector<int>&nums){
+//     int miin = INT_MAX;
+//     int idx = -1;
+//     for(int i=0;i<nums.size();i++){
+//         if(nums[i]<miin){
+//             idx = i;
+//             miin = nums[i];
+//         }
+//     }
+//     nums.erase(nums.begin() + idx); 
+//     return miin;
+// }
+// int main(){
+//     vector<int>nums;
+//     nums.push_back(5);
+//     nums.push_back(4);
+//     nums.push_back(2);
+//     nums.push_back(3);
+//     int alice, bob;
+//     vector<int>v;
+//     for(int i=0;i<nums.size();i++){
+//         alice = mini(nums);
+//             // nums.erase(alice);
+//         bob = mini(nums);
+//             // nums.erase(bob);
+//         v.push_back(bob);
+//         v.push_back(alice);
+//     }
+//     for(int i=0;i<v.size();i++){
+//         cout << v[i] << " ";
+//     }
+    
+// }
+
 #include<bits/stdc++.h>
 using namespace std;
-
-int mini(vector<int>&nums){
-    int miin = INT_MAX;
-    int idx = -1;
-    for(int i=0;i<nums.size();i++){
-        if(nums[i]<miin){
-            idx = i;
-            miin = nums[i];
+int counting(char ch,string s){
+    int count = 0;
+    for(int i=0;i<s.size();i++){
+        if(ch==s[i]){
+            count++;
         }
     }
-    nums.erase(nums.begin() + idx); 
-    return miin;
+    return count;
 }
 int main(){
-    vector<int>nums;
-    nums.push_back(5);
-    nums.push_back(4);
-    nums.push_back(2);
-    nums.push_back(3);
-    int alice, bob;
-    vector<int>v;
-    for(int i=0;i<nums.size();i++){
-        alice = mini(nums);
-            // nums.erase(alice);
-        bob = mini(nums);
-            // nums.erase(bob);
-        v.push_back(bob);
-        v.push_back(alice);
+    string stones = "cba";
+    string jewels = "bcd";
+    int sum = 0;
+    int j = 0;
+    // sort(stones.begin(),stones.end());
+    // sort(jewels.begin(),jewels.end());
+    // for(int i=0;i<stones.size();i++){
+    //     if(jewels[j]==stones[i]){
+    //         // char send = jewel[j]
+    //         sum += counting(jewels[j],stones);
+    //     }
+    //     j++;
+    // }
+    int i =0;
+    int n = stones.size();
+    while(i<n){
+        if(jewels[j]==stones[i]){
+            sum += counting(jewels[j],stones);
+            i++;
+            j++;
+        }
     }
-    for(int i=0;i<v.size();i++){
-        cout << v[i] << " ";
-    }
-    
+    cout << sum;
 }
-
-
 
 
 
