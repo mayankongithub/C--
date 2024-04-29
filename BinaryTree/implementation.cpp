@@ -83,5 +83,6 @@ int main(){
     // cout << endl;
     // cout << size(a);
     //pre(a);
+    
     cout << level(a);
 }
