@@ -86,7 +86,3 @@ int main(){
     
     cout << level(a);
 }
-
-
-
-
