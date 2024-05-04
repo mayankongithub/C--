@@ -442,7 +442,7 @@ int main(){
     //     }
     //     j++;
     // }
-    
+
     int i =0;
     int n = stones.size();
     while(i<n){
@@ -454,6 +454,8 @@ int main(){
     }
     cout << sum;
 }
+
+
 
 
 
