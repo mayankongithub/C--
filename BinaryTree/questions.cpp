@@ -417,47 +417,47 @@
     
 // }
 
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int counting(char ch,string s){
+//     int count = 0;
+//     for(int i=0;i<s.size();i++){
+//         if(ch==s[i]){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// int main(){
+//     string stones = "cba";
+//     string jewels = "bcd";
+//     int sum = 0;
+//     int j = 0;
+//     // sort(stones.begin(),stones.end());
+//     // sort(jewels.begin(),jewels.end());
+//     // for(int i=0;i<stones.size();i++){
+//     //     if(jewels[j]==stones[i]){
+//     //         // char send = jewel[j]
+//     //         sum += counting(jewels[j],stones);
+//     //     }
+//     //     j++;
+//     // }
+
+
+//     int i =0;
+//     int n = stones.size();
+//     while(i<n){
+//         if(jewels[j]==stones[i]){
+//             sum += counting(jewels[j],stones);
+//             i++;
+//             j++;
+//         }
+//     }
+//     cout << sum;
+// }
+
+#include<iostream>
 using namespace std;
-int counting(char ch,string s){
-    int count = 0;
-    for(int i=0;i<s.size();i++){
-        if(ch==s[i]){
-            count++;
-        }
-    }
-    return count;
-}
 int main(){
-    string stones = "cba";
-    string jewels = "bcd";
-    int sum = 0;
-    int j = 0;
-    // sort(stones.begin(),stones.end());
-    // sort(jewels.begin(),jewels.end());
-    // for(int i=0;i<stones.size();i++){
-    //     if(jewels[j]==stones[i]){
-    //         // char send = jewel[j]
-    //         sum += counting(jewels[j],stones);
-    //     }
-    //     j++;
-    // }
-
-
-    int i =0;
-    int n = stones.size();
-    while(i<n){
-        if(jewels[j]==stones[i]){
-            sum += counting(jewels[j],stones);
-            i++;
-            j++;
-        }
-    }
-    cout << sum;
+    cout << 3 * 'abc';
 }
-
-
-
-
-
-
