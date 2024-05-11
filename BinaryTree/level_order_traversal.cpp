@@ -33,6 +33,7 @@ vector<vector<int>> level(Node* root,vector<vector<int>> &ans){
     }
     return ans;
 }
+
 int main(){
     Node* a = new Node(1);
     Node* b = new Node(2);

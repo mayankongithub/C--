@@ -43,7 +43,7 @@ int main(){
     int maxarea = 0;
     for(int i=0;i<n;i++){
         int height = arr[i];
-        int breath = nsi[i] - pse[i] -1;
+        int breath = nsi[i] - pse[i] - 1;
         int area = height * breath;
         maxarea = max(area,maxarea);
     }
