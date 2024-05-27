@@ -460,8 +460,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    string s = "543ahery";
-    sort(s.begin(),s.end());
-    cout << s;
+    string s = "()";
+    cout << s.size();
 }
+
 
