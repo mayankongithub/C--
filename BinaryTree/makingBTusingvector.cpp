@@ -47,3 +47,6 @@ int main(){
     Node* store = contruct(arr,n);
     display(store);
 }
+
+
+

@@ -1,5 +1,6 @@
 #include<iostream>
 #include<queue>
+#include<bits/stdc++.h>
 #include<vector>
 using namespace std;
 class Node{
@@ -13,12 +14,16 @@ public:
         right = NULL;
     }
 };
+void change(vector<int>&v){
+    reverse(v.begin(),v.end());
+}
 vector<vector<int>> level(Node* root,vector<vector<int>> &ans){
     if(root==NULL){
         return ans;
     }
     queue<Node*>q;
     q.push(root);
+    int r = 1;
     while(!q.empty()){
         int size = q.size();
         vector<int>level;
@@ -29,7 +34,15 @@ vector<vector<int>> level(Node* root,vector<vector<int>> &ans){
             if(node->right!=NULL)q.push(node->right);
             level.push_back(node->val);
         }
-        ans.push_back(level);
+        if(r%2==0){
+            change(level);
+            ans.push_back(level);
+            r++;
+        }
+        else{
+            ans.push_back(level);
+            r++;
+        }
     }
     return ans;
 }
