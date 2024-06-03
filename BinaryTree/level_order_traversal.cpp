@@ -23,7 +23,6 @@ vector<vector<int>> level(Node* root,vector<vector<int>> &ans){
     }
     queue<Node*>q;
     q.push(root);
-    int r = 1;
     while(!q.empty()){
         int size = q.size();
         vector<int>level;
@@ -34,15 +33,7 @@ vector<vector<int>> level(Node* root,vector<vector<int>> &ans){
             if(node->right!=NULL)q.push(node->right);
             level.push_back(node->val);
         }
-        if(r%2==0){
-            change(level);
-            ans.push_back(level);
-            r++;
-        }
-        else{
-            ans.push_back(level);
-            r++;
-        }
+        ans.push_back(level);
     }
     return ans;
 }
