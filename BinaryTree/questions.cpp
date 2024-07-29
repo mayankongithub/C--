@@ -459,9 +459,58 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int main(){
-    string s = "()";
-    cout << s.size();
+class node{
+public:
+    int val;
+    node* left;
+    node* right;
+    node(int val){
+        right = NULL;
+        left = NULL;
+        this->val = val;
+    }
+};
+void helper(node* root,int k,vector<int>&v){
+    if(root==NULL)return;
+    int n = 1;
+    queue<node*>q;
+    q.push(root);
+    while(!q.empty()){
+        int size = q.size();
+        for(int i=0;i<size;i++){
+            node* temp = q.front();
+            q.pop();
+            if(temp->left)q.push(temp->left);
+            if(temp->right)q.push(temp->right);
+            if(n==k){
+                v.push_back(temp->val);
+            }
+        }
+        n++;
+    }
 }
-
-
+int main(){
+    node* a = new node(1);
+    node* b = new node(7);
+    node* c = new node(9);
+    node* d = new node(2);
+    node* e = new node(6);
+    node* f = new node(9);
+    node* g = new node(5);
+    node* h = new node(11);
+    node* i = new node(5);
+    a->left = b;
+    a->right = c;
+    b->left = d;
+    b->right = e;
+    e->left = d;
+    e->right = h;
+    c->right = f;
+    f->left = i;
+    int k = 3;
+    vector<int>v;
+    helper(a,k,v);
+    for(int i=0;i<v.size();i++){
+        cout << v[i] << " ";
+    }
+}

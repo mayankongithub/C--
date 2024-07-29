@@ -35,30 +35,31 @@ Node* contruct(int arr[],int n){
     }
     return root;
 }
+
 void display(Node* root){
     if(root==NULL)return;
     cout << root->val << " ";
     display(root->left);
     display(root->right);
 }
-void in(Node* root,vector<int>&v){
-    if(root==NULL)return;
-    in(root->left,v);
-    v.push_back(root->val);
-    in(root->right,v);
-}
+// void in(Node* root,vector<int>&v){
+//     if(root==NULL)return;
+//     in(root->left,v);
+//     v.push_back(root->val);
+//     in(root->right,v);
+// }
 int main(){
     int arr[] = {1,2,3,4,5,6,INT_MIN,INT_MIN,INT_MIN,7,8,9};
     int n = sizeof(arr)/sizeof(arr[0]);
     Node* store = contruct(arr,n);
     display(store);
-    vector<int>v;
-    in(store,v);
+    // vector<int>v;
+    // in(store,v);
 
-    cout << endl;
-    for(int i=0;i<v.size();i++){
-        cout << v.at(i) << " ";
-    }
+    // cout << endl;
+    // for(int i=0;i<v.size();i++){
+    //     cout << v.at(i) << " ";
+    // }
 }
 
 

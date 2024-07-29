@@ -14,20 +14,23 @@ public:
         right = NULL;
     }
 };
-int sum(Node* root){
-    if(root==NULL)return 0;
-    return root->val + sum(root->left) + sum(root->right);
+void helper(Node* root,int &sum){
+    if(root==NULL)return;
+    // return root->val + sum(root->left) + sum(root->right);
+    helper(root->left,sum);
+    helper(root->right,sum);
+    sum++;
 }
 int size(Node* root){
     if(root==NULL)return 0;
     return 1 + size(root->left) + size(root->right); 
 }
-int display(Node* root){
-    if(root==NULL)return 0;
-    cout << root->val << " ";
-    display(root->left);
-    display(root->right);
-}
+// int display(Node* root){
+//     if(root==NULL)return 0;
+//     cout << root->val << " ";
+//     display(root->left);
+//     display(root->right);
+// }
 void pre(Node* root){
     if(root==NULL)return;
     cout << root->val << " ";
@@ -83,6 +86,7 @@ int main(){
     // cout << endl;
     // cout << size(a);
     //pre(a);
-    
-    cout << level(a);
+    int sum = 0;
+    helper(a,sum);
+    cout << sum;
 }
