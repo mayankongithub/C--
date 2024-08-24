@@ -193,46 +193,46 @@
 //     }
 //     cout << sum;
 // }
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int arr[32];
-//     int n = 10;
-//     int bit;
-//     int i=0;
-//     while(n>0){
-//         arr[i] = n & 1;
-//         n = n >> 1;
-//         i++;
-//     }
-//     for(int j=i-1;j>=0;j--){
-//         cout << arr[j];
-//     }
-// }
 #include<iostream>
 using namespace std;
 int main(){
-    int arr[5][5] = {1,4,7,11,15,2,5,8,12,19,3,6,9,16,22,10,13,14,17,24,18,21,23,26,30};
-    int i = 0;
-    int target = 30;
-    int j = 4;
-    bool flag = false;
-    while(i<=4 && j>0){
-        if(target == arr[i][j]){
-            flag = 1;
-            break;
-        }
-        else if(arr[i][j] > target){
-            j--;
-        }
-        else{
-            i++;
-        }
+    int arr[32];
+    int n = 10;
+    int bit;
+    int i=0;
+    while(n>0){
+        arr[i] = n & 1;
+        n = n >> 1;
+        i++;
     }
-    if(flag == 0){
-        cout << "False";
-    }
-    else{
-        cout << "True";
+    for(int j=i-1;j>=0;j--){
+        cout << arr[j];
     }
 }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[5][5] = {1,4,7,11,15,2,5,8,12,19,3,6,9,16,22,10,13,14,17,24,18,21,23,26,30};
+//     int i = 0;
+//     int target = 30;
+//     int j = 4;
+//     bool flag = false;
+//     while(i<=4 && j>0){
+//         if(target == arr[i][j]){
+//             flag = 1;
+//             break;
+//         }
+//         else if(arr[i][j] > target){
+//             j--;
+//         }
+//         else{
+//             i++;
+//         }
+//     }
+//     if(flag == 0){
+//         cout << "False";
+//     }
+//     else{
+//         cout << "True";
+//     }
+// }

@@ -16,6 +16,27 @@ public:
             }
         }
     }
+    void downheapify(int idx){
+        while(idx < v.size()){
+            int lc = idx*2+1;
+            int rc = idx*2+2;
+            if(lc >= v.size())break;
+            int maxside = idx;
+            if(v[idx] < v[lc]){
+                maxside = lc;
+            }
+            if(rc < v.size() && v[maxside] < v[rc]){
+                maxside = rc;
+            }
+            if(maxside != idx){
+                swap(v[maxside],v[idx]);
+                idx = maxside;
+            }
+            else{
+                break;
+            }
+        }
+    }
     
     bool empty(){
         return v.size()==0;
@@ -27,9 +48,12 @@ public:
     }
     heap(vector<int>hpv){
         v = hpv;
-        //tc => O(nlogn) for better use downheapify
         for(int i=1;i<v.size ();i++){
             upheapify(i);
+        }
+        //tc => O(nlogn) for better use downheapify
+        for(int i=v.size()/2;i>=0;i--){
+            downheapify(i);
         }
     }
 };

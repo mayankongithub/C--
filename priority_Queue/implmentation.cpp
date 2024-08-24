@@ -19,8 +19,9 @@ public:
         v.push_back(element);
         upheapify(v.size()-1);
     }
+    
 
-    void dowanify(int idx){
+    void downheapify(int idx){
         while(idx < v.size()){
             int lc = idx*2+1;
             int rc = idx*2+2;
@@ -46,7 +47,7 @@ public:
         if(empty())return;
         swap(v[0],v[v.size()-1]);//removes the highest priority element
         v.pop_back();
-        if(!empty()) dowanify(0);
+        if(!empty()) downheapify(0);
     }
     bool empty(){
         return v.size()==0;
@@ -60,7 +61,7 @@ public:
         v[idx] = INT_MAX;
         upheapify(idx);
         v[0] = v[v.size()-1];
-        dowanify(0);
+        downheapify(0);
         v.pop_back();
     }
 };
