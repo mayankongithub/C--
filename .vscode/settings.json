@@ -10,7 +10,9 @@
         "ranges": "cpp",
         "span": "cpp",
         "stacktrace": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "string": "cpp",
+        "format": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
