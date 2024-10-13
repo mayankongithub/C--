@@ -17,7 +17,7 @@ bool cycle(int node,int parent,vector<bool>&visited,vector<vector<int>>&adj){
 }
 int main(){
     vector<vector<int>>adj = {{1}, {0, 2, 4}, {1, 3}, {2, 4}, {1, 3}};
-    vector<bool>visited;
+    vector<bool>visited(adj.size(),0);
     int v = 5;
     bool flag = 0;
     for(int i=0;i<visited.size();i++){
