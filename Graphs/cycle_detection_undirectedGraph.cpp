@@ -32,4 +32,4 @@ int main(){
         cout << "No cycle present";
     }
     else cout << "Cycle is present";
-}
+} 

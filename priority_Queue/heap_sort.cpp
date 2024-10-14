@@ -122,7 +122,7 @@ class MaxHeap {
 
 public:
     // Function to maintain heap property upwards
-    void upheapify(int ci, vector<int>& hp) {
+    void upheapify(int ci, vector<int>& hp){
         while (ci > 0) {
             int papa = (ci - 1) / 2;
             if (hp[ci] > hp[papa]) {
@@ -205,7 +205,7 @@ public:
         }
 
         // Display sorted array
-        for (int k = 0; k < hp.size(); k++) {
+        for(int k = 0; k < hp.size(); k++){
             cout << hp[k] << " ";
         }
         cout << endl;
