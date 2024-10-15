@@ -80,23 +80,79 @@
 //     }
 //     flag==1 ? cout << true : cout << false;
 // }
-#include <bits/stdc++.h>
-#include <sys/wait.h>  // For wait()
-using namespace std;
-int main() {
-    int n = fork();  // Create a new process (fork())
+// #include <bits/stdc++.h>
+// #include <sys/wait.h>  // For wait()
+// using namespace std;
+// int main() {
+//     int n = fork();  // Create a new process (fork())
 
-    if (n < 0) {
-        cout << "Fork failed!" << endl;
+//     if (n < 0) {
+//         cout << "Fork failed!" << endl;
+//         return 1;
+//     }
+//     else if (n == 0) {  // Child process
+//         cout << "Child process" << endl;
+//     }
+//     else if (n > 0) {  // Parent process
+//         wait(NULL);  // Wait for the child process to finish
+//         cout << "Parent process";
+//     }
+
+//     return 0;
+// }
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+public:
+    int val;
+    Node* right;
+    Node* left;
+    Node(int val){
+        this->val = val;
+        right = left = NULL;
+    }
+};
+void display(Node* root){
+    if(root==NULL){
+        return;
+    }
+    cout << root->val << " ";
+    display(root->left);
+    display(root->right);
+}
+int sum(Node* root){
+    if(root==NULL){
         return 1;
     }
-    else if (n == 0) {  // Child process
-        cout << "Child process" << endl;
+    return root->val + sum(root->left) + sum(root->right);
+}
+int size(Node* root){
+    if(root==NULL){
+        return 0;
     }
-    else if (n > 0) {  // Parent process
-        wait(NULL);  // Wait for the child process to finish
-        cout << "Parent process";
-    }
-
-    return 0;
+    return 1 + size(root->left) + size(root->right);
+}
+int main(){
+    Node* a = new Node(1);
+    Node* b = new Node(2);
+    Node* c = new Node(3);
+    Node* d = new Node(4);
+    Node* e = new Node(5);
+    Node* f = new Node(6);
+    Node* g = new Node(7);
+    Node* h = new Node(8);
+    Node* i = new Node(9);
+    Node* j = new Node(10);
+    a->left = b;
+    b->left = c;
+    b->right = f;
+    c->left = d;
+    c->right = e;
+    a->right = g;
+    g->right = h;
+    h->left = i;
+    h->right = j;
+    // display(a);
+    cout << sum(a) << endl;
+    cout << size(a);
 }
