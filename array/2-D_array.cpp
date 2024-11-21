@@ -743,3 +743,40 @@
 //    }
 // }
 
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[4][5] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+    int minr = 0,minc = 0;
+    int maxr = 3,maxc = 4;
+    while(minr<=maxr && minc<=maxc){
+        //right
+        if(minr>maxr || minc>maxc) break;
+        for(int j=minc;j<=maxc;j++){
+            cout << arr[minr][j] << " ";
+        }
+        minr++;
+        //down
+        if(minr>maxr || minc>maxc) break;
+        for(int i=minr;i<=maxr;i++){
+            cout << arr[i][maxc] << " ";
+        }
+        maxc--;
+        //left
+        if(minr>maxr || minc>maxc) break;
+        for(int j=maxc;j>=minc;j--){
+            cout << arr[maxr][j] << " ";
+        }
+        maxr--;
+        //up
+        if(minr>maxr || minc>maxc) break;
+        for(int i=maxr;i>=minr;i--){
+            cout << arr[i][minc] << " ";
+        }
+        minc++;
+    }
+}
+
+i
