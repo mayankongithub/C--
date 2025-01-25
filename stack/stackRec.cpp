@@ -31,11 +31,9 @@ void insertatbottom(stack<int>&st,int val){
 }
 int main(){
     stack<int>st;
-    st.push(10);
-    st.push(20);
-    st.push(30);
-    st.push(40);
-    st.push(50);
+    st.push(4);
+    st.push(5);
+    st.push(7);
     displayRev(st);
     cout << endl;
     // display(st);
