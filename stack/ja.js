@@ -1,14 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
-
-export const counterSlice = createSlice({
-    name: 'counter',
-    initialState: {
-        value: 0
-    },
-    reducers: {
-        // Add your reducer functions here
-    }
-});
-
-export const {} = counterSlice.actions;
-export default counterSlice.reducer;
+let mark = 90
+if(mark>=90){
+    console.log(`A grade`);
+}
+else if(mark>=80){
+    console.log(`B grade`);
+}
+else if(mark>=70){
+    console.log(`C grade`);
+}
+else{
+    console.log(`fail`);
+}

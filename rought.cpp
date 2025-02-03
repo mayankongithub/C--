@@ -428,9 +428,30 @@
 // }
 
 
-#include<bits/stdc++.h>
-using namespace std;
-int main(){
-   string str = "anc";
-   cout << str[0] - '0';
-}
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    string str = "anc";
+//    cout << str[0] - '0';
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    int arr[5] = {1,3,2,4,5};
+//    vector<pair<int,int>>v(5);
+//    for(int i=0;i<5;i++){
+//       v[i] = {arr[i],i};
+//    }
+//    int count = 0;
+//    sort(v.begin(),v.end());
+//    for(int i=0;i<5;i++){
+//       if(v[i].second==i)continue;
+//       else{
+//          count++;
+//          swap(v[i],v[v[i].second]);
+//          --i;
+//       }
+//    }
+//    cout << count;
+// }
