@@ -14,7 +14,7 @@ int main(){
     //push
 
     for(int i=1;i<n;i++){
-        while(st.size()>0 && st.top()<=arr[i]){
+        while(st.size()>0 && st.top()>=arr[i]){
             st.pop();
         }
         if(st.size()==0) newarr[i] = -1;

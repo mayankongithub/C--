@@ -455,3 +455,429 @@
 //    }
 //    cout << count;
 // }
+// #include<bits/stdc++.h>
+// using namespace std;
+// class a{
+//     private:
+//     int age;
+//     public:
+//     a(int aa){
+//         age = aa;
+//     }
+//     void getage(){
+//         cout << age;
+//     }
+// };
+// int main(){
+//     a o(8);
+//     o.getage();
+// }
+// #include<bits/stdc++.h>
+// using namespace std;
+// class s{
+//     public:
+//     int age;
+// };
+// int main(){
+//     s *a = new s;
+//     a->age = 1;
+//     cout << a->age;
+// }
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// void helper(int arr[], int idx) {
+//     if (idx == 3) return;
+
+//     for (int i = idx; i < 3; i++) { // Start swapping from idx
+//         swap(arr[i], arr[idx]);
+//         helper(arr, idx + 1);
+//         // swap(arr[i], arr[idx]); // Swap back to restore original state
+//     }
+// }
+
+// int main() {
+//     int arr[] = {1, 2, 3};
+//     // next_permutation(arr, arr + 3); // Generate next permutation
+//     helper(arr, 0); 
+
+//     for (int i = 0; i < 3; i++) {
+//         cout << arr[i] << " ";
+//     }
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class student{
+// public:
+//     string name;
+//     int roll_number;
+//     int batch;
+//     int age;
+//     // student(string name,int roll_number,int batch,int age){
+//     //     this->name = name;
+//     //     this->roll_number = roll_number;
+//     //     this->batch = batch;
+//     //     this->age = age;
+//     // }
+//     inline student(string name,int r,int b,int a) : name(name),roll_number(r),batch(b),age(a){
+
+//     }
+//     ~student(){
+
+//     }
+// };
+// int main(){
+//     student* a = new student("swati",22909,5,21);
+//     student s("mayank",22909,5,21);
+//     cout << s.name << " " << s.roll_number << " " << s.batch << " " << s.age << endl; 
+//     cout << a->name << " " << a->roll_number << " " << a->batch << " " << a->age; 
+// }
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class bank{
+// public:
+//     static int num;
+//     bank(){
+//         num++;
+//     }
+// };
+// int bank :: num = 0;
+// int main(){
+//     bank a;
+//     bank b;
+//     cout << bank::num;
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class human{
+// public:
+//     string name;
+//     human(string name){
+//         this->name = name;
+//     }
+// };
+// class student : public human{
+// public:
+//     int age;
+//     student(int age,string name):human(name){
+//         // this->name = name;
+//         this->age = age;
+//     }
+// };
+// int main(){
+//     student s(3,"as");
+//     cout << s.name << " " <<  s.age << " ";
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     string ans = "abc";
+//     ans.erase(0,1);
+//     vector<int>v = {1,2,3,4,5,6};  //500 //6
+//     v.erase(v.begin()+5);
+//     // auto loda =  find(v.begin(),v.end(),6);
+//     // v.erase(loda);
+//     for(int i=0;i<v.size();i++){
+//         cout << v[i] << " ";
+//     }
+//     // cout << v.size() << " ";
+
+//     // cout << endl;
+//     // cout << ans;
+//     // cout << '1' + 1 << endl;
+//     // cout << 1 + '10';
+
+// }
+
+
+// interview
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class animal{
+// public:
+//     string name;
+//     animal(){
+
+//     }
+//     animal(string name){
+//         this->name = name;
+//     }
+//     virtual void display(){
+        
+//     }
+// };
+// class dog : public animal{
+// public:
+//     int number_of_legs;
+//     dog(string name,int number_of_legs):animal(name){
+//         this->number_of_legs = number_of_legs;
+//     }
+//     void display(){
+//         cout << name << endl << number_of_legs;
+//     }
+// };
+// int main(){
+//     animal *p;
+//     p = new dog("jnjnu",4);
+//     p->display();
+// }
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//    string str = "";
+//    int i = 0;
+//    int j = str.size()-1;
+//    while(i<j){
+//     swap(str[i],str[j]);
+//     i++;
+//     j--;
+// }
+//     cout << str;
+// }
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     vector<int>arr = {1,2,4,4,4,4,4,4,4,3,3,3,3,3,3,3,1,1,1,1,1,1,3,4,1};
+//     set<pair<int,int>>st;
+//     for(int i=0;i<arr.size();i++){
+//         st.insert({arr[i],i});
+//     }
+//     for(auto x : st){
+//         cout << x.first << " " << x.second << endl << " ";
+//     }
+//     cout << st.size();
+// }
+// #include<bits/stdc++.h>
+// #include<thread>
+// using namespace std;
+// int task(){
+//     int count = 0;
+//     for(int i=1;i<=1000000;i++){
+//         count += i;
+//     }
+//     return count;
+// }
+// int main(){
+//     int result1, result2;
+//     thread t1([&result1]() {
+//         result1 = task();
+//     });
+//     thread t2([&result2]() {
+//         result2 = task(); 
+//     });
+//     t1.join();
+//     t2.join();
+// }
+
+
+// friend function
+// #include<bits/stdc++.h>
+// using namespace std;
+// class a{
+// private:
+//     string name;
+// public:
+//     a(string name){
+//         this->name = name;
+//     }
+//     friend string print(a s);
+// };
+// string print(a s){
+//     return s.name;
+// }
+// int main(){
+//     a m("mayank");
+//     cout << print(m);
+// }
+
+
+// function override
+// #include<bits/stdc++.h>
+// using namespace std;
+// class a{
+// public:
+//     string name;
+//     a(string name){
+//         this->name = name;
+//     }
+//     virtual void display(){
+//         cout << name;
+//     }
+// };
+// class b : public a{
+//     public:
+//         b(string name):a(name){
+            
+//         }
+//         void display(){
+//             cout << name;
+//         }
+//     };
+// int main(){
+//     a m("mayank");
+//     b n("sharma");
+//     n.display();
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     vector<int>v = {4,3,2,1};
+//     for(int i=0;i<v.size();i++){
+//         for(int j=i;j<v.size();j++){
+//             if(v[i]>v[j]){
+//                 swap(v[i],v[j]);
+//             }
+//         }
+//     }
+//     for(int i=0;i<v.size();i++){
+//         cout << v[i];
+//     }
+// }
+
+#include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     vector<int>v = {1,2,3,4,5,6,7,8,9};
+//     int start = 0;
+//     int high = v.size() - 1;
+//     while(start<high){
+//         int mid = start + high / 2;
+//         if(v[mid]==4){
+//             cout << "yes present";
+//             break;
+//         }
+//         else if(v[mid]>4){
+//             high = mid - 1;
+//         }
+//         else if(v[mid]<4){
+//             start = mid + 1;
+//         }
+
+//     }
+// }
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     vector<vector<int>> arr = {{1,2,3,16},
+//                     {4,5,6,12},
+//                     {7,8,9,15}};
+    
+//     // for(int i=0;i<arr.size();i++){
+//         reverse(arr.begin(),arr.end());    
+//     // }
+//     for(int i=0;i<arr.size();i++){
+//         for(int j=0;j<arr[0].size();j++){
+//             cout << arr[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class Node{
+// public:
+//     int val;
+//     Node* left,*right;
+//     Node(int val){
+//         this->val = val;
+//         left = right = NULL;
+//     }
+// };
+// Node* construct(vector<int>&arr,int n){
+//     int i = 1;
+//     int j = 2;
+//     queue<Node*>q;
+//     Node* root = new Node(arr[0]);
+//     q.push(root);
+//     while(i<n && q.size()>0){
+//         Node* temp = q.front();
+//         q.pop();
+//         Node* l;
+//         Node* r;
+//         if(arr[i]!=INT_MIN){
+//             l = new Node(arr[i]);
+//         }
+//         else l = NULL;
+//         temp->left = l;
+//         if(j!=n && arr[j]!=INT_MIN){
+//             r = new Node(arr[j]);
+//         }
+//         else r = NULL;
+//         temp->right = r;
+//         if(l)q.push(l);
+//         if(r)q.push(r);
+//         i += 2;
+//         j += 2;
+//     }
+//     return root;
+// }
+// bool check(Node* root,int idx){
+//     if(!root)return true;
+//     bool flag = false;
+//     queue<Node*>q;
+//     q.push(root);
+//     while(q.size()>0){
+//         Node* temp = q.front();
+//         q.pop();
+//         if(temp->left){
+//             if(flag)return false;
+//             q.push(temp->left);
+//         }
+//         if(temp->right){
+//             if(flag)return false;
+//             q.push(temp->right);
+//         }
+//         else{
+//             flag = true;
+//         }
+//     }
+//     return true;
+// }
+// bool maxheap(Node* root){
+//     if(!root)return true;
+//     if(!root->left && !root->right){
+//         return true;
+//     }
+//     if(root->left && root->right){
+//         if(root->val >= root->left->val && root->val >= root->right->val){
+//             return max(maxheap(root->left),maxheap(root->right));
+//         }
+//         return false;
+//     }
+//     if(root->left && !root->right){
+//         if(root->val >= root->left->val){
+//             return maxheap(root->left);
+//         }
+//         return false;
+//     }
+
+//     if(root->right && !root->left){
+//         return false;
+//     }
+//     return true;
+// }
+// int main(){
+//     vector<int>v = {10, 9, 8, 7, 6, 5, 4};
+//     int n = v.size();
+//     Node* root = construct(v,n);
+//     cout << check(root,0) << endl << maxheap(root);
+// }
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string a = "a";
+    cout << typeid(a).name();
+}

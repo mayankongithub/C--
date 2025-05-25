@@ -31,7 +31,6 @@ int main(){
             int ans = cal(val1,val2,ch);
             val.push(ans);
         }
-        
     }
     cout << val.top() << endl;
 }

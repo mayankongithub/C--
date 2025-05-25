@@ -1,6 +1,2 @@
-  //  while(n!=0){
-    //     r.push(q.front());
-    //     q.push(q.front());
-    //     q.pop();
-    //     n--;
-    // }
+or(int i=0;i<v.size();i++){
+        cout << v[i]

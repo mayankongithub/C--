@@ -12,7 +12,8 @@
         "stacktrace": "cpp",
         "regex": "cpp",
         "string": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "thread": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
