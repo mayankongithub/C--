@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+int cnt = 0;
 void merge(int arr[],int low,int mid,int high){
     vector<int>temp;
     int left = low;
@@ -26,11 +27,19 @@ void merge(int arr[],int low,int mid,int high){
         arr[i] = temp[i-low];
     }
 }
+void countpair(int nums[],int low,int mid,int high){
+    int right = mid + 1;
+    for(int i=low;i<=mid;i++){
+        while(right<=high && nums[i]>2*nums[right]) right++;
+        cnt = cnt + (right-(mid+1));
+    }
+}
 void sort(int arr[],int low,int high){
     if(low==high)return;
     int mid = (low+high)/2;
     sort(arr,low,mid);
     sort(arr,mid+1,high);
+    countpair(arr,low,mid,high);
     merge(arr,low,mid,high);
 }
 int main(){
@@ -40,4 +49,5 @@ int main(){
     for(int i=0;i<n;i++){
         cout << arr[i] << " ";
     }
+    cout << endl << cnt;
 }

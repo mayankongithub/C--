@@ -875,9 +875,18 @@
 // }
 
 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     string a = "a";
+//     cout << typeid(a).name();
+// }
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    string a = "a";
-    cout << typeid(a).name();
+    vector<string>arr = {"flower","flow","flight"};
+    sort(arr.begin(),arr.end());
+    for(int i=0;i<arr.size();i++){
+        cout << arr[i] << " ";
+    }
 }
